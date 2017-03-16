@@ -4,6 +4,7 @@
 #include <cstring>
 #include <glm/gtc/matrix_transform.hpp>  
 #include <SDL_keyboard.h>
+#include <SDL_image.h>
 #include "Leap.h"
 #include "simple_logger.h"
 #include "graphics3d.h"
@@ -12,8 +13,8 @@
 
 GLuint vbo;
 using namespace Leap;
-//int roll;
-
+extern SDL_Window *__graphics3d_window;
+SDL_Renderer *renderer;
 
 class SampleListener : public Listener {
   public:
@@ -68,14 +69,14 @@ void SampleListener::onFrame(const Controller& controller) {
 		const Vector normal = hand.palmNormal();
 		const Vector direction = hand.direction();
 
-		if((normal.roll() * RAD_TO_DEG) > 0)
+		/*if((normal.roll() * RAD_TO_DEG) > 0)
 		{
 			std::cout << "LEFT" << std::endl;
 		}
 		if((normal.roll() * RAD_TO_DEG) < 0)
 		{
 			std::cout << "RIGHT" << std::endl;
-		}
+		}*/
     }
   }
 
@@ -165,14 +166,13 @@ int main(int argc, char *argv[])
     GLuint vao;
     GLuint triangleBufferObject;
     char bGameLoopRunning = 1;
-    SDL_Event e;
+    //SDL_Event e;
 
 	int lastFrameID = controller.frame().id();
 	int64_t lastFrame = controller.frame().timestamp();
 
-	Sprite spr; //Instantiate spr sprite of Sprite class
-	// Have the sample listener receive events from the controller
-	controller.addListener(listener);
+	Sprite spr; //Instantiate spr instance of Sprite class
+	controller.addListener(listener); // Have the sample listener receive events from the controller
 
 	const float triangleVertices[] = {
 		-0.2f, -0.2f, 0.0f, 1.0f,
@@ -194,19 +194,20 @@ int main(int argc, char *argv[])
 
     init_logger("gametest3d.log");
     if (graphics3d_init(1024,1024,1,"gametest3d",33) != 0)
-
     {
         return -1;
     }
 
+	renderer = SDL_CreateRenderer(__graphics3d_window, -1, SDL_RENDERER_ACCELERATED);
 	glGenBuffers(1, &vbo);
-    glGenVertexArrays(1, &vao);
-    glBindVertexArray(vao); //make our vertex array object, we need it to restore state we set after binding it. Re-binding reloads the state associated with it.
-    
-    glGenBuffers(1, &triangleBufferObject); //create the buffer
-    glBindBuffer(GL_ARRAY_BUFFER, triangleBufferObject); //we're "using" this one now
-    glBufferData(GL_ARRAY_BUFFER, sizeof(triangleVertices), triangleVertices, GL_STATIC_DRAW); //formatting the data for the buffer
-    glBindBuffer(GL_ARRAY_BUFFER, 0); //unbind any buffers
+
+ //   glGenVertexArrays(1, &vao);
+ //   glBindVertexArray(vao); //make our vertex array object, we need it to restore state we set after binding it. Re-binding reloads the state associated with it.
+ //  
+	//glGenBuffers(1, &triangleBufferObject); //create the buffer
+ //   glBindBuffer(GL_ARRAY_BUFFER, triangleBufferObject); //we're "using" this one now
+ //   glBufferData(GL_ARRAY_BUFFER, sizeof(triangleVertices), triangleVertices, GL_STATIC_DRAW); //formatting the data for the buffer
+ //   glBindBuffer(GL_ARRAY_BUFFER, 0); //unbind any buffers
     
     slog("glError: %d", glGetError());
     
@@ -226,25 +227,27 @@ int main(int argc, char *argv[])
 
     while (bGameLoopRunning)
     {
-        if ( SDL_PollEvent(&e) ) 
-        {
-            if (e.type == SDL_QUIT)
-                bGameLoopRunning = 0;
-            else if (e.type == SDL_KEYUP && e.key.keysym.sym == SDLK_ESCAPE)
-                bGameLoopRunning = 0;
-			else if(e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_c)
-				continue;
-        }
+		//input from keyboard
+   //     if ( SDL_PollEvent(&e) ) 
+   //     {
+   //         if (e.type == SDL_QUIT)
+   //             bGameLoopRunning = 0;
+   //         else if (e.type == SDL_KEYUP && e.key.keysym.sym == SDLK_ESCAPE)
+   //             bGameLoopRunning = 0;
+			//else if(e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_c)
+			//	continue;
+   //     }
 
-		if(controller.frame().timestamp() >= lastFrame + 1000000)
-		{
-			lastFrame = controller.frame().timestamp();
-			std::cout << "TIME" << lastFrameID << std::endl;
-		}
+		//print TIME when the specified frame is processed
+		//if(controller.frame().timestamp() >= lastFrame + 1000000)
+		//{
+		//	lastFrame = controller.frame().timestamp();
+		//	std::cout << "TIME" << lastFrameID << std::endl;
+		//}
 
 		bool hands = controller.frame().hands().count() > 1;
   		float angle = controller.frame().hands().leftmost().palmNormal().roll();
-  		std::cout << angle << std::endl;
+  		//std::cout << angle << std::endl; //Print angle of roll
 
 		rotateMatrix = glm::rotate(glm::mat4(1.0f), angle - 1, glm::vec3(0, 0, 1));
 		scaleMatrix = glm::scale(glm::mat4(1.0f), glm::vec3(0.5, 0.5, 0.5));
@@ -253,7 +256,6 @@ int main(int argc, char *argv[])
         glClearColor(0.0,0.2,0.4,1.0); //background color
         glClear(GL_COLOR_BUFFER_BIT);
 
-        /* drawing code in here! */
         glUseProgram(graphics3d_get_shader_program());
 
 		GLuint modelMatrixLocation = glGetUniformLocation(graphics3d_get_shader_program(), "modelMatrix"); // Get the location of our model matrix in the shader  
@@ -268,10 +270,8 @@ int main(int argc, char *argv[])
         //glDrawArrays(GL_TRIANGLES, 0, 6);
         spr.draw();//use sprites draw function
         //glDisableVertexAttribArray(0);
-        //glDisableVertexAttribArray(1);
+       // glDisableVertexAttribArray(1);
         glUseProgram(0);
-        /* drawing code above here! */
-
 		
         graphics3d_next_frame();
     } 

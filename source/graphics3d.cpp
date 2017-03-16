@@ -3,7 +3,7 @@
 #include "shader.h"
 
 static SDL_GLContext __graphics3d_gl_context;
-static SDL_Window  * __graphics3d_window = NULL;
+SDL_Window  * __graphics3d_window = NULL;
 static GLuint        __graphics3d_shader_program;
 static Uint32        __graphics3d_frame_delay = 33;
 

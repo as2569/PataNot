@@ -1,5 +1,5 @@
 #version 400
-in vec4 theColor;
+//in vec4 theColor;
 out vec4 outputColor;
 uniform mat4 modelMatrix;
 
@@ -20,6 +20,7 @@ void main()
 	//outputColor = modelMatrix[row][col] * theColor;
 	//outputColor = vec4(gl_FragCoord.x/1024, gl_FragCoord.y/768, 0, 1);
 
-	outputColor = theColor;
+	outputColor = vec4(1.0f, 1.0f, 1.0f, 1.0f);
+	//outputColor = theColor;
 
 }
