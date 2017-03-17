@@ -4,7 +4,7 @@
 #include <cstring>
 #include <glm/gtc/matrix_transform.hpp>  
 #include <SDL_keyboard.h>
-#include <SDL_image.h>
+#include <SOIL.h>
 #include "Leap.h"
 #include "simple_logger.h"
 #include "graphics3d.h"
@@ -12,9 +12,9 @@
 #include "sprite.h"
 
 GLuint vbo;
+GLuint uvs;
+GLuint tex;
 using namespace Leap;
-extern SDL_Window *__graphics3d_window;
-SDL_Renderer *renderer;
 
 class SampleListener : public Listener {
   public:
@@ -68,15 +68,6 @@ void SampleListener::onFrame(const Controller& controller) {
 		// Get the hand's normal vector and direction
 		const Vector normal = hand.palmNormal();
 		const Vector direction = hand.direction();
-
-		/*if((normal.roll() * RAD_TO_DEG) > 0)
-		{
-			std::cout << "LEFT" << std::endl;
-		}
-		if((normal.roll() * RAD_TO_DEG) < 0)
-		{
-			std::cout << "RIGHT" << std::endl;
-		}*/
     }
   }
 
@@ -162,7 +153,6 @@ int main(int argc, char *argv[])
 	glm::vec3 scaleVector;
 	glm::vec3 rotationVector;
 
-	bool input;
     GLuint vao;
     GLuint triangleBufferObject;
     char bGameLoopRunning = 1;
@@ -172,6 +162,8 @@ int main(int argc, char *argv[])
 	int64_t lastFrame = controller.frame().timestamp();
 
 	Sprite spr; //Instantiate spr instance of Sprite class
+	spr.size.x = 0.25f;
+	spr.size.y = 1.0f;
 	controller.addListener(listener); // Have the sample listener receive events from the controller
 
 	const float triangleVertices[] = {
@@ -198,8 +190,12 @@ int main(int argc, char *argv[])
         return -1;
     }
 
-	renderer = SDL_CreateRenderer(__graphics3d_window, -1, SDL_RENDERER_ACCELERATED);
+	//renderer = SDL_CreateRenderer(__graphics3d_window, -1, SDL_RENDERER_ACCELERATED);
 	glGenBuffers(1, &vbo);
+	glGenBuffers(1, &uvs);
+
+	//glGenTextures(1, &tex);
+	//glBindTexture(GL_TEXTURE_2D, tex);
 
  //   glGenVertexArrays(1, &vao);
  //   glBindVertexArray(vao); //make our vertex array object, we need it to restore state we set after binding it. Re-binding reloads the state associated with it.
@@ -275,9 +271,7 @@ int main(int argc, char *argv[])
 		
         graphics3d_next_frame();
     } 
-
-	//Remove the sample listener when done
-	controller.removeListener(listener);
+	controller.removeListener(listener); //Remove the sample listener when done
 
     return 0;
 }

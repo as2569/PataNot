@@ -1,7 +1,8 @@
 #version 400
 //in vec4 theColor;
+in vec2 Texcoord;
 out vec4 outputColor;
-uniform mat4 modelMatrix;
+uniform sampler2D tex;
 
 void main()
 {
@@ -20,7 +21,8 @@ void main()
 	//outputColor = modelMatrix[row][col] * theColor;
 	//outputColor = vec4(gl_FragCoord.x/1024, gl_FragCoord.y/768, 0, 1);
 
-	outputColor = vec4(1.0f, 1.0f, 1.0f, 1.0f);
+	//outputColor = vec4(1.0f, 1.0f, 1.0f, 1.0f);
 	//outputColor = theColor;
+	outputColor = texture(tex, Texcoord);
 
 }

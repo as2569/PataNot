@@ -8,7 +8,7 @@ struct frameData {
 
 class Sprite{
 	public:
-		struct frameData spriteFrames[4];
+		frameData spriteFrames[4];
 		int timeRemaining; 
 		int currentStep;
 		glm::vec2 size; 
