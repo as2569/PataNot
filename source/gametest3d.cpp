@@ -166,6 +166,10 @@ int main(int argc, char *argv[])
 	spr.spriteFrames[1].index = 1;
 	spr.spriteFrames[2].index = 2;
 	spr.spriteFrames[3].index = 3;
+	spr.spriteFrames[0].timing = 1;
+	spr.spriteFrames[1].timing = 10;
+	spr.spriteFrames[2].timing = 100;
+	spr.spriteFrames[3].timing = 1000;
 	spr.currentStep = 0;
 
 	controller.addListener(listener); //Have the sample listener receive events from the controller
@@ -197,6 +201,7 @@ int main(int argc, char *argv[])
 
     while (bGameLoopRunning)
     {
+		SDL_Init;
 		//input from keyboard
         while( SDL_PollEvent(&evn) ) 
         {
@@ -229,6 +234,7 @@ int main(int argc, char *argv[])
 		GLuint modelMatrixLocation = glGetUniformLocation(graphics3d_get_shader_program(), "modelMatrix"); // Get the location of our model matrix in the shader  
 		glUniformMatrix4fv(modelMatrixLocation, 1, GL_FALSE, &modelMatrix[0][0]); // Send our model matrix to the shader 
 
+		spr.update();
         spr.draw();//use sprites draw function
         glUseProgram(0);
 		

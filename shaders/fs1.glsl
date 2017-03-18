@@ -1,5 +1,4 @@
 #version 400
-//in vec4 theColor;
 in vec2 Texcoord;
 out vec4 outputColor;
 uniform sampler2D tex;

@@ -16,6 +16,7 @@ class Sprite{
 		int flags;
 
 		void draw();
+		void update();
 };
 
 #endif 

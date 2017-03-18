@@ -2,6 +2,7 @@
 #include <iostream>
 #include <GL\glew.h>
 #include <SOIL.h>
+#include <SDL.h>
 #include "Sprite.h"
 
 extern GLuint vbo;
@@ -9,7 +10,22 @@ extern GLuint tex;
 extern GLuint uvs;
 
 int i;
+int currentTime;
+int lastTime;
+int changeTime;
 
+void Sprite::update(){
+	currentTime = SDL_GetTicks();
+	changeTime = currentTime + spriteFrames[currentStep].timing;
+	if(currentStep >= changeTime)
+	{
+		currentStep += 1;
+		if(currentStep == 4)
+		{
+			currentStep = 0;
+		}
+	}
+}
 
 void Sprite::draw(){
 	
