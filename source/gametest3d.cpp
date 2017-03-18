@@ -15,7 +15,7 @@ GLuint vbo;
 GLuint uvs;
 GLuint tex;
 using namespace Leap;
-
+//DO TO, move all the leap motion stuff to appropriate location
 class SampleListener : public Listener {
   public:
     virtual void onInit(const Controller&);
@@ -70,7 +70,6 @@ void SampleListener::onFrame(const Controller& controller) {
 		const Vector direction = hand.direction();
     }
   }
-
 
 void SampleListener::onFocusGained(const Controller& controller) {
   std::cout << "Focus Gained" << std::endl;
@@ -134,7 +133,6 @@ void SampleListener::onLogMessage(const Controller&, MessageSeverity s, int64_t 
 }
 
 int main(int argc, char *argv[])
-
 {	
 	using namespace Leap;
 	SampleListener listener;
@@ -156,7 +154,7 @@ int main(int argc, char *argv[])
     GLuint vao;
     GLuint triangleBufferObject;
     char bGameLoopRunning = 1;
-    //SDL_Event e;
+	SDL_Event evn;
 
 	int lastFrameID = controller.frame().id();
 	int64_t lastFrame = controller.frame().timestamp();
@@ -164,25 +162,13 @@ int main(int argc, char *argv[])
 	Sprite spr; //Instantiate spr instance of Sprite class
 	spr.size.x = 0.25f;
 	spr.size.y = 1.0f;
-	controller.addListener(listener); // Have the sample listener receive events from the controller
+	spr.spriteFrames[0].index = 0;
+	spr.spriteFrames[1].index = 1;
+	spr.spriteFrames[2].index = 2;
+	spr.spriteFrames[3].index = 3;
+	spr.currentStep = 0;
 
-	const float triangleVertices[] = {
-		-0.2f, -0.2f, 0.0f, 1.0f,
-        0.2f, -0.2f, 0.0f, 1.0f,
-        -0.2f, 0.2f, 0.0f, 1.0f,
-
-		0.2f, -0.2f, 0.0f, 1.0f,
-		0.2f, 0.2f, 0.0f, 1.0f,
-		-0.2f, 0.2f, 0.0f, 1.0f,
-
-		.7f, .7f, .7f, 1.0f,
-        .7f, .7f, .7f, 1.0f,
-        .7f, .7f, .7f, 1.0f,
-
-		.5f, .5f, .5f, 1.0f,
-        .5f, .5f, .5f, 1.0f,
-        .5f, .5f, .5f, 1.0f,
-	};
+	controller.addListener(listener); //Have the sample listener receive events from the controller
 
     init_logger("gametest3d.log");
     if (graphics3d_init(1024,1024,1,"gametest3d",33) != 0)
@@ -190,21 +176,9 @@ int main(int argc, char *argv[])
         return -1;
     }
 
-	//renderer = SDL_CreateRenderer(__graphics3d_window, -1, SDL_RENDERER_ACCELERATED);
 	glGenBuffers(1, &vbo);
 	glGenBuffers(1, &uvs);
 
-	//glGenTextures(1, &tex);
-	//glBindTexture(GL_TEXTURE_2D, tex);
-
- //   glGenVertexArrays(1, &vao);
- //   glBindVertexArray(vao); //make our vertex array object, we need it to restore state we set after binding it. Re-binding reloads the state associated with it.
- //  
-	//glGenBuffers(1, &triangleBufferObject); //create the buffer
- //   glBindBuffer(GL_ARRAY_BUFFER, triangleBufferObject); //we're "using" this one now
- //   glBufferData(GL_ARRAY_BUFFER, sizeof(triangleVertices), triangleVertices, GL_STATIC_DRAW); //formatting the data for the buffer
- //   glBindBuffer(GL_ARRAY_BUFFER, 0); //unbind any buffers
-    
     slog("glError: %d", glGetError());
     
 	translateVector = glm::vec3(0, 0, 0);
@@ -224,15 +198,13 @@ int main(int argc, char *argv[])
     while (bGameLoopRunning)
     {
 		//input from keyboard
-   //     if ( SDL_PollEvent(&e) ) 
-   //     {
-   //         if (e.type == SDL_QUIT)
-   //             bGameLoopRunning = 0;
-   //         else if (e.type == SDL_KEYUP && e.key.keysym.sym == SDLK_ESCAPE)
-   //             bGameLoopRunning = 0;
-			//else if(e.type == SDL_KEYDOWN && e.key.keysym.sym == SDLK_c)
-			//	continue;
-   //     }
+        while( SDL_PollEvent(&evn) ) 
+        {
+          if(evn.type == SDL_KEYDOWN && evn.key.keysym.sym == SDLK_c)
+		  {
+			  spr.currentStep += 1;
+		  }
+        }
 
 		//print TIME when the specified frame is processed
 		//if(controller.frame().timestamp() >= lastFrame + 1000000)
@@ -257,16 +229,7 @@ int main(int argc, char *argv[])
 		GLuint modelMatrixLocation = glGetUniformLocation(graphics3d_get_shader_program(), "modelMatrix"); // Get the location of our model matrix in the shader  
 		glUniformMatrix4fv(modelMatrixLocation, 1, GL_FALSE, &modelMatrix[0][0]); // Send our model matrix to the shader 
 
-        //glBindBuffer(GL_ARRAY_BUFFER, triangleBufferObject); //bind the buffer we're applying attributes to
-        //glEnableVertexAttribArray(0); //0 is our index, refer to "location = 0" in the vertex shader
-        //glEnableVertexAttribArray(1); //attribute 1 is for vertex color data
-        //glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 0, 0); //tell gl (shader!) how to interpret our vertex data
-
-        //glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, 0, (void*)96); //color data is 48 bytes in to the array
-        //glDrawArrays(GL_TRIANGLES, 0, 6);
         spr.draw();//use sprites draw function
-        //glDisableVertexAttribArray(0);
-       // glDisableVertexAttribArray(1);
         glUseProgram(0);
 		
         graphics3d_next_frame();

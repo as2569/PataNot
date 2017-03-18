@@ -9,7 +9,7 @@ extern GLuint tex;
 extern GLuint uvs;
 
 int i;
-int index = 3;
+
 
 void Sprite::draw(){
 	
@@ -26,37 +26,14 @@ void Sprite::draw(){
 
 	float uvCoords[] =
 	{
-			(size.x * index), size.y,
-			size.x * (index + 1), size.y, 
-			(size.x * index), 0.0f,
+		(size.x * spriteFrames[currentStep].index), size.y,
+		size.x * (spriteFrames[currentStep].index + 1), size.y, 
+		(size.x * spriteFrames[currentStep].index), 0.0f,
 
-			size.x * (index + 1), size.y,
-			size.x * (index + 1), 0.0f, 
-			(size.x * index), 0.0f,
+		size.x * (spriteFrames[currentStep].index + 1), size.y,
+		size.x * (spriteFrames[currentStep].index + 1), 0.0f, 
+		(size.x * spriteFrames[currentStep].index), 0.0f,
 	};
-	/*for(i = 0; i < 6; i++)
-	{
-		if(i != 2 && i != 4 && i !=5)
-			uvCoords[2*i+1] = 0;
-		else
-			uvCoords[2*i+1] = 1;
-		if(i != 1 && i != 3 && i != 4)
-			uvCoords[2*i] = (0.25f * (index + 1));
-		else
-			uvCoords[2*i] = (0.25f * index);
-		std::cout << i << "("<< uvCoords[2*i] << "," <<uvCoords[2*i+1] << ")"<<std::endl;
-	}
-*/
-	//float uvCoords[] =
-	//{
-	//		0.0f, 1.0f,
-	//		1.0f, 1.0f, 
-	//		0.0f, 0.0f,
-
-	//		1.0f, 1.0f,
-	//		1.0f, 0.0f, 
-	//		0.0f, 0.0f,
-	//};
 
 	int width, height;
 	unsigned char* image = SOIL_load_image("frametest.png", &width, &height, 0, SOIL_LOAD_RGB);
@@ -77,12 +54,10 @@ void Sprite::draw(){
 	glBufferData(GL_ARRAY_BUFFER, sizeof(sprite), sprite, GL_STATIC_DRAW);
 	glVertexAttribPointer(0, 4, GL_FLOAT, GL_FALSE, 0, 0);
 	
-	
 	glEnableVertexAttribArray(1); 
 	glBindBuffer(GL_ARRAY_BUFFER, uvs); 
 	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(uvCoords), uvCoords, GL_STATIC_DRAW);
-
 
 	glDrawArrays(GL_TRIANGLES, 0, 6);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);

@@ -1,7 +1,7 @@
 #ifndef _SPRITE_H_
 #define _SPRITE_H_
 
-struct frameData {
+struct frameData{
 	int index;
 	int timing;
 };
