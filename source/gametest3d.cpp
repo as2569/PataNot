@@ -166,9 +166,9 @@ int main(int argc, char *argv[])
 	spr.spriteFrames[1].index = 1;
 	spr.spriteFrames[2].index = 2;
 	spr.spriteFrames[3].index = 3;
-	spr.spriteFrames[0].timing = 1;
-	spr.spriteFrames[1].timing = 10;
-	spr.spriteFrames[2].timing = 100;
+	spr.spriteFrames[0].timing = 1000;
+	spr.spriteFrames[1].timing = 1000;
+	spr.spriteFrames[2].timing = 1000;
 	spr.spriteFrames[3].timing = 1000;
 	spr.currentStep = 0;
 

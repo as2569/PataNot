@@ -17,6 +17,8 @@ class Sprite{
 
 		void draw();
 		void update();
+		void timeLeft();
+		void deltaTime();
 };
 
 #endif 

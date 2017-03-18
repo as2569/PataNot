@@ -10,20 +10,38 @@ extern GLuint tex;
 extern GLuint uvs;
 
 int i;
-int currentTime;
-int lastTime;
-int changeTime;
+float delta = 0.0;
+long last;
+long now = SDL_GetTicks();
+//int timeRemaining = 1000; 
+
+void Sprite::deltaTime()
+{
+	if (SDL_GetTicks()> last)
+	{
+		delta = ((float)(SDL_GetTicks() - last));
+		last = SDL_GetTicks();
+	}
+}
+
+void Sprite::timeLeft()
+{
+	timeRemaining = spriteFrames[currentStep].timing;
+}
 
 void Sprite::update(){
-	currentTime = SDL_GetTicks();
-	changeTime = currentTime + spriteFrames[currentStep].timing;
-	if(currentStep >= changeTime)
-	{
+	deltaTime();
+	timeRemaining -= delta;
+
+	if(timeRemaining <= 0)
+	{	
+		timeLeft();			
 		currentStep += 1;
 		if(currentStep == 4)
 		{
 			currentStep = 0;
 		}
+		
 	}
 }
 
