@@ -2,12 +2,12 @@
 in vec4 position;
 in vec2 texcoord;
 out vec2 Texcoord;
-uniform mat4 modelMatrix;
+uniform mat4 matrixMVP;
 
 void main()
 {
-	//gl_Position = modelMatrix * position;
-	gl_Position = position;
+	gl_Position = matrixMVP * position;
+	//gl_Position = position;
 	Texcoord = texcoord;
 	//theColor = color;
 }

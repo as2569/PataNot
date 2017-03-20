@@ -11,14 +11,17 @@ class Sprite{
 		frameData spriteFrames[4];
 		int timeRemaining; 
 		int currentStep;
-		glm::vec2 size; 
-		GLuint textureId; 
 		int flags;
+		glm::vec2 size; 
+		glm::mat4 modelMatrix;
+		GLuint textureId; 		
 
 		void draw();
 		void update();
-		void timeLeft();
+		void animate();
+		void moveUp();
 		void deltaTime();
+		void setup();
 };
 
 #endif 

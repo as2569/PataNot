@@ -15,7 +15,9 @@ GLuint vbo;
 GLuint uvs;
 GLuint tex;
 using namespace Leap;
-//DO TO, move all the leap motion stuff to appropriate location
+glm::mat4 matrixMVP;
+
+//TO DO, move all the leap motion stuff to appropriate location
 class SampleListener : public Listener {
   public:
     virtual void onInit(const Controller&);
@@ -138,18 +140,18 @@ int main(int argc, char *argv[])
 	SampleListener listener;
 	Controller controller;
 
-	glm::mat4 scaleMatrix;
-	glm::mat4 rotateMatrix;
-	glm::mat4 translateMatrix;
-	glm::mat4 matrixMVP;
+	//glm::mat4 scaleMatrix;
+	//glm::mat4 rotateMatrix;
+	//glm::mat4 translateMatrix;
+	//glm::mat4 matrixMVP;
 
-	glm::mat4 modelMatrix;
-	glm::mat4 viewMatrix;
-	glm::mat4 projectionMatrix;
+	//glm::mat4 modelMatrix;
+	//glm::mat4 viewMatrix;
+	//glm::mat4 projectionMatrix;
 
-	glm::vec3 translateVector;
-	glm::vec3 scaleVector;
-	glm::vec3 rotationVector;
+	//glm::vec3 translateVector;
+	//glm::vec3 scaleVector;
+	//glm::vec3 rotationVector;
 
     GLuint vao;
     GLuint triangleBufferObject;
@@ -160,16 +162,18 @@ int main(int argc, char *argv[])
 	int64_t lastFrame = controller.frame().timestamp();
 
 	Sprite spr; //Instantiate spr instance of Sprite class
+	spr.setup();
 	spr.size.x = 0.25f;
 	spr.size.y = 1.0f;
+	spr.timeRemaining = 500;
 	spr.spriteFrames[0].index = 0;
 	spr.spriteFrames[1].index = 1;
 	spr.spriteFrames[2].index = 2;
 	spr.spriteFrames[3].index = 3;
-	spr.spriteFrames[0].timing = 1000;
-	spr.spriteFrames[1].timing = 1000;
-	spr.spriteFrames[2].timing = 1000;
-	spr.spriteFrames[3].timing = 1000;
+	spr.spriteFrames[0].timing = 500;
+	spr.spriteFrames[1].timing = 500;
+	spr.spriteFrames[2].timing = 500;
+	spr.spriteFrames[3].timing = 500;
 	spr.currentStep = 0;
 
 	controller.addListener(listener); //Have the sample listener receive events from the controller
@@ -185,17 +189,14 @@ int main(int argc, char *argv[])
 
     slog("glError: %d", glGetError());
     
-	translateVector = glm::vec3(0, 0, 0);
-	rotationVector = glm::vec3(0.0f, 0.0f, 1.0f);
-	scaleVector = glm::vec3(0.5f, 0.5f, 0);
-	
-	matrixMVP = glm::mat4(1.0f);
-	modelMatrix = glm::mat4(1.0f);
-	projectionMatrix = glm::mat4(1.0f);
-	viewMatrix = glm::mat4(1.0f);
-
-	GLuint modelMatrixLocation = glGetUniformLocation(graphics3d_get_shader_program(), "modelMatrix"); // Get the location of our model matrix in the shader  
-	glUniformMatrix4fv(modelMatrixLocation, 1, GL_FALSE, &modelMatrix[0][0]); // Send our model matrix to the shader 
+	//translateVector = glm::vec3(0, 0, 0);
+	//rotationVector = glm::vec3(0.0f, 0.0f, 1.0f);
+	//scaleVector = glm::vec3(0.5f, 0.5f, 0);
+	//
+	//matrixMVP = glm::mat4(1.0f);
+	//modelMatrix = glm::mat4(1.0f);
+	//projectionMatrix = glm::mat4(1.0f);
+	//viewMatrix = glm::mat4(1.0f);
 
 	lastFrame = controller.frame().timestamp();
 
@@ -222,17 +223,17 @@ int main(int argc, char *argv[])
   		float angle = controller.frame().hands().leftmost().palmNormal().roll();
   		//std::cout << angle << std::endl; //Print angle of roll
 
-		rotateMatrix = glm::rotate(glm::mat4(1.0f), angle - 1, glm::vec3(0, 0, 1));
-		scaleMatrix = glm::scale(glm::mat4(1.0f), glm::vec3(0.5, 0.5, 0.5));
-		modelMatrix = scaleMatrix * rotateMatrix;
+		//rotateMatrix = glm::rotate(glm::mat4(1.0f), angle - 1, glm::vec3(0, 0, 1));
+		//scaleMatrix = glm::scale(glm::mat4(1.0f), glm::vec3(0.5, 0.5, 0.5));
+		//modelMatrix = scaleMatrix * rotateMatrix;
 
         glClearColor(0.0,0.2,0.4,1.0); //background color
         glClear(GL_COLOR_BUFFER_BIT);
 
         glUseProgram(graphics3d_get_shader_program());
 
-		GLuint modelMatrixLocation = glGetUniformLocation(graphics3d_get_shader_program(), "modelMatrix"); // Get the location of our model matrix in the shader  
-		glUniformMatrix4fv(modelMatrixLocation, 1, GL_FALSE, &modelMatrix[0][0]); // Send our model matrix to the shader 
+		GLuint modelMatrixLocation = glGetUniformLocation(graphics3d_get_shader_program(), "matrixMVP"); // Get the location of our model matrix in the shader  
+		glUniformMatrix4fv(modelMatrixLocation, 1, GL_FALSE, &matrixMVP[0][0]); // Send our model matrix to the shader 
 
 		spr.update();
         spr.draw();//use sprites draw function

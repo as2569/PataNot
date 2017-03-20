@@ -1,4 +1,5 @@
-#include <glm\glm.hpp>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp> 
 #include <iostream>
 #include <GL\glew.h>
 #include <SOIL.h>
@@ -8,12 +9,19 @@
 extern GLuint vbo;
 extern GLuint tex;
 extern GLuint uvs;
+extern glm::mat4 matrixMVP;
 
 int i;
 float delta = 0.0;
 long last;
 long now = SDL_GetTicks();
-//int timeRemaining = 1000; 
+glm::vec3 translateVector;
+
+
+void Sprite::setup()
+{
+	modelMatrix = glm::mat4(1.0f);
+}
 
 void Sprite::deltaTime()
 {
@@ -24,25 +32,32 @@ void Sprite::deltaTime()
 	}
 }
 
-void Sprite::timeLeft()
+void Sprite::animate()
 {
-	timeRemaining = spriteFrames[currentStep].timing;
-}
-
-void Sprite::update(){
-	deltaTime();
 	timeRemaining -= delta;
-
 	if(timeRemaining <= 0)
 	{	
-		timeLeft();			
+		timeRemaining = spriteFrames[currentStep].timing;
 		currentStep += 1;
 		if(currentStep == 4)
 		{
 			currentStep = 0;
-		}
-		
+		}		
 	}
+}
+
+void Sprite::update()
+{
+	deltaTime();
+	moveUp();
+	animate();
+}
+
+void Sprite::moveUp()
+{
+	translateVector = glm::vec3(0.0f, 0.001f, 0.0f);
+	//matrixMVP = matrixMVP * translateVector;
+	matrixMVP = glm::translate(matrixMVP, translateVector); 
 }
 
 void Sprite::draw(){
