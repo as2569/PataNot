@@ -37,7 +37,7 @@ int graphics3d_init(int sw,int sh,int fullscreen,const char *project,Uint32 fram
         slog("failed to initialize SDL!");
         return -1;
     }
-    atexit(SDL_Quit);
+    atexit(SDL_Quit); //Why is this here?
     __graphics3d_frame_delay = frameDelay;
     
     __graphics3d_window = SDL_CreateWindow(project?project:"gametest3d",
@@ -75,7 +75,6 @@ int graphics3d_init(int sw,int sh,int fullscreen,const char *project,Uint32 fram
         return -1;
     }
     
-    
     __graphics3d_shader_program = BuildShaderProgram("shaders/vs1.glsl", "shaders/fs1.glsl");
     if (__graphics3d_shader_program == -1)
     {
@@ -84,7 +83,7 @@ int graphics3d_init(int sw,int sh,int fullscreen,const char *project,Uint32 fram
     
     slog("Using program %d", __graphics3d_shader_program);
         
-    atexit(graphics3d_close);
+    atexit(graphics3d_close); //Why?
     return 0;
 }
 

@@ -7,7 +7,6 @@ uniform mat4 matrixMVP;
 void main()
 {
 	gl_Position = matrixMVP * position;
-	//gl_Position = position;
 	Texcoord = texcoord;
 	//theColor = color;
 }

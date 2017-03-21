@@ -5,7 +5,7 @@ uniform sampler2D tex;
 
 void main()
 {
-	//shader debugger bs
+	//shader debugger 
 	//float x = (gl_FragCoord.x - 512)/1024 * 2;
 	//float y = (gl_FragCoord.y - 384)/768 * 2;
 

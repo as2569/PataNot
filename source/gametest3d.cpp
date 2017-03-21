@@ -10,12 +10,15 @@
 #include "graphics3d.h"
 #include "shader.h"
 #include "sprite.h"
+#include "gameFunctions.h"
 
+GameFunctions func;
 GLuint vbo;
 GLuint uvs;
 GLuint tex;
 //using namespace Leap;
 glm::mat4 matrixMVP;
+extern float delta;
 
 //TO DO, move all the leap motion stuff to appropriate location
 
@@ -163,6 +166,7 @@ int main(int argc, char *argv[])
 	int lastFrameID = controller.frame().id();
 	int64_t lastFrame = controller.frame().timestamp();
 
+	
 	Sprite spr; //Instantiate spr instance of Sprite class
 	spr.setup();
 	spr.size.x = 0.25f;
@@ -201,10 +205,11 @@ int main(int argc, char *argv[])
 	//viewMatrix = glm::mat4(1.0f);
 
 	lastFrame = controller.frame().timestamp();
+	SDL_Init;
 
     while (bGameLoopRunning)
     {
-		SDL_Init;
+		func.deltaTime();
 		//input from keyboard
         while( SDL_PollEvent(&evn) ) 
         {

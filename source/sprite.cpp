@@ -5,16 +5,18 @@
 #include <SOIL.h>
 #include <SDL.h>
 #include "Sprite.h"
+#include "gameFunctions.h"
 
 extern GLuint vbo;
 extern GLuint tex;
 extern GLuint uvs;
 extern glm::mat4 matrixMVP;
+extern GameFunctions func;
 
 int i;
-float delta = 0.0;
-long last;
-long now = SDL_GetTicks();
+//float delta = 0.0;
+//long last;
+//long now = SDL_GetTicks();
 glm::vec3 translateVector;
 
 
@@ -23,18 +25,18 @@ void Sprite::setup()
 	modelMatrix = glm::mat4(1.0f);
 }
 
-void Sprite::deltaTime()
-{
-	if (SDL_GetTicks()> last)
-	{
-		delta = ((float)(SDL_GetTicks() - last));
-		last = SDL_GetTicks();
-	}
-}
+//void Sprite::deltaTime()
+//{
+//	if (SDL_GetTicks()> last)
+//	{
+//		delta = ((float)(SDL_GetTicks() - last));
+//		last = SDL_GetTicks();
+//	}
+//}
 
 void Sprite::animate()
 {
-	timeRemaining -= delta;
+	timeRemaining -= func.delta;
 	if(timeRemaining <= 0)
 	{	
 		timeRemaining = spriteFrames[currentStep].timing;
@@ -48,7 +50,7 @@ void Sprite::animate()
 
 void Sprite::update()
 {
-	deltaTime();
+	//deltaTime();
 	moveUp();
 	animate();
 }

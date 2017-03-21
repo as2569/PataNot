@@ -68,11 +68,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="entity.cpp" />
+    <ClCompile Include="source\gameFunctions.cpp" />
     <ClCompile Include="source\gametest3d.cpp" />
     <ClCompile Include="source\graphics3d.cpp" />
     <ClCompile Include="source\shader.cpp" />
     <ClCompile Include="source\simple_logger.cpp" />
     <ClCompile Include="source\sprite.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\entity.h" />
+    <ClInclude Include="include\graphics3d.h" />
+    <ClInclude Include="include\shader.h" />
+    <ClInclude Include="include\simple_logger.h" />
+    <ClInclude Include="include\sprite.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
