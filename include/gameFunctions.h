@@ -9,8 +9,6 @@ public:
 
 private:
 	long last;
-	//long now = SDL_GetTicks();
-
 };
 
 #endif

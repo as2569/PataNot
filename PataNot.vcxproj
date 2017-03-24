@@ -70,7 +70,7 @@
   <ItemGroup>
     <ClCompile Include="entity.cpp" />
     <ClCompile Include="source\gameFunctions.cpp" />
-    <ClCompile Include="source\gametest3d.cpp" />
+    <ClCompile Include="source\game.cpp" />
     <ClCompile Include="source\graphics3d.cpp" />
     <ClCompile Include="source\shader.cpp" />
     <ClCompile Include="source\simple_logger.cpp" />

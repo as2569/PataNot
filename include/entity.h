@@ -4,8 +4,18 @@
 class Entity 
 {
 public:
-	Sprite *m_Sprite;
-		
+	Sprite* sprite;
+
+	int timeRemaining; 
+	int currentStep;
+	glm::mat4 modelMatrix;
+	glm::vec3 translateVector;
+
+	void update();
+	void moveUp();
+	void setup();
+	void animate();
+	void setSprite();
 };
 
 #endif 

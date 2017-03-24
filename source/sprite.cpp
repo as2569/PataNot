@@ -5,64 +5,35 @@
 #include <SOIL.h>
 #include <SDL.h>
 #include "Sprite.h"
-#include "gameFunctions.h"
 
 extern GLuint vbo;
 extern GLuint tex;
 extern GLuint uvs;
 extern glm::mat4 matrixMVP;
-extern GameFunctions func;
 
-int i;
-//float delta = 0.0;
-//long last;
-//long now = SDL_GetTicks();
-glm::vec3 translateVector;
+extern int timeRemaining;
+extern int currentStep;
 
+int Sprite::getTiming(int step)
+{
+	return spriteFrames[step].timing;
+}
 
 void Sprite::setup()
 {
-	modelMatrix = glm::mat4(1.0f);
+	size.x = 0.25f;
+	size.y = 1.0f;
+	spriteFrames[0].index = 0;
+	spriteFrames[1].index = 1;
+	spriteFrames[2].index = 2;
+	spriteFrames[3].index = 3;
+	spriteFrames[0].timing = 500;
+	spriteFrames[1].timing = 500;
+	spriteFrames[2].timing = 500;
+	spriteFrames[3].timing = 500;
 }
 
-//void Sprite::deltaTime()
-//{
-//	if (SDL_GetTicks()> last)
-//	{
-//		delta = ((float)(SDL_GetTicks() - last));
-//		last = SDL_GetTicks();
-//	}
-//}
-
-void Sprite::animate()
-{
-	timeRemaining -= func.delta;
-	if(timeRemaining <= 0)
-	{	
-		timeRemaining = spriteFrames[currentStep].timing;
-		currentStep += 1;
-		if(currentStep == 4)
-		{
-			currentStep = 0;
-		}		
-	}
-}
-
-void Sprite::update()
-{
-	//deltaTime();
-	moveUp();
-	animate();
-}
-
-void Sprite::moveUp()
-{
-	translateVector = glm::vec3(0.0f, 0.001f, 0.0f);
-	//matrixMVP = matrixMVP * translateVector;
-	matrixMVP = glm::translate(matrixMVP, translateVector); 
-}
-
-void Sprite::draw(){
+void Sprite::draw(glm::mat4 matrixMVP){
 	
 	float sprite[] = 
 	{
@@ -88,7 +59,7 @@ void Sprite::draw(){
 
 	int width, height;
 	unsigned char* image = SOIL_load_image("frametest.png", &width, &height, 0, SOIL_LOAD_RGB);
-
+	//Set up and push into the shader the mvp
 	glGenTextures(1, &tex);
 	glBindTexture(GL_TEXTURE_2D, tex);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, image);

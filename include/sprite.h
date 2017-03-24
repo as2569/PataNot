@@ -7,21 +7,20 @@ struct frameData{
 };
 
 class Sprite{
-	public:
-		frameData spriteFrames[4];
-		int timeRemaining; 
-		int currentStep;
-		int flags;
-		glm::vec2 size; 
-		glm::mat4 modelMatrix;
-		GLuint textureId; 		
+public:
+	frameData spriteFrames[4];
+	glm::vec2 size; 
+	glm::mat4 modelMatrix;
+	GLuint textureId; 	
 
-		void draw();
-		void update();
-		void animate();
-		void moveUp();
-		void deltaTime();
-		void setup();
+	int getTiming(int step);
+	void draw(glm::mat4);
+	void update();
+	void animate();
+	void setup();
+
+private:
+	int i;
 };
 
 #endif 
