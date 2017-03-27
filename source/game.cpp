@@ -168,9 +168,8 @@ int main(int argc, char *argv[])
 	SDL_Init;
 
 	Entity ent;
-	ent.setup();
 	ent.setSprite();
-	
+	ent.setup();
 
     while (bGameLoopRunning)
     {

@@ -12,15 +12,16 @@ public:
 	glm::vec2 size; 
 	glm::mat4 modelMatrix;
 	GLuint textureId; 	
-
+	
 	int getTiming(int step);
-	void draw(glm::mat4);
+	void draw(glm::mat4, int step);
 	void update();
 	void animate();
 	void setup();
 
 private:
 	int i;
+	int step;
 };
 
 #endif 

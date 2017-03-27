@@ -13,7 +13,13 @@ void Entity::setup()
 	timeRemaining = 500;
 	currentStep = 0;
 	modelMatrix = glm::mat4(1.0f);
+	matrixMVP = glm::mat4(1.0f);
 	sprite->setup();
+}
+
+int Entity::getStep()
+{
+	return currentStep;
 }
 
 void Entity::setSprite()
@@ -24,13 +30,15 @@ void Entity::setSprite()
 void Entity::moveUp()
 {
 	translateVector = glm::vec3(0.0f, 0.001f, 0.0f);
-	//modelMatrix = glm::translate(modelMatrix, translateVector); 
+	modelMatrix = glm::translate(modelMatrix, translateVector); 
 }
 
 void Entity::update()
 {
 	moveUp();
+	matrixMVP = matrixMVP * modelMatrix;
 	animate();
+	sprite->draw(matrixMVP, getStep());
 }
 
 void Entity::animate()

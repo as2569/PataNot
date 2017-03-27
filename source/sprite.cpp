@@ -5,14 +5,15 @@
 #include <SOIL.h>
 #include <SDL.h>
 #include "Sprite.h"
+#include "Entity.h"
 
 extern GLuint vbo;
 extern GLuint tex;
 extern GLuint uvs;
 extern glm::mat4 matrixMVP;
 
-extern int timeRemaining;
-extern int currentStep;
+//extern int timeRemaining;
+//extern int currentStep;
 
 int Sprite::getTiming(int step)
 {
@@ -33,8 +34,10 @@ void Sprite::setup()
 	spriteFrames[3].timing = 500;
 }
 
-void Sprite::draw(glm::mat4 matrixMVP){
+void Sprite::draw(glm::mat4 matrixMVP, int step){
 	
+	//int currentStep = getStep();
+
 	float sprite[] = 
 	{
 			0.0f, 0.0f, 0.0f, 1.0f,
@@ -48,13 +51,13 @@ void Sprite::draw(glm::mat4 matrixMVP){
 
 	float uvCoords[] =
 	{
-		(size.x * spriteFrames[currentStep].index), size.y,
-		size.x * (spriteFrames[currentStep].index + 1), size.y, 
-		(size.x * spriteFrames[currentStep].index), 0.0f,
+		(size.x * spriteFrames[step].index), size.y,
+		size.x * (spriteFrames[step].index + 1), size.y, 
+		(size.x * spriteFrames[step].index), 0.0f,
 
-		size.x * (spriteFrames[currentStep].index + 1), size.y,
-		size.x * (spriteFrames[currentStep].index + 1), 0.0f, 
-		(size.x * spriteFrames[currentStep].index), 0.0f,
+		size.x * (spriteFrames[step].index + 1), size.y,
+		size.x * (spriteFrames[step].index + 1), 0.0f, 
+		(size.x * spriteFrames[step].index), 0.0f,
 	};
 
 	int width, height;
