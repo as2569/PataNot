@@ -175,14 +175,14 @@ int main(int argc, char *argv[])
     {
 		func.deltaTime();
 
-		//input from keyboard
-        while( SDL_PollEvent(&evn) ) 
-        {
-          if(evn.type == SDL_KEYDOWN && evn.key.keysym.sym == SDLK_c)
-		  {
-			  //spr.currentStep += 1;
-		  }
-        }
+		////input from keyboard
+  //      while( SDL_PollEvent(&evn) ) 
+  //      {
+  //        if(evn.type == SDL_KEYDOWN && evn.key.keysym.sym == SDLK_c)
+		//  {
+		//	  //spr.currentStep += 1;
+		//  }
+  //      }
 
 		//print TIME when the specified frame is processed
 		//if(controller.frame().timestamp() >= lastFrame + 1000000)

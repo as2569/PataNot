@@ -1,19 +1,20 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp> 
 #include <GL\glew.h>
+#include <iostream>
 #include "Sprite.h"
 #include "Entity.h"
 #include "gameFunctions.h"
 
-//extern glm::mat4 modelMatrix;
+
+extern glm::mat4 matrixMVP;
 extern GameFunctions func;
 
 void Entity::setup()
 {
 	timeRemaining = 500;
 	currentStep = 0;
-	modelMatrix = glm::mat4(1.0f);
-	matrixMVP = glm::mat4(1.0f);
+	//modelMatrix = glm::mat4(1.0f);
 	sprite->setup();
 }
 
@@ -29,15 +30,16 @@ void Entity::setSprite()
 
 void Entity::moveUp()
 {
-	translateVector = glm::vec3(0.0f, 0.001f, 0.0f);
-	modelMatrix = glm::translate(modelMatrix, translateVector); 
+	translateVector = glm::vec3(0.0f, 0.10f, 0.0f);
+	//modelMatrix = glm::translate(modelMatrix, translateVector);
+	matrixMVP = glm::translate(matrixMVP, translateVector);
 }
 
 void Entity::update()
 {
 	moveUp();
-	matrixMVP = matrixMVP * modelMatrix;
 	animate();
+	//matrixMVP = modelMatrix;
 	sprite->draw(matrixMVP, getStep());
 }
 

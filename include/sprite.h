@@ -9,9 +9,9 @@ struct frameData{
 class Sprite{
 public:
 	frameData spriteFrames[4];
-	glm::vec2 size; 
-	glm::mat4 modelMatrix;
 	GLuint textureId; 	
+	glm::vec2 size; 
+	//glm::mat4 matrixMVP;
 	
 	int getTiming(int step);
 	void draw(glm::mat4, int step);

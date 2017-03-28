@@ -8,8 +8,8 @@ public:
 
 	int timeRemaining; 
 	int currentStep;
-	glm::mat4 modelMatrix;
-	glm::mat4 matrixMVP;
+	//glm::mat4 modelMatrix;
+	//glm::mat4 matrixMVP;
 	glm::vec3 translateVector;
 
 	int getStep();

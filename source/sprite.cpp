@@ -10,10 +10,6 @@
 extern GLuint vbo;
 extern GLuint tex;
 extern GLuint uvs;
-extern glm::mat4 matrixMVP;
-
-//extern int timeRemaining;
-//extern int currentStep;
 
 int Sprite::getTiming(int step)
 {
@@ -34,9 +30,9 @@ void Sprite::setup()
 	spriteFrames[3].timing = 500;
 }
 
-void Sprite::draw(glm::mat4 matrixMVP, int step){
-	
-	//int currentStep = getStep();
+void Sprite::draw(glm::mat4 modelMatrix, int step){
+
+	//matrixMVP = modelMatrix;
 
 	float sprite[] = 
 	{
@@ -48,6 +44,7 @@ void Sprite::draw(glm::mat4 matrixMVP, int step){
 			0.25f, 0.25f, 0.0f, 1.0f,
 			0.0f, 0.25f, 0.0f, 1.0f,
 	};
+
 
 	float uvCoords[] =
 	{
@@ -62,6 +59,7 @@ void Sprite::draw(glm::mat4 matrixMVP, int step){
 
 	int width, height;
 	unsigned char* image = SOIL_load_image("frametest.png", &width, &height, 0, SOIL_LOAD_RGB);
+
 	//Set up and push into the shader the mvp
 	glGenTextures(1, &tex);
 	glBindTexture(GL_TEXTURE_2D, tex);
