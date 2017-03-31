@@ -32,8 +32,6 @@ void Sprite::setup()
 
 void Sprite::draw(glm::mat4 modelMatrix, int step){
 
-	//matrixMVP = modelMatrix;
-
 	float sprite[] = 
 	{
 			0.0f, 0.0f, 0.0f, 1.0f,

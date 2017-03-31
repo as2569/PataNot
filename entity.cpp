@@ -6,16 +6,26 @@
 #include "Entity.h"
 #include "gameFunctions.h"
 
-
 extern glm::mat4 matrixMVP;
-extern GameFunctions func;
+extern GameFunctions gamefunctions;
 
 void Entity::setup()
 {
+	setSprite();
 	timeRemaining = 500;
 	currentStep = 0;
-	//modelMatrix = glm::mat4(1.0f);
+	modelMatrix = glm::mat4(1.0f);
 	sprite->setup();
+}
+
+glm::mat4 Entity::getMatrix()
+{
+	return modelMatrix;
+}
+
+void Entity::randomSpawn()
+{
+	
 }
 
 int Entity::getStep()
@@ -30,22 +40,20 @@ void Entity::setSprite()
 
 void Entity::moveUp()
 {
-	translateVector = glm::vec3(0.0f, 0.10f, 0.0f);
-	//modelMatrix = glm::translate(modelMatrix, translateVector);
-	matrixMVP = glm::translate(matrixMVP, translateVector);
+	translateVector = glm::vec3(0.0f, 0.005f, 0.0f);
+	modelMatrix = glm::translate(modelMatrix, translateVector);
 }
 
 void Entity::update()
 {
 	moveUp();
 	animate();
-	//matrixMVP = modelMatrix;
 	sprite->draw(matrixMVP, getStep());
 }
 
 void Entity::animate()
 {
-	timeRemaining -= func.delta;
+	timeRemaining -= gamefunctions.delta;
 	if(timeRemaining <= 0)
 	{		
 		currentStep += 1;

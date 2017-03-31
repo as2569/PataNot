@@ -9,3 +9,6 @@ void GameFunctions::deltaTime()
 		last = SDL_GetTicks();
 	}
 };
+
+
+

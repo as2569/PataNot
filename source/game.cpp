@@ -13,11 +13,13 @@
 #include "entity.h"
 #include "gameFunctions.h"
 
-GameFunctions func;
+GameFunctions gamefunctions;
 GLuint vbo;
 GLuint uvs;
 GLuint tex;
 glm::mat4 matrixMVP;
+Entity entList[5];
+
 extern float delta;
 
 //class SampleListener : public Listener {
@@ -167,13 +169,14 @@ int main(int argc, char *argv[])
 	lastFrame = controller.frame().timestamp();
 	SDL_Init;
 
-	Entity ent;
-	ent.setSprite();
-	ent.setup();
+	entList[0].setup;
+	//Entity ent;
+	//ent.setup();
 
     while (bGameLoopRunning)
     {
-		func.deltaTime();
+		gamefunctions.deltaTime();
+		matrixMVP = entList[0].getMatrix();
 
 		////input from keyboard
   //      while( SDL_PollEvent(&evn) ) 
@@ -203,7 +206,7 @@ int main(int argc, char *argv[])
 		GLuint modelMatrixLocation = glGetUniformLocation(graphics3d_get_shader_program(), "matrixMVP"); // Get the location of our model matrix in the shader  
 		glUniformMatrix4fv(modelMatrixLocation, 1, GL_FALSE, &matrixMVP[0][0]); // Send our model matrix to the shader 
 
-		ent.update();
+		entList[0].update();
         glUseProgram(0);	
         graphics3d_next_frame();
     }

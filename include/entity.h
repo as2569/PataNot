@@ -8,16 +8,21 @@ public:
 
 	int timeRemaining; 
 	int currentStep;
-	//glm::mat4 modelMatrix;
-	//glm::mat4 matrixMVP;
-	glm::vec3 translateVector;
+	int facing;
+	int side;
 
+	glm::vec3 translateVector;
+	glm::mat4 modelMatrix;
+
+	glm::mat4 getMatrix();
+	 
 	int getStep();
 	void update();
 	void moveUp();
 	void setup();
 	void animate();
 	void setSprite();
+	void randomSpawn();
 };
 
 #endif 
