@@ -2,6 +2,8 @@
 #include <glm/gtc/matrix_transform.hpp> 
 #include <GL\glew.h>
 #include <iostream>
+#include <stdlib.h>
+#include <time.h>
 #include "Sprite.h"
 #include "Entity.h"
 #include "gameFunctions.h"
@@ -15,6 +17,7 @@ void Entity::setup()
 	timeRemaining = 500;
 	currentStep = 0;
 	modelMatrix = glm::mat4(1.0f);
+	randomSpawn();
 	sprite->setup();
 }
 
@@ -25,7 +28,33 @@ glm::mat4 Entity::getMatrix()
 
 void Entity::randomSpawn()
 {
-	
+	srand(time(NULL));
+	pos = rand() % 2;
+	rot = rand() % 3;	
+	std::cout << pos << rot<< std::endl; //console position and rotation
+
+	if(pos == 1)
+	{
+		posVec = glm::vec3(0.4f, 0.0f, 0.0f);
+		modelMatrix = glm::translate(modelMatrix, posVec);
+	}
+	else
+	{
+		posVec = glm::vec3(-0.6f, 0.0f, 0.0f);
+		modelMatrix = glm::translate(modelMatrix, posVec);
+	}
+
+	if(rot == 0)
+	{
+		rotVec = glm::vec3(0.0f, 0.0f, 1.0f);
+		modelMatrix = glm::rotate(modelMatrix, -90.0f, rotVec);
+	}
+	if(rot == 2)
+	{
+		rotVec = glm::vec3(0.0f, 0.0f, 1.0f);
+		modelMatrix = glm::rotate(modelMatrix, 90.0f, rotVec);
+	}
+
 }
 
 int Entity::getStep()

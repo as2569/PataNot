@@ -169,7 +169,8 @@ int main(int argc, char *argv[])
 	lastFrame = controller.frame().timestamp();
 	SDL_Init;
 
-	entList[0].setup;
+	entList[0].setup();
+	//entList[0].randomSpawn();
 	//Entity ent;
 	//ent.setup();
 
