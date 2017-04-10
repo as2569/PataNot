@@ -5,6 +5,7 @@
 #include <glm/gtc/matrix_transform.hpp>  
 #include <SDL_keyboard.h>
 #include <SOIL.h>
+#include <time.h>
 #include "Leap.h"
 #include "simple_logger.h"
 #include "graphics3d.h"
@@ -17,7 +18,8 @@ GameFunctions gamefunctions;
 GLuint vbo;
 GLuint uvs;
 GLuint tex;
-glm::mat4 matrixMVP;
+glm::mat4 VP;
+
 Entity entList[5];
 
 extern float delta;
@@ -170,14 +172,15 @@ int main(int argc, char *argv[])
 	SDL_Init;
 
 	entList[0].setup();
-	//entList[0].randomSpawn();
-	//Entity ent;
-	//ent.setup();
+	entList[1].setup();
+	srand(time(NULL));
 
     while (bGameLoopRunning)
     {
 		gamefunctions.deltaTime();
-		matrixMVP = entList[0].getMatrix();
+		//matrixMVP = entList[0].getMatrix();
+		//matrixMVP = entList[1].getMatrix();
+		//matrixMVP = entList[2].getMatrix();
 
 		////input from keyboard
   //      while( SDL_PollEvent(&evn) ) 
@@ -204,10 +207,11 @@ int main(int argc, char *argv[])
 
         glUseProgram(graphics3d_get_shader_program());
 
-		GLuint modelMatrixLocation = glGetUniformLocation(graphics3d_get_shader_program(), "matrixMVP"); // Get the location of our model matrix in the shader  
-		glUniformMatrix4fv(modelMatrixLocation, 1, GL_FALSE, &matrixMVP[0][0]); // Send our model matrix to the shader 
+		GLuint modelMatrixLocation = glGetUniformLocation(graphics3d_get_shader_program(), "VP"); // Get the location of our model matrix in the shader  
+		glUniformMatrix4fv(modelMatrixLocation, 1, GL_FALSE, &VP[0][0]); // Send our model matrix to the shader 
 
 		entList[0].update();
+		entList[1].update();
         glUseProgram(0);	
         graphics3d_next_frame();
     }

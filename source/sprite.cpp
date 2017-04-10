@@ -4,6 +4,7 @@
 #include <GL\glew.h>
 #include <SOIL.h>
 #include <SDL.h>
+#include <graphics3d.h>
 #include "Sprite.h"
 #include "Entity.h"
 
@@ -58,7 +59,10 @@ void Sprite::draw(glm::mat4 modelMatrix, int step){
 	int width, height;
 	unsigned char* image = SOIL_load_image("frametest.png", &width, &height, 0, SOIL_LOAD_RGB);
 
-	//Set up and push into the shader the mvp
+	GLuint model = glGetUniformLocation(graphics3d_get_shader_program(), "model");
+	glUniformMatrix4fv(model, 1, GL_FALSE, &modelMatrix[0][0]);
+
+	//Set up buffer and push the mvp to the shader
 	glGenTextures(1, &tex);
 	glBindTexture(GL_TEXTURE_2D, tex);
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
@@ -82,4 +86,6 @@ void Sprite::draw(glm::mat4 modelMatrix, int step){
 
 	glDrawArrays(GL_TRIANGLES, 0, 6);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
+	glDisableVertexAttribArray(0);
+	glDisableVertexAttribArray(1);
 }
