@@ -13,14 +13,16 @@
 #include "sprite.h"
 #include "entity.h"
 #include "gameFunctions.h"
+#include "manager.h"
 
 GameFunctions gamefunctions;
+Manager manager;
 GLuint vbo;
 GLuint uvs;
 GLuint tex;
 glm::mat4 VP;
 
-Entity entList[5];
+//Entity entList[5];
 
 extern float delta;
 
@@ -143,8 +145,8 @@ extern float delta;
 int main(int argc, char *argv[])
 {	
 	using namespace Leap;
-	//SampleListener listener;
 	
+	Leap::FingerList extended;
 	Controller controller;
 	Leap::Listener listener;
     GLuint vao;
@@ -152,7 +154,7 @@ int main(int argc, char *argv[])
     char bGameLoopRunning = 1;
 	SDL_Event evn;
 
-	int lastFrameID = controller.frame().id();
+	int64_t frameID;
 	int64_t lastFrame = controller.frame().timestamp();
 
 	controller.addListener(listener); //Have the sample listener receive events from the controller
@@ -168,35 +170,40 @@ int main(int argc, char *argv[])
 
     slog("glError: %d", glGetError());
     
-	lastFrame = controller.frame().timestamp();
-	SDL_Init;
+	//lastFrame = controller.frame().timestamp();
+	SDL_Init(SDL_INIT_EVERYTHING);
 
-	entList[0].setup();
-	entList[1].setup();
+	//entList[0].setup();
+	//entList[1].setup();
+	Entity doof;
+	Entity doof2;
+
+	doof.setup();
+	doof2.setup();
+
 	srand(time(NULL));
 
     while (bGameLoopRunning)
     {
 		gamefunctions.deltaTime();
-		//matrixMVP = entList[0].getMatrix();
-		//matrixMVP = entList[1].getMatrix();
-		//matrixMVP = entList[2].getMatrix();
 
 		////input from keyboard
   //      while( SDL_PollEvent(&evn) ) 
   //      {
   //        if(evn.type == SDL_KEYDOWN && evn.key.keysym.sym == SDLK_c)
 		//  {
-		//	  //spr.currentStep += 1;
+
 		//  }
   //      }
 
 		//print TIME when the specified frame is processed
-		//if(controller.frame().timestamp() >= lastFrame + 1000000)
-		//{
-		//	lastFrame = controller.frame().timestamp();
-		//	std::cout << "TIME" << lastFrameID << std::endl;
-		//}
+		if(controller.frame().timestamp() >= lastFrame + 100000)
+		{
+			lastFrame = controller.frame().timestamp();
+			frameID = controller.frame().id();
+			//extended = hand.fingers().extended();
+			std::cout << frameID << " " << lastFrame << std::endl;
+		}
 
 		bool hands = controller.frame().hands().count() > 1;
   		float angle = controller.frame().hands().leftmost().palmNormal().roll();
@@ -210,8 +217,8 @@ int main(int argc, char *argv[])
 		GLuint modelMatrixLocation = glGetUniformLocation(graphics3d_get_shader_program(), "VP"); // Get the location of our model matrix in the shader  
 		glUniformMatrix4fv(modelMatrixLocation, 1, GL_FALSE, &VP[0][0]); // Send our model matrix to the shader 
 
-		entList[0].update();
-		entList[1].update();
+		doof.update();
+		doof2.update();
         glUseProgram(0);	
         graphics3d_next_frame();
     }

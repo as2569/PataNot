@@ -5,21 +5,26 @@
 #include <stdlib.h>
 #include <time.h>
 #include <simple_logger.h>
+#include <vector>
 #include "Sprite.h"
 #include "Entity.h"
 #include "gameFunctions.h"
+#include "manager.h"
 
-//extern glm::mat4 matrixMVP;
 extern GameFunctions gamefunctions;
+extern Manager manager;
 
 void Entity::setup()
 {
 	setSprite();
 	timeRemaining = 500;
+	timeAlive = 4000;
 	currentStep = 0;
 	modelMatrix = glm::mat4(1.0f);
 	randomSpawn();
 	sprite->setup();
+	inUse = 1;
+	manager.addEnt(this);
 }
 
 glm::mat4 Entity::getMatrix()
@@ -29,20 +34,19 @@ glm::mat4 Entity::getMatrix()
 
 void Entity::randomSpawn()
 {
-	//srand(time(NULL));
 	pos = rand() % 2;
 	rot = rand() % 3;	
 	std::cout << pos << rot<< std::endl; //console position and rotation
 
 	if(pos == 1)
 	{
-		posVec = glm::vec3(0.6f, 0.0f, 0.0f);
+		posVec = glm::vec3(0.5f, 0.0f, 0.0f);
 		modelMatrix = glm::translate(modelMatrix, posVec);
 	}
 
 	if(pos == 0)
 	{
-		posVec = glm::vec3(-0.4f, 0.0f, 0.0f);
+		posVec = glm::vec3(-0.8f, 0.0f, 0.0f);
 		modelMatrix = glm::translate(modelMatrix, posVec);
 	}
 
@@ -80,6 +84,12 @@ void Entity::update()
 	moveUp();
 	animate();
 	sprite->draw(modelMatrix, getStep());
+	timeAlive -= gamefunctions.delta;
+	//std::cout << timeAlive<< std::endl;
+	if(timeAlive <= 0)
+	{
+		;
+	}
 }
 
 void Entity::animate()

@@ -69,6 +69,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="entity.cpp" />
+    <ClCompile Include="manager.cpp" />
     <ClCompile Include="source\gameFunctions.cpp" />
     <ClCompile Include="source\game.cpp" />
     <ClCompile Include="source\graphics3d.cpp" />
@@ -78,10 +79,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\entity.h" />
+    <ClInclude Include="include\gameFunctions.h" />
     <ClInclude Include="include\graphics3d.h" />
     <ClInclude Include="include\shader.h" />
     <ClInclude Include="include\simple_logger.h" />
     <ClInclude Include="include\sprite.h" />
+    <ClInclude Include="manager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

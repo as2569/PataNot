@@ -8,8 +8,8 @@ public:
 
 	int timeRemaining; 
 	int currentStep;
-	int facing;
-	int side;
+	int inUse;
+	int timeAlive;
 
 	glm::vec3 translateVector;
 	glm::mat4 modelMatrix;
