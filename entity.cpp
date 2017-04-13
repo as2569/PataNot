@@ -6,10 +6,12 @@
 #include <time.h>
 #include <simple_logger.h>
 #include <vector>
+#include <SDL.h>
 #include "Sprite.h"
 #include "Entity.h"
 #include "gameFunctions.h"
 #include "manager.h"
+
 
 extern GameFunctions gamefunctions;
 extern Manager manager;
@@ -21,7 +23,7 @@ void Entity::setup()
 	timeAlive = 4000;
 	currentStep = 0;
 	modelMatrix = glm::mat4(1.0f);
-	randomSpawn();
+	spawnPos();
 	sprite->setup();
 	inUse = 1;
 	manager.addEnt(this);
@@ -32,11 +34,21 @@ glm::mat4 Entity::getMatrix()
 	return modelMatrix;
 }
 
-void Entity::randomSpawn()
+//void Entity::randomSpawn(int BPM)
+//{
+//	timing = BPM / 60;
+//	currentTime = SDL_GetTicks() * 100;
+//	if(timing + lastBeat > currentTime)
+//	{
+//		std::cout << "beat" << std::endl;
+//		lastBeat = currentTime;
+//	}	
+//}
+
+void Entity::spawnPos()
 {
 	pos = rand() % 2;
-	rot = rand() % 3;	
-	std::cout << pos << rot<< std::endl; //console position and rotation
+	std::cout << pos << std::endl; //console position and rotation
 
 	if(pos == 1)
 	{
@@ -49,18 +61,6 @@ void Entity::randomSpawn()
 		posVec = glm::vec3(-0.8f, 0.0f, 0.0f);
 		modelMatrix = glm::translate(modelMatrix, posVec);
 	}
-
-	//if(rot == 0)
-	//{
-	//	rotVec = glm::vec3(0.0f, 0.0f, 1.0f);
-	//	modelMatrix = glm::rotate(modelMatrix, -90.0f, rotVec);
-	//}
-	//if(rot == 2)
-	//{
-	//	rotVec = glm::vec3(0.0f, 0.0f, 1.0f);
-	//	modelMatrix = glm::rotate(modelMatrix, 90.0f, rotVec);
-	//}
-
 }
 
 int Entity::getStep()
@@ -85,7 +85,7 @@ void Entity::update()
 	animate();
 	sprite->draw(modelMatrix, getStep());
 	timeAlive -= gamefunctions.delta;
-	//std::cout << timeAlive<< std::endl;
+	//::cout << timeAlive<< std::endl;
 	if(timeAlive <= 0)
 	{
 		;
@@ -104,5 +104,6 @@ void Entity::animate()
 		}
 		timeRemaining = sprite->getTiming(currentStep);
 	}
-}
+} 
+
 

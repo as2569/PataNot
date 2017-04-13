@@ -21,8 +21,7 @@ GLuint vbo;
 GLuint uvs;
 GLuint tex;
 glm::mat4 VP;
-
-//Entity entList[5];
+float bpm = 100;
 
 extern float delta;
 
@@ -173,26 +172,24 @@ int main(int argc, char *argv[])
 	//lastFrame = controller.frame().timestamp();
 	SDL_Init(SDL_INIT_EVERYTHING);
 
-	//entList[0].setup();
-	//entList[1].setup();
-	Entity doof;
-	Entity doof2;
+	Entity ent1;
+	Entity ent2;
 
-	doof.setup();
-	doof2.setup();
+	ent1.setup();
+	ent2.setup();
 
 	srand(time(NULL));
 
     while (bGameLoopRunning)
     {
 		gamefunctions.deltaTime();
+		manager.randomSpawn(bpm);
 
 		////input from keyboard
   //      while( SDL_PollEvent(&evn) ) 
   //      {
   //        if(evn.type == SDL_KEYDOWN && evn.key.keysym.sym == SDLK_c)
 		//  {
-
 		//  }
   //      }
 
@@ -201,7 +198,7 @@ int main(int argc, char *argv[])
 		{
 			lastFrame = controller.frame().timestamp();
 			frameID = controller.frame().id();
-			//extended = hand.fingers().extended();
+			//extended = fingers().extended();
 			std::cout << frameID << " " << lastFrame << std::endl;
 		}
 
@@ -217,8 +214,8 @@ int main(int argc, char *argv[])
 		GLuint modelMatrixLocation = glGetUniformLocation(graphics3d_get_shader_program(), "VP"); // Get the location of our model matrix in the shader  
 		glUniformMatrix4fv(modelMatrixLocation, 1, GL_FALSE, &VP[0][0]); // Send our model matrix to the shader 
 
-		doof.update();
-		doof2.update();
+		ent1.update();
+		ent2.update();
         glUseProgram(0);	
         graphics3d_next_frame();
     }

@@ -2,6 +2,8 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp> 
 #include <GL\glew.h>
+#include <SDL.h>
+#include <iostream>
 #include "Sprite.h"
 #include "Entity.h"
 #include "gameFunctions.h"
@@ -20,6 +22,18 @@ Manager::Manager()
 Manager::~Manager()
 {
 	entList.clear();
+}
+
+void Manager::randomSpawn(float BPM)
+{
+	timing = BPM / 60;
+	currentTime = SDL_GetTicks() / 1000;
+	std::cout << timing << " " << currentTime << std::endl;
+	if(timing + lastBeat > currentTime)
+	{
+		std::cout << " beat" << std::endl;
+		lastBeat = currentTime;
+	}	
 }
 
 void Manager::addEnt(Entity* e)

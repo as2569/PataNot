@@ -1,7 +1,6 @@
 #include <SDL.h>
 #include "gameFunctions.h"
 
-
 void GameFunctions::deltaTime()
 {
 	if (SDL_GetTicks()> last)
@@ -10,6 +9,7 @@ void GameFunctions::deltaTime()
 		last = SDL_GetTicks();
 	}
 };
+
 
 
 

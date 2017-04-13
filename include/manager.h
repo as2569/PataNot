@@ -8,9 +8,16 @@ public:
 	~Manager(); //Destructor
 	void addEnt(Entity*);
 	void removeEnt(Entity*);
+	void randomSpawn(float BPM);
 
 private:
 	std::vector<Entity*> entList;
+	float firstBeat;
+	float BPM;
+	float lastBeat;
+	float thisBeat;
+	float timing;
+	float currentTime;
 
 };
 

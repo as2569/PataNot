@@ -22,13 +22,13 @@ public:
 	void setup();
 	void animate();
 	void setSprite();
-	void randomSpawn();
+	void spawnPos();
+	void randomSpawn(int BPM);
 
 private:
 	int pos; //0 for left, 1 for right
-	int rot; //0 for left, 1 for up, 2 for right
 	glm::vec3 posVec;
-	glm::vec3 rotVec;
+
 };
 
 #endif 
