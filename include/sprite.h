@@ -11,6 +11,8 @@ public:
 	frameData spriteFrames[4];
 	GLuint textureId; 	
 	glm::vec2 size; 
+	int width, height;
+	unsigned char* image;
 	
 	int getTiming(int step);
 	void draw(glm::mat4, int step);

@@ -13,15 +13,14 @@
 #include "sprite.h"
 #include "entity.h"
 #include "gameFunctions.h"
-#include "manager.h"
 
 GameFunctions gamefunctions;
-Manager manager;
 GLuint vbo;
 GLuint uvs;
 GLuint tex;
 glm::mat4 VP;
-float bpm = 100;
+int bpm = 30;
+int fb = 5;
 
 extern float delta;
 
@@ -152,6 +151,7 @@ int main(int argc, char *argv[])
     GLuint triangleBufferObject;
     char bGameLoopRunning = 1;
 	SDL_Event evn;
+	
 
 	int64_t frameID;
 	int64_t lastFrame = controller.frame().timestamp();
@@ -172,20 +172,21 @@ int main(int argc, char *argv[])
 	//lastFrame = controller.frame().timestamp();
 	SDL_Init(SDL_INIT_EVERYTHING);
 
-	Entity ent1;
-	Entity ent2;
-
-	ent1.setup();
-	ent2.setup();
-
+	Entity::reserve();
 	srand(time(NULL));
+
+	//Entity::NewEntity();	
+	Entity* e = Entity::NewEntity();
+	e->setup();
 
     while (bGameLoopRunning)
     {
-		gamefunctions.deltaTime();
-		manager.randomSpawn(bpm);
+		
+		//std::cout << Entity::entList.size() << std::endl;
+		gamefunctions.deltaTime();	
+		e->update();
 
-		////input from keyboard
+		//input from keyboard
   //      while( SDL_PollEvent(&evn) ) 
   //      {
   //        if(evn.type == SDL_KEYDOWN && evn.key.keysym.sym == SDLK_c)
@@ -198,12 +199,11 @@ int main(int argc, char *argv[])
 		{
 			lastFrame = controller.frame().timestamp();
 			frameID = controller.frame().id();
-			//extended = fingers().extended();
 			std::cout << frameID << " " << lastFrame << std::endl;
 		}
 
-		bool hands = controller.frame().hands().count() > 1;
-  		float angle = controller.frame().hands().leftmost().palmNormal().roll();
+		//bool hands = controller.frame().hands().count() > 1;
+  		//float angle = controller.frame().hands().leftmost().palmNormal().roll();
   		//std::cout << angle << std::endl; //Print angle of roll
 
         glClearColor(0.0,0.2,0.4,1.0); //background color
@@ -214,8 +214,6 @@ int main(int argc, char *argv[])
 		GLuint modelMatrixLocation = glGetUniformLocation(graphics3d_get_shader_program(), "VP"); // Get the location of our model matrix in the shader  
 		glUniformMatrix4fv(modelMatrixLocation, 1, GL_FALSE, &VP[0][0]); // Send our model matrix to the shader 
 
-		ent1.update();
-		ent2.update();
         glUseProgram(0);	
         graphics3d_next_frame();
     }

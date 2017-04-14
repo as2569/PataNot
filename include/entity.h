@@ -4,18 +4,16 @@
 class Entity 
 {
 public:
+	static std::vector<Entity> entList;
 	Sprite* sprite;
-
 	int timeRemaining; 
 	int currentStep;
 	int inUse;
 	int timeAlive;
-
 	glm::vec3 translateVector;
 	glm::mat4 modelMatrix;
 
-	glm::mat4 getMatrix();
-	 
+	glm::mat4 getMatrix(); 
 	int getStep();
 	void update();
 	void moveUp();
@@ -23,12 +21,23 @@ public:
 	void animate();
 	void setSprite();
 	void spawnPos();
-	void randomSpawn(int BPM);
+	void randomSpawn(float, int);
+	void addEnt(Entity);
+	static Entity *NewEntity();
+	static void reserve();
+	Entity();
 
 private:
 	int pos; //0 for left, 1 for right
 	glm::vec3 posVec;
+	float BPM;
+	float lastBeat;
+	float thisBeat;
+	float timing;
+	float currentTime;
 
+protected:
+	
 };
 
 #endif 

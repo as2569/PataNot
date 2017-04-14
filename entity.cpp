@@ -10,11 +10,27 @@
 #include "Sprite.h"
 #include "Entity.h"
 #include "gameFunctions.h"
-#include "manager.h"
-
 
 extern GameFunctions gamefunctions;
-extern Manager manager;
+std::vector<Entity> Entity::entList;
+
+void Entity::reserve()
+{
+	Entity::entList.resize(5);
+}
+
+Entity::Entity()
+{
+	inUse = 0;
+}
+
+Entity *Entity::NewEntity()
+{
+	for(int i = 0; i < entList.size(); i++)
+		if(!entList[i].inUse)
+			return &entList[i];
+	return NULL;
+}
 
 void Entity::setup()
 {
@@ -25,25 +41,23 @@ void Entity::setup()
 	modelMatrix = glm::mat4(1.0f);
 	spawnPos();
 	sprite->setup();
-	inUse = 1;
-	manager.addEnt(this);
+}
+
+void Entity::randomSpawn(float BPM, int firstBeat)
+{
+	timing = (1 / (BPM / 60)) * 1000;
+	currentTime = SDL_GetTicks();
+	if(currentTime >= lastBeat + timing )
+	{
+		std::cout << currentTime << " beat" << std::endl;
+		lastBeat = currentTime;
+	}	
 }
 
 glm::mat4 Entity::getMatrix()
 {
 	return modelMatrix;
 }
-
-//void Entity::randomSpawn(int BPM)
-//{
-//	timing = BPM / 60;
-//	currentTime = SDL_GetTicks() * 100;
-//	if(timing + lastBeat > currentTime)
-//	{
-//		std::cout << "beat" << std::endl;
-//		lastBeat = currentTime;
-//	}	
-//}
 
 void Entity::spawnPos()
 {

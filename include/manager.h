@@ -4,21 +4,18 @@
 class Manager
 {
 public: 
-	Manager(); //Constructor
-	~Manager(); //Destructor
-	void addEnt(Entity*);
-	void removeEnt(Entity*);
-	void randomSpawn(float BPM);
+	//Manager(); //Constructor
+	//~Manager(); //Destructor
+	//void addEnt(Entity*);
+	//void removeEnt(Entity*);
+	void randomSpawn(float, int);
 
-private:
-	std::vector<Entity*> entList;
-	float firstBeat;
+private:	
 	float BPM;
 	float lastBeat;
 	float thisBeat;
 	float timing;
 	float currentTime;
-
 };
 
 #endif
