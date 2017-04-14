@@ -79,15 +79,15 @@ void Sprite::draw(glm::mat4 modelMatrix, int step){
 
 	////Set up buffer and push the mvp to the shader
 	//glGenTextures(1, &tex);
-	//glBindTexture(GL_TEXTURE_2D, tex);
+	
 	//glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
 	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR); 
 	//glGenerateMipmap(GL_TEXTURE_2D);
-	//
 	//SOIL_free_image_data(image);
+	glBindTexture(GL_TEXTURE_2D, tex);
 
 	glEnableVertexAttribArray(0); 
 	glBindBuffer(GL_ARRAY_BUFFER, vbo); 

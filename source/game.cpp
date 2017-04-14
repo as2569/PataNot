@@ -19,7 +19,7 @@ GLuint vbo;
 GLuint uvs;
 GLuint tex;
 glm::mat4 VP;
-int bpm = 30;
+int bpm = 60;
 int fb = 5;
 
 extern float delta;
@@ -175,16 +175,17 @@ int main(int argc, char *argv[])
 	Entity::reserve();
 	srand(time(NULL));
 
-	//Entity::NewEntity();	
-	Entity* e = Entity::NewEntity();
-	e->setup();
+	//Entity* e = Entity::NewEntity();
+	//Entity* e1 = Entity::NewEntity();
+	//e->setup();
+	//e1->setup();
 
     while (bGameLoopRunning)
     {
-		
+		Entity::randomSpawn(bpm, fb);
 		//std::cout << Entity::entList.size() << std::endl;
 		gamefunctions.deltaTime();	
-		e->update();
+		Entity::updateEntities();
 
 		//input from keyboard
   //      while( SDL_PollEvent(&evn) ) 
@@ -208,8 +209,10 @@ int main(int argc, char *argv[])
 
         glClearColor(0.0,0.2,0.4,1.0); //background color
         glClear(GL_COLOR_BUFFER_BIT);
-
+		
         glUseProgram(graphics3d_get_shader_program());
+
+		Entity::drawEntities();
 
 		GLuint modelMatrixLocation = glGetUniformLocation(graphics3d_get_shader_program(), "VP"); // Get the location of our model matrix in the shader  
 		glUniformMatrix4fv(modelMatrixLocation, 1, GL_FALSE, &VP[0][0]); // Send our model matrix to the shader 

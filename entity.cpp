@@ -13,6 +13,10 @@
 
 extern GameFunctions gamefunctions;
 std::vector<Entity> Entity::entList;
+float Entity::lastBeat;
+float Entity::thisBeat;
+float Entity::timing;
+float Entity::currentTime;
 
 void Entity::reserve()
 {
@@ -24,16 +28,43 @@ Entity::Entity()
 	inUse = 0;
 }
 
+void Entity::updateEntities()
+{
+	for(int i = 0; i <entList.size(); i++)
+	{
+		if(entList[i].inUse)
+		{
+			entList[i].update();
+		}
+	}
+}
+
+void Entity::drawEntities()
+{
+	for(int i = 0; i <entList.size(); i++)
+	{
+		if(entList[i].inUse)
+		{
+			entList[i].draw();
+		}
+	}
+}
+
 Entity *Entity::NewEntity()
 {
 	for(int i = 0; i < entList.size(); i++)
+	{
 		if(!entList[i].inUse)
+		{
 			return &entList[i];
+		}
+	}
 	return NULL;
 }
 
 void Entity::setup()
 {
+	inUse = 1;
 	setSprite();
 	timeRemaining = 500;
 	timeAlive = 4000;
@@ -49,6 +80,8 @@ void Entity::randomSpawn(float BPM, int firstBeat)
 	currentTime = SDL_GetTicks();
 	if(currentTime >= lastBeat + timing )
 	{
+		Entity* ent = Entity::NewEntity();
+		ent-> setup();
 		std::cout << currentTime << " beat" << std::endl;
 		lastBeat = currentTime;
 	}	
@@ -97,13 +130,18 @@ void Entity::update()
 {
 	moveUp();
 	animate();
-	sprite->draw(modelMatrix, getStep());
+	
 	timeAlive -= gamefunctions.delta;
 	//::cout << timeAlive<< std::endl;
 	if(timeAlive <= 0)
 	{
 		;
 	}
+}
+
+void Entity::draw()
+{
+	sprite->draw(modelMatrix, getStep());
 }
 
 void Entity::animate()
