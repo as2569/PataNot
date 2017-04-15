@@ -39,8 +39,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Libraries\Simple OpenGL Image Library\src;C:\Libraries\SDL2_image-2.0.1\include;C:\Libraries\glm-0.9.8.4;C:\Users\Adam\Documents\PataNot\include;C:\Libraries\SDL2-2.0.5\include;C:\Libraries\LeapSDK\include;C:\Libraries\glew-2.0.0\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Libraries\Simple OpenGL Image Library\lib;C:\Libraries\SDL2_image-2.0.1\lib\x86;C:\Libraries\SDL2-2.0.5\lib\x86;C:\Libraries\LeapSDK\lib\x86;C:\Libraries\glew-2.0.0\lib\Release\Win32;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Libraries\SDL2_mixer-2.0.1\include;C:\Libraries\Simple OpenGL Image Library\src;C:\Libraries\SDL2_image-2.0.1\include;C:\Libraries\glm-0.9.8.4;C:\Users\Adam\Documents\PataNot\include;C:\Libraries\SDL2-2.0.5\include;C:\Libraries\LeapSDK\include;C:\Libraries\glew-2.0.0\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Libraries\SDL2_mixer-2.0.1\lib\x86;C:\Libraries\Simple OpenGL Image Library\lib;C:\Libraries\SDL2_image-2.0.1\lib\x86;C:\Libraries\SDL2-2.0.5\lib\x86;C:\Libraries\LeapSDK\lib\x86;C:\Libraries\glew-2.0.0\lib\Release\Win32;$(LibraryPath)</LibraryPath>
     <OutDir>$(ProjectDir)</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -50,7 +50,7 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>SDL2main.lib;SDL2.lib;glew32.lib;opengl32.lib;leap.lib;SOIL.lib;SDL2_image.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>SDL2main.lib;SDL2.lib;glew32.lib;opengl32.lib;leap.lib;SOIL.lib;SDL2_image.lib;SDL2_Mixer.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>

@@ -2,10 +2,12 @@
 #include <iostream>
 #include <fstream>
 #include <cstring>
-#include <glm/gtc/matrix_transform.hpp>  
-#include <SDL_keyboard.h>
+#include <glm/gtc/matrix_transform.hpp> 
+#include <SDL.h>
+#include <SDL_mixer.h>
 #include <SOIL.h>
 #include <time.h>
+
 #include "Leap.h"
 #include "simple_logger.h"
 #include "graphics3d.h"
@@ -19,7 +21,7 @@ GLuint vbo;
 GLuint uvs;
 GLuint tex;
 glm::mat4 VP;
-int bpm = 60;
+int bpm = 30;
 int fb = 5;
 
 extern float delta;
@@ -150,15 +152,15 @@ int main(int argc, char *argv[])
     GLuint vao;
     GLuint triangleBufferObject;
     char bGameLoopRunning = 1;
+	FILE *fp;
 	SDL_Event evn;
-	
-
 	int64_t frameID;
 	int64_t lastFrame = controller.frame().timestamp();
 
 	controller.addListener(listener); //Have the sample listener receive events from the controller
 
     init_logger("gametest3d.log");
+
     if (graphics3d_init(1024,1024,1,"gametest3d",33) != 0)
     {
         return -1;
@@ -171,29 +173,33 @@ int main(int argc, char *argv[])
     
 	//lastFrame = controller.frame().timestamp();
 	SDL_Init(SDL_INIT_EVERYTHING);
+	
+	if( Mix_OpenAudio( 32075, MIX_DEFAULT_FORMAT, 2, 1024 ) == -1 )
+    {
+        std::cout << "fail" << std::endl;    
+    }
 
+	Mix_Init(MIX_INIT_MP3);
+	//Initialize SDL_mixerc	
+	gamefunctions.loadSong();
 	Entity::reserve();
 	srand(time(NULL));
-
-	//Entity* e = Entity::NewEntity();
-	//Entity* e1 = Entity::NewEntity();
-	//e->setup();
-	//e1->setup();
 
     while (bGameLoopRunning)
     {
 		Entity::randomSpawn(bpm, fb);
 		//std::cout << Entity::entList.size() << std::endl;
 		gamefunctions.deltaTime();	
-		Entity::updateEntities();
+		Entity::updateEntities();		
 
 		//input from keyboard
-  //      while( SDL_PollEvent(&evn) ) 
-  //      {
-  //        if(evn.type == SDL_KEYDOWN && evn.key.keysym.sym == SDLK_c)
-		//  {
-		//  }
-  //      }
+        while( SDL_PollEvent(&evn) ) 
+        {
+			if(evn.type == SDL_KEYDOWN && evn.key.keysym.sym == SDLK_c)
+			{
+				gamefunctions.playMusic();	
+			}
+        }
 
 		//print TIME when the specified frame is processed
 		if(controller.frame().timestamp() >= lastFrame + 100000)
@@ -221,6 +227,7 @@ int main(int argc, char *argv[])
         graphics3d_next_frame();
     }
 
+	gamefunctions.cleanupSong();
 	controller.removeListener(listener); //Remove the sample listener when done
     return 0;
 }

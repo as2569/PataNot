@@ -7,6 +7,8 @@
 #include <simple_logger.h>
 #include <vector>
 #include <SDL.h>
+#include <SDL_mixer.h>
+
 #include "Sprite.h"
 #include "Entity.h"
 #include "gameFunctions.h"
@@ -62,12 +64,18 @@ Entity *Entity::NewEntity()
 	return NULL;
 }
 
+void Entity::freeEntity(Entity *ent)
+{
+	ent->inUse = 0;
+	ent->sprite = NULL;
+}
+
 void Entity::setup()
 {
 	inUse = 1;
 	setSprite();
 	timeRemaining = 500;
-	timeAlive = 4000;
+	timeAlive = 5000;
 	currentStep = 0;
 	modelMatrix = glm::mat4(1.0f);
 	spawnPos();
@@ -99,13 +107,13 @@ void Entity::spawnPos()
 
 	if(pos == 1)
 	{
-		posVec = glm::vec3(0.5f, 0.0f, 0.0f);
+		posVec = glm::vec3(0.5f, -0.7f, 0.0f);
 		modelMatrix = glm::translate(modelMatrix, posVec);
 	}
 
 	if(pos == 0)
 	{
-		posVec = glm::vec3(-0.8f, 0.0f, 0.0f);
+		posVec = glm::vec3(-0.8f, -0.7f, 0.0f);
 		modelMatrix = glm::translate(modelMatrix, posVec);
 	}
 }
@@ -130,12 +138,10 @@ void Entity::update()
 {
 	moveUp();
 	animate();
-	
 	timeAlive -= gamefunctions.delta;
-	//::cout << timeAlive<< std::endl;
 	if(timeAlive <= 0)
 	{
-		;
+		Entity::freeEntity(this);
 	}
 }
 

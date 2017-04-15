@@ -28,17 +28,17 @@ public:
 	void spawnPos();
 	void draw();
 	static void randomSpawn(float, int);
-	void addEnt(Entity);
-	static Entity *NewEntity();
 	static void drawEntities();
 	static void updateEntities();
 	static void reserve();
+	static void freeEntity(Entity *e);
+	static Entity *NewEntity();
+	
 	Entity();
 
 private:
 	int pos; //0 for left, 1 for right
 	glm::vec3 posVec;
-
 
 protected:
 	
