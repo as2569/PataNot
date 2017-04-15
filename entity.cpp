@@ -1,8 +1,9 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp> 
 #include <GL\glew.h>
-#include <iostream>
 #include <stdlib.h>
+#include <iostream>
+#include <glm/gtx/string_cast.hpp>
 #include <time.h>
 #include <simple_logger.h>
 #include <vector>
@@ -50,6 +51,11 @@ void Entity::drawEntities()
 			entList[i].draw();
 		}
 	}
+}
+
+Entity *Entity::getEnt()
+{
+	return &entList[0];
 }
 
 Entity *Entity::NewEntity()
@@ -107,13 +113,13 @@ void Entity::spawnPos()
 
 	if(pos == 1)
 	{
-		posVec = glm::vec3(0.5f, -0.7f, 0.0f);
+		posVec = glm::vec3(0.55f, -0.8f, 0.0f);
 		modelMatrix = glm::translate(modelMatrix, posVec);
 	}
 
 	if(pos == 0)
 	{
-		posVec = glm::vec3(-0.8f, -0.7f, 0.0f);
+		posVec = glm::vec3(-0.8f, -0.8f, 0.0f);
 		modelMatrix = glm::translate(modelMatrix, posVec);
 	}
 }
@@ -139,6 +145,8 @@ void Entity::update()
 	moveUp();
 	animate();
 	timeAlive -= gamefunctions.delta;
+	//currentPos = glm::vec3(modelMatrix[3][1], modelMatrix[3][2], modelMatrix[3][3]);
+	//std::cout << to_string(currentPos) << std::endl;
 	if(timeAlive <= 0)
 	{
 		Entity::freeEntity(this);

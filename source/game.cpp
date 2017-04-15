@@ -15,6 +15,7 @@
 #include "sprite.h"
 #include "entity.h"
 #include "gameFunctions.h"
+#include "scoring.h"
 
 GameFunctions gamefunctions;
 GLuint vbo;
@@ -152,7 +153,7 @@ int main(int argc, char *argv[])
     GLuint vao;
     GLuint triangleBufferObject;
     char bGameLoopRunning = 1;
-	FILE *fp;
+	//FILE *fp;
 	SDL_Event evn;
 	int64_t frameID;
 	int64_t lastFrame = controller.frame().timestamp();
@@ -180,18 +181,18 @@ int main(int argc, char *argv[])
     }
 
 	Mix_Init(MIX_INIT_MP3);
-	//Initialize SDL_mixerc	
 	gamefunctions.loadSong();
 	Entity::reserve();
 	srand(time(NULL));
 
     while (bGameLoopRunning)
-    {
+    {	
 		Entity::randomSpawn(bpm, fb);
 		//std::cout << Entity::entList.size() << std::endl;
 		gamefunctions.deltaTime();	
-		Entity::updateEntities();		
+		Entity::updateEntities();	
 
+		Scoring::checkEnt(Entity::getEnt());
 		//input from keyboard
         while( SDL_PollEvent(&evn) ) 
         {
@@ -220,8 +221,8 @@ int main(int argc, char *argv[])
 
 		Entity::drawEntities();
 
-		GLuint modelMatrixLocation = glGetUniformLocation(graphics3d_get_shader_program(), "VP"); // Get the location of our model matrix in the shader  
-		glUniformMatrix4fv(modelMatrixLocation, 1, GL_FALSE, &VP[0][0]); // Send our model matrix to the shader 
+		GLuint modelMatrixLocation = glGetUniformLocation(graphics3d_get_shader_program(), "VP"); // Get the location of our VP matrix in the shader  
+		glUniformMatrix4fv(modelMatrixLocation, 1, GL_FALSE, &VP[0][0]); // Send our VP matrix to the shader 
 
         glUseProgram(0);	
         graphics3d_next_frame();

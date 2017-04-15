@@ -12,6 +12,7 @@ public:
 	int timeAlive;
 	glm::vec3 translateVector;
 	glm::mat4 modelMatrix;
+	glm::vec3 currentPos;
 	static float BPM;
 	static float lastBeat;
 	static float thisBeat;
@@ -32,8 +33,8 @@ public:
 	static void updateEntities();
 	static void reserve();
 	static void freeEntity(Entity *e);
-	static Entity *NewEntity();
-	
+	static Entity *getEnt();
+	static Entity *NewEntity();	
 	Entity();
 
 private:
