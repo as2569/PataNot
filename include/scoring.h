@@ -5,10 +5,10 @@ class Scoring
 {
 public:
 	static glm::mat4 mat;
-	static glm::vec3 posVec;
-	float f;
+	static Entity* ent;
 
 	static void checkEnt(Entity *e);
+	static void checkEntities();
 };
 
 #endif

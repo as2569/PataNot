@@ -24,6 +24,7 @@ GLuint tex;
 glm::mat4 VP;
 int bpm = 30;
 int fb = 5;
+//int i;
 
 extern float delta;
 
@@ -153,7 +154,6 @@ int main(int argc, char *argv[])
     GLuint vao;
     GLuint triangleBufferObject;
     char bGameLoopRunning = 1;
-	//FILE *fp;
 	SDL_Event evn;
 	int64_t frameID;
 	int64_t lastFrame = controller.frame().timestamp();
@@ -187,12 +187,17 @@ int main(int argc, char *argv[])
 
     while (bGameLoopRunning)
     {	
-		Entity::randomSpawn(bpm, fb);
-		//std::cout << Entity::entList.size() << std::endl;
 		gamefunctions.deltaTime();	
+		Entity::randomSpawn(bpm, fb);
 		Entity::updateEntities();	
 
-		Scoring::checkEnt(Entity::getEnt());
+		//Scoring::checkEnt(Entity::getEnt(2));
+		
+		for(int j = 0; j<Entity::entList.size(); j++)
+		{
+			Scoring::checkEnt(Entity::getEnt(j));
+		}
+
 		//input from keyboard
         while( SDL_PollEvent(&evn) ) 
         {

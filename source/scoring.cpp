@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <cstring>
+#include <vector>
 #include <glm/gtc/matrix_transform.hpp> 
 #include <glm/gtx/string_cast.hpp>
 #include <SDL.h>
@@ -19,16 +20,21 @@
 #include "scoring.h"
 
 glm::mat4 Scoring::mat;
-glm::vec3 Scoring::posVec;
 
 void Scoring::checkEnt(Entity *e)
 {
 	mat = e->getMatrix();
-	posVec = glm::vec3(mat[3][0], mat[3][1], mat[3][2]);
-	//std::cout << to_string(posVec) << std::endl;
 	float f = mat[3][1];
-	if(f < 0.1f && f > -0.1f)
+	if((f < 0.01f && f > -0.01f) && e->inUse)
 	{
 		std::cout << "ping" << std::endl;
+	}
+}
+
+void Scoring::checkEntities()
+{
+	for(int i = 0; i < Entity::entList.size(); i++)
+	{
+		checkEnt(Entity::getEnt(i));
 	}
 }

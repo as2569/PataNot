@@ -13,6 +13,7 @@
 #include "Sprite.h"
 #include "Entity.h"
 #include "gameFunctions.h"
+#include "scoring.h"
 
 extern GameFunctions gamefunctions;
 std::vector<Entity> Entity::entList;
@@ -53,9 +54,9 @@ void Entity::drawEntities()
 	}
 }
 
-Entity *Entity::getEnt()
+Entity *Entity::getEnt(int i)
 {
-	return &entList[0];
+	return &entList[i];
 }
 
 Entity *Entity::NewEntity()
@@ -145,8 +146,6 @@ void Entity::update()
 	moveUp();
 	animate();
 	timeAlive -= gamefunctions.delta;
-	//currentPos = glm::vec3(modelMatrix[3][1], modelMatrix[3][2], modelMatrix[3][3]);
-	//std::cout << to_string(currentPos) << std::endl;
 	if(timeAlive <= 0)
 	{
 		Entity::freeEntity(this);

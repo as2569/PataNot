@@ -33,7 +33,7 @@ public:
 	static void updateEntities();
 	static void reserve();
 	static void freeEntity(Entity *e);
-	static Entity *getEnt();
+	static Entity *getEnt(int);
 	static Entity *NewEntity();	
 	Entity();
 
