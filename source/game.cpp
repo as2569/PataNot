@@ -193,11 +193,12 @@ int main(int argc, char *argv[])
 
 		//Scoring::checkEnt(Entity::getEnt(2));
 		
-		for(int j = 0; j<Entity::entList.size(); j++)
-		{
-			Scoring::checkEnt(Entity::getEnt(j));
-		}
+		//for(int j = 0; j<Entity::entList.size(); j++)
+		//{
+		//	Scoring::checkEnt(Entity::getEnt(j));
+		//}
 
+		Scoring::checkEntities();
 		//input from keyboard
         while( SDL_PollEvent(&evn) ) 
         {

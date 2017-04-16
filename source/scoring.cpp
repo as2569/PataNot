@@ -27,6 +27,7 @@ void Scoring::checkEnt(Entity *e)
 	float f = mat[3][1];
 	if((f < 0.01f && f > -0.01f) && e->inUse)
 	{
+		//e->freeEntity(e);
 		std::cout << "ping" << std::endl;
 	}
 }

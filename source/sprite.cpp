@@ -22,14 +22,20 @@ void Sprite::setup()
 {
 	size.x = 0.25f;
 	size.y = 1.0f;
-	spriteFrames[0].index = 0;
-	spriteFrames[1].index = 1;
-	spriteFrames[2].index = 2;
-	spriteFrames[3].index = 3;
-	spriteFrames[0].timing = 500;
-	spriteFrames[1].timing = 500;
-	spriteFrames[2].timing = 500;
-	spriteFrames[3].timing = 500;
+	//spriteFrames[0].index = 0;
+	//spriteFrames[1].index = 1;
+	//spriteFrames[2].index = 2;
+	//spriteFrames[3].index = 3;
+	//spriteFrames[0].timing = 500;
+	//spriteFrames[1].timing = 500;
+	//spriteFrames[2].timing = 500;
+	//spriteFrames[3].timing = 500;
+	
+	for(int i = 0; i > sizeof(spriteFrames) + 1; i++)
+	{
+		spriteFrames[i].index = i;
+		spriteFrames[i].timing = 500;
+	}
 
 	image = SOIL_load_image("frametest.png", &width, &height, 0, SOIL_LOAD_RGB);
 
