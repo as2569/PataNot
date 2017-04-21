@@ -20,6 +20,7 @@
 #include "scoring.h"
 
 glm::mat4 Scoring::mat;
+int Scoring::score;
 
 void Scoring::checkEnt(Entity *e)
 {
@@ -28,7 +29,8 @@ void Scoring::checkEnt(Entity *e)
 	if((f < 0.01f && f > -0.01f) && e->inUse)
 	{
 		//e->freeEntity(e);
-		std::cout << "ping" << std::endl;
+		score++;
+		//std::cout << score << std::endl;
 	}
 }
 

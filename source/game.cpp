@@ -16,15 +16,23 @@
 #include "entity.h"
 #include "gameFunctions.h"
 #include "scoring.h"
+#include "interface.h"
 
 GameFunctions gamefunctions;
 GLuint vbo;
 GLuint uvs;
 GLuint tex;
+GLuint bar;
+GLuint baruvs;
+GLuint barTex;
+GLuint digitTex;
+GLuint digit;
+GLuint digituvs;
+
 glm::mat4 VP;
+glm::mat4 barPosition;
 int bpm = 30;
 int fb = 5;
-//int i;
 
 extern float delta;
 
@@ -147,16 +155,18 @@ extern float delta;
 int main(int argc, char *argv[])
 {	
 	using namespace Leap;
-	
+
+	char bGameLoopRunning = 1;
 	Leap::FingerList extended;
 	Controller controller;
 	Leap::Listener listener;
-    GLuint vao;
-    GLuint triangleBufferObject;
-    char bGameLoopRunning = 1;
+    //GLuint vao;
+   // GLuint triangleBufferObject;
 	SDL_Event evn;
 	int64_t frameID;
 	int64_t lastFrame = controller.frame().timestamp();
+
+	barPosition = glm::mat4(1.0f);
 
 	controller.addListener(listener); //Have the sample listener receive events from the controller
 
@@ -167,8 +177,11 @@ int main(int argc, char *argv[])
         return -1;
     }
 
+	//GLfloat 
 	glGenBuffers(1, &vbo);
 	glGenBuffers(1, &uvs);
+	glGenBuffers(1, &bar);
+	glGenBuffers(1, &baruvs);
 
     slog("glError: %d", glGetError());
     
@@ -184,24 +197,25 @@ int main(int argc, char *argv[])
 	gamefunctions.loadSong();
 	Entity::reserve();
 	srand(time(NULL));
+	
+	Sprite bar = Sprite();
+	bar.setupBar();
+	barPosition = glm::translate(barPosition, glm::vec3(0.0f, 0.0f, 0.0f));
 
     while (bGameLoopRunning)
     {	
 		gamefunctions.deltaTime();	
 		Entity::randomSpawn(bpm, fb);
 		Entity::updateEntities();	
-
-		//Scoring::checkEnt(Entity::getEnt(2));
-		
-		//for(int j = 0; j<Entity::entList.size(); j++)
-		//{
-		//	Scoring::checkEnt(Entity::getEnt(j));
-		//}
-
+			
 		Scoring::checkEntities();
 		//input from keyboard
         while( SDL_PollEvent(&evn) ) 
         {
+			if(evn.type == SDL_KEYDOWN && evn.key.keysym.sym == SDLK_x)
+			{
+				gamefunctions.playMusic();	
+			}
 			if(evn.type == SDL_KEYDOWN && evn.key.keysym.sym == SDLK_c)
 			{
 				gamefunctions.playMusic();	
@@ -222,9 +236,10 @@ int main(int argc, char *argv[])
 
         glClearColor(0.0,0.2,0.4,1.0); //background color
         glClear(GL_COLOR_BUFFER_BIT);
-		
+
         glUseProgram(graphics3d_get_shader_program());
 
+		bar.barDraw(barPosition);
 		Entity::drawEntities();
 
 		GLuint modelMatrixLocation = glGetUniformLocation(graphics3d_get_shader_program(), "VP"); // Get the location of our VP matrix in the shader  

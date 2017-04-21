@@ -6,9 +6,11 @@ class Scoring
 public:
 	static glm::mat4 mat;
 	static Entity* ent;
+	static int score;
 
 	static void checkEnt(Entity *e);
 	static void checkEntities();
+	
 };
 
 #endif

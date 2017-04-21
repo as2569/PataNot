@@ -73,6 +73,7 @@
     <ClCompile Include="source\gameFunctions.cpp" />
     <ClCompile Include="source\game.cpp" />
     <ClCompile Include="source\graphics3d.cpp" />
+    <ClCompile Include="source\interface.cpp" />
     <ClCompile Include="source\scoring.cpp" />
     <ClCompile Include="source\shader.cpp" />
     <ClCompile Include="source\simple_logger.cpp" />
@@ -82,6 +83,7 @@
     <ClInclude Include="include\entity.h" />
     <ClInclude Include="include\gameFunctions.h" />
     <ClInclude Include="include\graphics3d.h" />
+    <ClInclude Include="include\interface.h" />
     <ClInclude Include="include\manager.h" />
     <ClInclude Include="include\scoring.h" />
     <ClInclude Include="include\shader.h" />
