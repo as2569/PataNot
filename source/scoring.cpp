@@ -21,6 +21,8 @@
 
 glm::mat4 Scoring::mat;
 int Scoring::score;
+Sprite* firstDigit;
+Sprite* secondDigit;
 
 void Scoring::checkEnt(Entity *e)
 {
@@ -28,8 +30,9 @@ void Scoring::checkEnt(Entity *e)
 	float f = mat[3][1];
 	if((f < 0.01f && f > -0.01f) && e->inUse)
 	{
-		//e->freeEntity(e);
+		e->freeEntity(e);
 		score++;
+		displayScore();
 		//std::cout << score << std::endl;
 	}
 }
@@ -40,4 +43,11 @@ void Scoring::checkEntities()
 	{
 		checkEnt(Entity::getEnt(i));
 	}
+}
+
+void Scoring::displayScore()
+{
+	int f = score / 10;
+	int s = score - (f * 10);
+	std::cout << f << "  " << s << std::endl;
 }

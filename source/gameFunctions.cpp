@@ -17,8 +17,11 @@ void GameFunctions::loadSong()
 	if((music = Mix_LoadMUS("barbie.mp3")) == NULL)
 	{
 		std::cout<< Mix_GetError()<<std::endl;
-	}else
-		std::cout << "loaded song" << std::endl;
+	}
+	else
+	{
+		//std::cout << "loaded song" << std::endl;
+	}
 }
 
 void GameFunctions::cleanupSong()

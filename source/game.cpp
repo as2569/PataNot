@@ -31,7 +31,7 @@ GLuint digituvs;
 
 glm::mat4 VP;
 glm::mat4 barPosition;
-int bpm = 30;
+int bpm = 60;
 int fb = 5;
 
 extern float delta;
@@ -209,6 +209,7 @@ int main(int argc, char *argv[])
 		Entity::updateEntities();	
 			
 		Scoring::checkEntities();
+
 		//input from keyboard
         while( SDL_PollEvent(&evn) ) 
         {

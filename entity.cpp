@@ -97,7 +97,7 @@ void Entity::randomSpawn(float BPM, int firstBeat)
 	{
 		Entity* ent = Entity::NewEntity();
 		ent-> setup();
-		std::cout << currentTime << " beat" << std::endl;
+		//std::cout << currentTime << " beat" << std::endl;
 		lastBeat = currentTime;
 	}	
 }
@@ -110,7 +110,7 @@ glm::mat4 Entity::getMatrix()
 void Entity::spawnPos()
 {
 	pos = rand() % 2;
-	std::cout << pos << std::endl; //console position and rotation
+	//std::cout << pos << std::endl; //console position and rotation
 
 	if(pos == 1)
 	{
