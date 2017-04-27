@@ -13,6 +13,7 @@ public:
 	int width, height;
 	unsigned char* image;
 	unsigned char* barTexture;
+	unsigned char* scoreTexture;
 	
 	int getTiming(int step);
 	void update();
@@ -21,7 +22,7 @@ public:
 	void setupBar();
 	void barDraw(glm::mat4);
 	void setupScore();
-	void drawScore();
+	void drawScore(glm::mat4, int step);
 
 private:
 	int i;

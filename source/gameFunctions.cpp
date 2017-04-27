@@ -39,10 +39,15 @@ int GameFunctions::playMusic()
 		//Play the music
 		if( Mix_PlayMusic(music, -1 ) == -1 )
 		{
-			std::cout << "playing" << std::endl;
-			return 1;
+			std::cout << "playing" << std::endl;	
 		}    
+		return 1;
      }
+	 else
+	 {
+		 Mix_HaltMusic();
+		 return 1;
+	 }
 }
 
 

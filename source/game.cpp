@@ -31,9 +31,12 @@ GLuint digituvs;
 
 glm::mat4 VP;
 glm::mat4 barPosition;
-int bpm = 60;
+int bpm = 45;
 int fb = 5;
 
+Leap::Controller controller;
+Leap::Listener listener;
+Leap::FingerList extended;
 extern float delta;
 
 //class SampleListener : public Listener {
@@ -154,12 +157,11 @@ extern float delta;
 
 int main(int argc, char *argv[])
 {	
-	using namespace Leap;
+	//using namespace Leap;
 
 	char bGameLoopRunning = 1;
-	Leap::FingerList extended;
-	Controller controller;
-	Leap::Listener listener;
+	
+
     //GLuint vao;
    // GLuint triangleBufferObject;
 	SDL_Event evn;
@@ -185,12 +187,13 @@ int main(int argc, char *argv[])
 
     slog("glError: %d", glGetError());
     
-	//lastFrame = controller.frame().timestamp();
+	lastFrame = controller.frame().timestamp();
+
 	SDL_Init(SDL_INIT_EVERYTHING);
 	
 	if( Mix_OpenAudio( 32075, MIX_DEFAULT_FORMAT, 2, 1024 ) == -1 )
     {
-        std::cout << "fail" << std::endl;    
+        std::cout << "AudioFail" << std::endl;    
     }
 
 	Mix_Init(MIX_INIT_MP3);
@@ -198,9 +201,9 @@ int main(int argc, char *argv[])
 	Entity::reserve();
 	srand(time(NULL));
 	
-	Sprite bar = Sprite();
+	/*Sprite bar = Sprite();
 	bar.setupBar();
-	barPosition = glm::translate(barPosition, glm::vec3(0.0f, 0.0f, 0.0f));
+	barPosition = glm::translate(barPosition, glm::vec3(0.0f, 0.0f, 0.0f));*/
 
     while (bGameLoopRunning)
     {	
@@ -217,30 +220,25 @@ int main(int argc, char *argv[])
 			{
 				gamefunctions.playMusic();	
 			}
-			if(evn.type == SDL_KEYDOWN && evn.key.keysym.sym == SDLK_c)
-			{
-				gamefunctions.playMusic();	
-			}
         }
 
 		//print TIME when the specified frame is processed
-		if(controller.frame().timestamp() >= lastFrame + 100000)
-		{
-			lastFrame = controller.frame().timestamp();
-			frameID = controller.frame().id();
-			std::cout << frameID << " " << lastFrame << std::endl;
-		}
+		//if(controller.frame().timestamp() >= lastFrame + 100000)
+		//{
+			//lastFrame = controller.frame().timestamp();
+			//frameID = controller.frame().id();
+			//std::cout << frameID << " " << lastFrame << std::endl;
+		//}
 
 		//bool hands = controller.frame().hands().count() > 1;
   		//float angle = controller.frame().hands().leftmost().palmNormal().roll();
   		//std::cout << angle << std::endl; //Print angle of roll
 
-        glClearColor(0.0,0.2,0.4,1.0); //background color
+        glClearColor(0.0,0.2,0.5,1.0); //background color
         glClear(GL_COLOR_BUFFER_BIT);
 
         glUseProgram(graphics3d_get_shader_program());
 
-		bar.barDraw(barPosition);
 		Entity::drawEntities();
 
 		GLuint modelMatrixLocation = glGetUniformLocation(graphics3d_get_shader_program(), "VP"); // Get the location of our VP matrix in the shader  

@@ -18,6 +18,7 @@ public:
 	static float thisBeat;
 	static float timing;
 	static float currentTime;
+	int pos; //0 for left, 1 for right
 
 	glm::mat4 getMatrix(); 
 	int getStep();
@@ -38,7 +39,6 @@ public:
 	Entity();
 
 private:
-	int pos; //0 for left, 1 for right
 	glm::vec3 posVec;
 
 protected:

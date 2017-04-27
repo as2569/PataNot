@@ -12,7 +12,9 @@ public:
 
 	static void checkEnt(Entity *e);
 	static void checkEntities();
+	static void setupScore();
 	static void displayScore();
+	static int gesture(Entity *e);
 	
 };
 
