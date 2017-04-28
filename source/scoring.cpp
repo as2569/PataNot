@@ -23,6 +23,7 @@ extern Leap::Controller controller;
 extern Leap::Listener listener;
 
 glm::mat4 Scoring::mat;
+Leap::Vector Scoring::leapVec;
 int Scoring::score;
 int f, s;
 Sprite* firstDigit;
@@ -36,18 +37,18 @@ int Scoring::gesture(Entity *e)
 	HandList hands = frame.hands();
 	int pos = e->pos;
 
-	for (HandList::const_iterator hl = hands.begin(); hl != hands.end(); ++hl)\
+	for (HandList::const_iterator hl = hands.begin(); hl != hands.end(); ++hl) //Not sure how iterator works
 	{
 		const Hand hand = *hl;
-		const Vector normal = hand.palmNormal();
-		const Vector direction = hand.direction();
+		//const Vector normal = hand.palmNormal();
+		//const Vector direction = hand.direction();
 		
 		//Is hand left or right?
-		//std::string handType = hand.isLeft() ? "Left" : "Right";
-		std::string handType = hand.isLeft() ? "0" : "1";
-
+		std::string handType = hand.isLeft() ? "Left" : "Right";
+		
 		//Print states
-		std::cout << handType <<" "<< pos << std::endl;
+		//std::cout << handType <<" "<< pos << std::endl;
+		//std::cout << hand.direction() << std::endl;
     }
 	return 1;
 }

@@ -4,14 +4,14 @@
 
 static SDL_GLContext __graphics3d_gl_context;
 SDL_Window  * __graphics3d_window = NULL;
-static GLuint        __graphics3d_shader_program;
+static GLuint        __graphics3d_shader_program[2];
 static Uint32        __graphics3d_frame_delay = 33;
 
 void graphics3d_close();
 
-GLuint graphics3d_get_shader_program()
+GLuint graphics3d_get_shader_program(int shaderNum)
 {
-    return __graphics3d_shader_program;
+	return __graphics3d_shader_program[shaderNum];
 }
 
 void graphics3d_next_frame()
@@ -75,14 +75,22 @@ int graphics3d_init(int sw,int sh,int fullscreen,const char *project,Uint32 fram
         return -1;
     }
     
-    __graphics3d_shader_program = BuildShaderProgram("shaders/vs1.glsl", "shaders/fs1.glsl");
-    if (__graphics3d_shader_program == -1)
+    __graphics3d_shader_program[0] = BuildShaderProgram("shaders/vs1.glsl", "shaders/fs1.glsl");
+    if (__graphics3d_shader_program[0] == -1)
     {
         return -1;
     }
     
-    slog("Using program %d", __graphics3d_shader_program);
-        
+    slog("Using program[0] %d", __graphics3d_shader_program[0]);
+
+     __graphics3d_shader_program[1] = BuildShaderProgram("shaders/vs1.glsl", "shaders/leapfrag.glsl");
+    if (__graphics3d_shader_program[1] == -1)
+    {
+        return -1;
+    }
+    
+    slog("Using program[1] %d", __graphics3d_shader_program[1]); 
+
     atexit(graphics3d_close); //Why?
     return 0;
 }

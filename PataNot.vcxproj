@@ -94,6 +94,12 @@
     <None Include="shaders\fs1.glsl" />
     <None Include="shaders\vs1.glsl" />
   </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="leapfrag.glsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
+    </FxCompile>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

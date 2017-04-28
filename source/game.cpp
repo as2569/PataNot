@@ -30,8 +30,10 @@ GLuint digit;
 GLuint digituvs;
 
 glm::mat4 VP;
+Leap::Vector leapVec;
+
 glm::mat4 barPosition;
-int bpm = 45;
+int bpm = 25;
 int fb = 5;
 
 Leap::Controller controller;
@@ -157,11 +159,7 @@ extern float delta;
 
 int main(int argc, char *argv[])
 {	
-	//using namespace Leap;
-
 	char bGameLoopRunning = 1;
-	
-
     //GLuint vao;
    // GLuint triangleBufferObject;
 	SDL_Event evn;
@@ -206,7 +204,19 @@ int main(int argc, char *argv[])
 	barPosition = glm::translate(barPosition, glm::vec3(0.0f, 0.0f, 0.0f));*/
 
     while (bGameLoopRunning)
-    {	
+    {
+		//Get hand position
+		using namespace Leap;
+		const Frame frame = controller.frame();
+		HandList hands = frame.hands();
+		leapVec = hands.leftmost().palmNormal();
+		//for (HandList::const_iterator hl = hands.begin(); hl != hands.end(); ++hl) //Not sure how iterator works
+		//{
+		//	const Hand hand = *hl;
+		//	//std::string handType = hand.isLeft() ? "Left" : "Right";
+		//	//std::cout << hand.palmNormal().pitch() << std::endl;
+		//}
+
 		gamefunctions.deltaTime();	
 		Entity::randomSpawn(bpm, fb);
 		Entity::updateEntities();	
@@ -216,6 +226,7 @@ int main(int argc, char *argv[])
 		//input from keyboard
         while( SDL_PollEvent(&evn) ) 
         {
+			//Play music on press C
 			if(evn.type == SDL_KEYDOWN && evn.key.keysym.sym == SDLK_x)
 			{
 				gamefunctions.playMusic();	
@@ -230,21 +241,19 @@ int main(int argc, char *argv[])
 			//std::cout << frameID << " " << lastFrame << std::endl;
 		//}
 
-		//bool hands = controller.frame().hands().count() > 1;
-  		//float angle = controller.frame().hands().leftmost().palmNormal().roll();
-  		//std::cout << angle << std::endl; //Print angle of roll
-
         glClearColor(0.0,0.2,0.5,1.0); //background color
         glClear(GL_COLOR_BUFFER_BIT);
 
-        glUseProgram(graphics3d_get_shader_program());
+		//glUseProgram(graphics3d_get_shader_program(1));
+		GLuint leapVectorLocation = glGetUniformLocation(graphics3d_get_shader_program(1), "leapVec");
+		glUniform3fv(leapVectorLocation, 1, GL_FALSE, &leapVec[0]);
 
+        glUseProgram(graphics3d_get_shader_program(0));
 		Entity::drawEntities();
-
-		GLuint modelMatrixLocation = glGetUniformLocation(graphics3d_get_shader_program(), "VP"); // Get the location of our VP matrix in the shader  
+		GLuint modelMatrixLocation = glGetUniformLocation(graphics3d_get_shader_program(0), "VP"); // Get the location of our VP matrix in the shader  
 		glUniformMatrix4fv(modelMatrixLocation, 1, GL_FALSE, &VP[0][0]); // Send our VP matrix to the shader 
-
         glUseProgram(0);	
+
         graphics3d_next_frame();
     }
 

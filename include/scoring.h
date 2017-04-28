@@ -9,6 +9,7 @@ public:
 	static Sprite* firstDigit;
 	static Sprite* secondDigit;
 	static int score;
+	static Leap::Vector leapVec;
 
 	static void checkEnt(Entity *e);
 	static void checkEntities();
