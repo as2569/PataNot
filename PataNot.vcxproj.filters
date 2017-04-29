@@ -85,5 +85,8 @@
     <None Include="shaders\leapfrag.glsl">
       <Filter>Shaders</Filter>
     </None>
+    <None Include="shaders\frag.glsl">
+      <Filter>Shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -77,8 +77,6 @@ void Sprite::draw(glm::mat4 modelMatrix, int step){
 	GLuint model = glGetUniformLocation(graphics3d_get_shader_program(0), "model");
 	glUniformMatrix4fv(model, 1, GL_FALSE, &modelMatrix[0][0]);
 
-	
-
 	glEnableVertexAttribArray(0); 
 	glBindBuffer(GL_ARRAY_BUFFER, vbo); 
 	glBufferData(GL_ARRAY_BUFFER, sizeof(sprite), sprite, GL_STATIC_DRAW);
@@ -89,7 +87,7 @@ void Sprite::draw(glm::mat4 modelMatrix, int step){
 	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(uvCoords), uvCoords, GL_STATIC_DRAW);
 	glBindTexture(GL_TEXTURE_2D, tex); 
-	glDrawArrays(GL_TRIANGLES, 0, 6);
+	glDrawArrays(GL_TRIANGLES, 0, 6); //Draw arrays
 	glBindTexture(GL_TEXTURE_2D, 0); 
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glDisableVertexAttribArray(0);
@@ -151,8 +149,6 @@ void Sprite::barDraw(glm::mat4 modelMatrix){
 	GLuint model = glGetUniformLocation(graphics3d_get_shader_program(0), "model");
 	glUniformMatrix4fv(model, 1, GL_FALSE, &modelMatrix[0][0]);
 
-	//glBindTexture(GL_TEXTURE_2D, tex); Why is this here?
-
 	glEnableVertexAttribArray(0); 
 	glBindBuffer(GL_ARRAY_BUFFER, bar); 
 	glBufferData(GL_ARRAY_BUFFER, sizeof(sprite), sprite, GL_STATIC_DRAW);
@@ -162,7 +158,7 @@ void Sprite::barDraw(glm::mat4 modelMatrix){
 	glBindBuffer(GL_ARRAY_BUFFER, baruvs); 
 	glBufferData(GL_ARRAY_BUFFER, sizeof(uvCoords), uvCoords, GL_STATIC_DRAW);
 	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
-
+	glBindTexture(GL_TEXTURE_2D, tex);
 	glDrawArrays(GL_TRIANGLES, 0, 6);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glDisableVertexAttribArray(0);

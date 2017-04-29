@@ -90,6 +90,7 @@
     <ClInclude Include="include\sprite.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="shaders\frag.glsl" />
     <None Include="shaders\fs1.glsl" />
     <None Include="shaders\leapfrag.glsl" />
     <None Include="shaders\vs1.glsl" />
