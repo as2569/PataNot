@@ -39,9 +39,6 @@
     <ClCompile Include="source\game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="manager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="source\scoring.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -85,10 +82,8 @@
     <None Include="shaders\vs1.glsl">
       <Filter>Shaders</Filter>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <FxCompile Include="leapfrag.glsl">
+    <None Include="shaders\leapfrag.glsl">
       <Filter>Shaders</Filter>
-    </FxCompile>
+    </None>
   </ItemGroup>
 </Project>

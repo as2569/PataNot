@@ -9,6 +9,7 @@
 #include <vector>
 #include <SDL.h>
 #include <SDL_mixer.h>
+#include <Leap.h>
 
 #include "Sprite.h"
 #include "Entity.h"

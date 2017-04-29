@@ -206,10 +206,11 @@ int main(int argc, char *argv[])
     while (bGameLoopRunning)
     {
 		//Get hand position
-		using namespace Leap;
-		const Frame frame = controller.frame();
-		HandList hands = frame.hands();
-		leapVec = hands.leftmost().palmNormal();
+		//using namespace Leap;
+		//const Frame frame = controller.frame();
+		//HandList hands = frame.hands();
+		//leapVec = hands.leftmost().palmNormal();
+
 		//for (HandList::const_iterator hl = hands.begin(); hl != hands.end(); ++hl) //Not sure how iterator works
 		//{
 		//	const Hand hand = *hl;
@@ -245,9 +246,9 @@ int main(int argc, char *argv[])
         glClear(GL_COLOR_BUFFER_BIT);
 
 		//glUseProgram(graphics3d_get_shader_program(1));
-		GLuint leapVectorLocation = glGetUniformLocation(graphics3d_get_shader_program(1), "leapVec");
-		glUniform3fv(leapVectorLocation, 1, GL_FALSE, &leapVec[0]);
-
+		//GLuint leapVectorLocation = glGetUniformLocation(graphics3d_get_shader_program(1), "leapVec");
+		//glUniform3fv(leapVectorLocation, 1, GL_FALSE, &leapVec[0]);
+		
         glUseProgram(graphics3d_get_shader_program(0));
 		Entity::drawEntities();
 		GLuint modelMatrixLocation = glGetUniformLocation(graphics3d_get_shader_program(0), "VP"); // Get the location of our VP matrix in the shader  

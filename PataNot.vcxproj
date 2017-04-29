@@ -69,7 +69,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="entity.cpp" />
-    <ClCompile Include="manager.cpp" />
     <ClCompile Include="source\gameFunctions.cpp" />
     <ClCompile Include="source\game.cpp" />
     <ClCompile Include="source\graphics3d.cpp" />
@@ -92,13 +91,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="shaders\fs1.glsl" />
+    <None Include="shaders\leapfrag.glsl" />
     <None Include="shaders\vs1.glsl" />
-  </ItemGroup>
-  <ItemGroup>
-    <FxCompile Include="leapfrag.glsl">
-      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
-      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
-    </FxCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

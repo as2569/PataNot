@@ -46,7 +46,7 @@ void Sprite::setup()
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR); 
 	glGenerateMipmap(GL_TEXTURE_2D);
-	
+	glBindTexture(GL_TEXTURE_2D, 0);
 	SOIL_free_image_data(image);
 }
 
@@ -74,10 +74,10 @@ void Sprite::draw(glm::mat4 modelMatrix, int step){
 		(size.x * spriteFrames[step].index), 0.0f,
 	};
 
-	GLuint model = glGetUniformLocation(graphics3d_get_shader_program(), "model");
+	GLuint model = glGetUniformLocation(graphics3d_get_shader_program(0), "model");
 	glUniformMatrix4fv(model, 1, GL_FALSE, &modelMatrix[0][0]);
 
-	//glBindTexture(GL_TEXTURE_2D, tex); Why is this here?
+	
 
 	glEnableVertexAttribArray(0); 
 	glBindBuffer(GL_ARRAY_BUFFER, vbo); 
@@ -88,8 +88,9 @@ void Sprite::draw(glm::mat4 modelMatrix, int step){
 	glBindBuffer(GL_ARRAY_BUFFER, uvs); 
 	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(uvCoords), uvCoords, GL_STATIC_DRAW);
-
+	glBindTexture(GL_TEXTURE_2D, tex); 
 	glDrawArrays(GL_TRIANGLES, 0, 6);
+	glBindTexture(GL_TEXTURE_2D, 0); 
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glDisableVertexAttribArray(0);
 	glDisableVertexAttribArray(1);
@@ -117,7 +118,7 @@ void Sprite::setupBar()
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR); 
 	glGenerateMipmap(GL_TEXTURE_2D);
-	
+	glBindTexture(GL_TEXTURE_2D, 0);
 	SOIL_free_image_data(barTexture);
 }
 
@@ -147,7 +148,7 @@ void Sprite::barDraw(glm::mat4 modelMatrix){
 		(size.x * spriteFrames[step].index), 0.0f,
 	};
 
-	GLuint model = glGetUniformLocation(graphics3d_get_shader_program(), "model");
+	GLuint model = glGetUniformLocation(graphics3d_get_shader_program(0), "model");
 	glUniformMatrix4fv(model, 1, GL_FALSE, &modelMatrix[0][0]);
 
 	//glBindTexture(GL_TEXTURE_2D, tex); Why is this here?
@@ -179,18 +180,18 @@ void Sprite::setupScore()
 		spriteFrames[i].timing = 1;
 	}
 
-	scoreTexture = SOIL_load_image("frametest.png", &width, &height, 0, SOIL_LOAD_RGB);
+	scoreTexture = SOIL_load_image("frametest.png", &width, &height, 0, SOIL_LOAD_RGBA);
 
 	//Set up buffer
 	glGenTextures(1, &digitTex);
 	glBindTexture(GL_TEXTURE_2D, digitTex);
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, scoreTexture);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, scoreTexture);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR); 
 	glGenerateMipmap(GL_TEXTURE_2D);
-	
+	glBindTexture(GL_TEXTURE_2D, 0);
 	SOIL_free_image_data(scoreTexture);
 }
 
@@ -218,10 +219,8 @@ void Sprite::drawScore(glm::mat4 modelMatrix, int step){
 		(size.x * spriteFrames[step].index), 0.0f,
 	};
 
-	GLuint model = glGetUniformLocation(graphics3d_get_shader_program(), "model");
+	GLuint model = glGetUniformLocation(graphics3d_get_shader_program(0), "model");
 	glUniformMatrix4fv(model, 1, GL_FALSE, &modelMatrix[0][0]);
-
-	//glBindTexture(GL_TEXTURE_2D, tex); Why is this here?
 
 	glEnableVertexAttribArray(0); 
 	glBindBuffer(GL_ARRAY_BUFFER, digit); 
@@ -233,7 +232,15 @@ void Sprite::drawScore(glm::mat4 modelMatrix, int step){
 	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(uvCoords), uvCoords, GL_STATIC_DRAW);
 
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, tex);
+	glActiveTexture(GL_TEXTURE1);
+	glBindTexture(GL_TEXTURE_2D, tex);
 	glDrawArrays(GL_TRIANGLES, 0, 6);
+	glBindTexture(GL_TEXTURE_2D, 0);
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, 0);
+
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glDisableVertexAttribArray(0);
 	glDisableVertexAttribArray(1);
