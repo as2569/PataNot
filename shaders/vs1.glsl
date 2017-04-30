@@ -9,5 +9,4 @@ void main()
 {
 	gl_Position = VP * model * position;
 	Texcoord = texcoord;
-	//theColor = color;
 }

@@ -86,8 +86,12 @@ void Scoring::setupScore()
 
 	firstDigitPos = glm::mat4(1.0f);
 	secondDigitPos = glm::mat4(1.0f);
-	firstDigitPos = glm::translate(firstDigitPos, glm::vec3(-0.27f, -0.2f, 0.0));
-	secondDigitPos = glm::translate(secondDigitPos, glm::vec3(0.05f, -0.2f, 0.0));
+
+	firstDigitPos = glm::scale(firstDigitPos, glm::vec3(1.5f, 1.5f, 1.0f));
+	secondDigitPos = glm::scale(secondDigitPos, glm::vec3(1.5f, 1.5f, 1.0f));
+
+	firstDigitPos = glm::translate(firstDigitPos, glm::vec3(-0.1f, -0.1f, 0.0));
+	secondDigitPos = glm::translate(secondDigitPos, glm::vec3(0.00f, -0.1f, 0.0));
 
 	firstDigit-> setupScore();
 	secondDigit-> setupScore();

@@ -244,7 +244,7 @@ int main(int argc, char *argv[])
 			//std::cout << frameID << " " << lastFrame << std::endl;
 		//}
 
-        glClearColor(0.0,0.7,0.5,1.0); //background color
+        glClearColor(0.4,0,0.5,1.0); //background color
         glClear(GL_COLOR_BUFFER_BIT);
 		
 		//glUseProgram(graphics3d_get_shader_program(1));
@@ -252,9 +252,9 @@ int main(int argc, char *argv[])
 		//glUniform3fv(leapVectorLocation, 1, GL_FALSE, &leapVec[0]);
 		
         glUseProgram(graphics3d_get_shader_program(0));
-		
-		Scoring::displayScore();
 		Entity::drawEntities();
+		Scoring::displayScore();
+		
 		GLuint modelMatrixLocation = glGetUniformLocation(graphics3d_get_shader_program(0), "VP"); // Get the location of our VP matrix in the shader  
 		glUniformMatrix4fv(modelMatrixLocation, 1, GL_FALSE, &VP[0][0]); // Send our VP matrix to the shader 
         glUseProgram(0);	

@@ -168,16 +168,16 @@ void Sprite::barDraw(glm::mat4 modelMatrix){
 
 void Sprite::setupScore()
 {
-	size.x = 0.25f;
+	size.x = 0.1f;
 	size.y = 1.0f;
 
-	for(int i = 0; i < 9; i++)
+	for(int i = 0; i < 10; i++)
 	{
 		spriteFrames[i].index = i;
 		spriteFrames[i].timing = 1;
 	}
 
-	scoreTexture = SOIL_load_image("digits.png", &width, &height, 0, SOIL_LOAD_RGBA);
+	scoreTexture = SOIL_load_image("digits24.png", &width, &height, 0, SOIL_LOAD_RGBA);
 
 	//Set up buffer
 	glGenTextures(1, &digitTex);
@@ -197,12 +197,12 @@ void Sprite::drawScore(glm::mat4 modelMatrix, int step){
 	float sprite[] = 
 	{
 			0.0f, 0.0f, 0.0f, 1.0f,
-			0.25f, 0.0f, 0.0f, 1.0f,
-			0.0f, 0.25f, 0.0f, 1.0f, 
+			0.1f, 0.0f, 0.0f, 1.0f,
+			0.0f, 0.2f, 0.0f, 1.0f, 
 
-			0.25f, 0.0f, 0.0f, 1.0f,
-			0.25f, 0.25f, 0.0f, 1.0f,
-			0.0f, 0.25f, 0.0f, 1.0f,
+			0.1f, 0.0f, 0.0f, 1.0f,
+			0.1f, 0.2f, 0.0f, 1.0f,
+			0.0f, 0.2f, 0.0f, 1.0f,
 	};
 
 	float uvCoords[] =
@@ -220,7 +220,7 @@ void Sprite::drawScore(glm::mat4 modelMatrix, int step){
 	glUniformMatrix4fv(model, 1, GL_FALSE, &modelMatrix[0][0]);
 
 	glEnable(GL_BLEND);
-	glBlendFunc(GL_SRC_COLOR, GL_ONE_MINUS_SRC_COLOR);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 	glEnableVertexAttribArray(0); 
 	glBindBuffer(GL_ARRAY_BUFFER, digit); 
