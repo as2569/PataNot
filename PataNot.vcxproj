@@ -83,7 +83,6 @@
     <ClInclude Include="include\gameFunctions.h" />
     <ClInclude Include="include\graphics3d.h" />
     <ClInclude Include="include\interface.h" />
-    <ClInclude Include="include\manager.h" />
     <ClInclude Include="include\scoring.h" />
     <ClInclude Include="include\shader.h" />
     <ClInclude Include="include\simple_logger.h" />

@@ -65,9 +65,6 @@
     <ClInclude Include="include\gameFunctions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="include\manager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="include\scoring.h">
       <Filter>Header Files</Filter>
     </ClInclude>

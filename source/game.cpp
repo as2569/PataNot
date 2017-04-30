@@ -32,7 +32,9 @@ GLuint digituvs;
 glm::mat4 VP;
 Leap::Vector leapVec;
 
-glm::mat4 barPosition;
+glm::mat4 firstDigit;
+glm::mat4 secondDigit;
+
 int bpm = 25;
 int fb = 5;
 
@@ -160,13 +162,11 @@ extern float delta;
 int main(int argc, char *argv[])
 {	
 	char bGameLoopRunning = 1;
-    //GLuint vao;
-   // GLuint triangleBufferObject;
 	SDL_Event evn;
 	int64_t frameID;
 	int64_t lastFrame = controller.frame().timestamp();
 
-	barPosition = glm::mat4(1.0f);
+	firstDigit = glm::mat4(1.0f);
 
 	controller.addListener(listener); //Have the sample listener receive events from the controller
 
@@ -182,6 +182,8 @@ int main(int argc, char *argv[])
 	glGenBuffers(1, &uvs);
 	glGenBuffers(1, &bar);
 	glGenBuffers(1, &baruvs);
+	glGenBuffers(1, &digit);
+	glGenBuffers(1, &digituvs);
 
     slog("glError: %d", glGetError());
     
@@ -199,13 +201,13 @@ int main(int argc, char *argv[])
 	Entity::reserve();
 	srand(time(NULL));
 	
-	/*Sprite bar = Sprite();
-	bar.setupBar();
-	barPosition = glm::translate(barPosition, glm::vec3(0.0f, 0.0f, 0.0f));*/
+	Sprite score1 = Sprite();
+	score1.setupScore();
+	firstDigit = glm::translate(firstDigit, glm::vec3(-0.1f, 0.0f, 0.0f));
 
     while (bGameLoopRunning)
     {
-		//Get hand position
+		////Get hand position
 		//using namespace Leap;
 		//const Frame frame = controller.frame();
 		//HandList hands = frame.hands();
@@ -218,11 +220,10 @@ int main(int argc, char *argv[])
 		//	//std::cout << hand.palmNormal().pitch() << std::endl;
 		//}
 
-		gamefunctions.deltaTime();	
+		gamefunctions.deltaTime(); //time keeping
 		Entity::randomSpawn(bpm, fb);
-		Entity::updateEntities();	
-			
-		Scoring::checkEntities();
+		Entity::updateEntities();		
+		Scoring::checkEntities(); //check if entity is 'scorable'
 
 		//input from keyboard
         while( SDL_PollEvent(&evn) ) 
@@ -234,7 +235,7 @@ int main(int argc, char *argv[])
 			}
         }
 
-		//print TIME when the specified frame is processed
+		////print TIME when the specified frame is processed
 		//if(controller.frame().timestamp() >= lastFrame + 100000)
 		//{
 			//lastFrame = controller.frame().timestamp();
@@ -242,14 +243,15 @@ int main(int argc, char *argv[])
 			//std::cout << frameID << " " << lastFrame << std::endl;
 		//}
 
-        glClearColor(0.0,0.2,0.5,1.0); //background color
+        glClearColor(0.0,0.7,0.5,1.0); //background color
         glClear(GL_COLOR_BUFFER_BIT);
-
+		
 		//glUseProgram(graphics3d_get_shader_program(1));
 		//GLuint leapVectorLocation = glGetUniformLocation(graphics3d_get_shader_program(1), "leapVec");
 		//glUniform3fv(leapVectorLocation, 1, GL_FALSE, &leapVec[0]);
 		
         glUseProgram(graphics3d_get_shader_program(0));
+		score1.drawScore(firstDigit, 1);
 		Entity::drawEntities();
 		GLuint modelMatrixLocation = glGetUniformLocation(graphics3d_get_shader_program(0), "VP"); // Get the location of our VP matrix in the shader  
 		glUniformMatrix4fv(modelMatrixLocation, 1, GL_FALSE, &VP[0][0]); // Send our VP matrix to the shader 

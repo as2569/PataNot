@@ -84,8 +84,9 @@ void Sprite::draw(glm::mat4 modelMatrix, int step){
 	
 	glEnableVertexAttribArray(1); 
 	glBindBuffer(GL_ARRAY_BUFFER, uvs); 
-	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(uvCoords), uvCoords, GL_STATIC_DRAW);
+	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
+	
 	glBindTexture(GL_TEXTURE_2D, tex); 
 	glDrawArrays(GL_TRIANGLES, 0, 6); //Draw arrays
 	glBindTexture(GL_TEXTURE_2D, 0); 
@@ -170,13 +171,13 @@ void Sprite::setupScore()
 	size.x = 0.25f;
 	size.y = 1.0f;
 
-	for(int i = 0; i < 4; i++)
+	for(int i = 0; i < 9; i++)
 	{
 		spriteFrames[i].index = i;
 		spriteFrames[i].timing = 1;
 	}
 
-	scoreTexture = SOIL_load_image("frametest.png", &width, &height, 0, SOIL_LOAD_RGBA);
+	scoreTexture = SOIL_load_image("digits.png", &width, &height, 0, SOIL_LOAD_RGBA);
 
 	//Set up buffer
 	glGenTextures(1, &digitTex);
@@ -218,6 +219,9 @@ void Sprite::drawScore(glm::mat4 modelMatrix, int step){
 	GLuint model = glGetUniformLocation(graphics3d_get_shader_program(0), "model");
 	glUniformMatrix4fv(model, 1, GL_FALSE, &modelMatrix[0][0]);
 
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_COLOR, GL_ONE_MINUS_SRC_COLOR);
+
 	glEnableVertexAttribArray(0); 
 	glBindBuffer(GL_ARRAY_BUFFER, digit); 
 	glBufferData(GL_ARRAY_BUFFER, sizeof(sprite), sprite, GL_STATIC_DRAW);
@@ -225,19 +229,15 @@ void Sprite::drawScore(glm::mat4 modelMatrix, int step){
 	
 	glEnableVertexAttribArray(1); 
 	glBindBuffer(GL_ARRAY_BUFFER, digituvs); 
-	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
 	glBufferData(GL_ARRAY_BUFFER, sizeof(uvCoords), uvCoords, GL_STATIC_DRAW);
+	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);	
 
 	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, tex);
-	glActiveTexture(GL_TEXTURE1);
-	glBindTexture(GL_TEXTURE_2D, tex);
+	glBindTexture(GL_TEXTURE_2D, digitTex);
 	glDrawArrays(GL_TRIANGLES, 0, 6);
 	glBindTexture(GL_TEXTURE_2D, 0);
-	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, 0);
-
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glDisableVertexAttribArray(0);
 	glDisableVertexAttribArray(1);
+	glDisable(GL_BLEND);
 }

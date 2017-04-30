@@ -57,15 +57,13 @@ void Scoring::checkEnt(Entity *e)
 {
 	mat = e->getMatrix();
 	float f = mat[3][1];
-	//if((f < 0.01f && f > -0.01f) && e->inUse)
-	if((f < 0.82f && f > 0.80f) && e->inUse)
+	if((f < 0.28f && f > 0.26f) && e->inUse)
 	{
 		gesture(e);
 		//somecode to check if leap motion works
 		e->freeEntity(e);
 		score++;
 		displayScore();
-		//std::cout << score << std::endl;
 	}
 }
 

@@ -12,5 +12,4 @@ void main()
 				+ texture(gradient, vec2(texture(sprite, coord).g, gradientRow.g)).rgb
 				+ texture(gradient, vec2(texture(sprite, coord).b, gradientRow.b)).rgb,
 				texture(sprite, coord).a);
-
 }

@@ -8,7 +8,7 @@ struct frameData{
 
 class Sprite{
 public:
-	frameData spriteFrames[4];
+	frameData spriteFrames[20];
 	glm::vec2 size; 
 	int width, height;
 	unsigned char* image;
