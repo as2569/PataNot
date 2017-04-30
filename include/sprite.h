@@ -10,7 +10,8 @@ class Sprite{
 public:
 	frameData spriteFrames[20];
 	glm::vec2 size; 
-	int width, height;
+	int width;
+	int height;
 	unsigned char* image;
 	unsigned char* barTexture;
 	unsigned char* scoreTexture;

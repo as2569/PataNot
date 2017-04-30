@@ -5,6 +5,8 @@ class Scoring
 {
 public:
 	static glm::mat4 mat;
+	static glm::mat4 firstDigitPos;
+	static glm::mat4 secondDigitPos;
 	static Entity* ent;
 	static Sprite* firstDigit;
 	static Sprite* secondDigit;

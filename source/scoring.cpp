@@ -23,11 +23,15 @@ extern Leap::Controller controller;
 extern Leap::Listener listener;
 
 glm::mat4 Scoring::mat;
+glm::mat4 Scoring::firstDigitPos;
+glm::mat4 Scoring::secondDigitPos;
 Leap::Vector Scoring::leapVec;
+
+Sprite* Scoring::firstDigit;
+Sprite* Scoring::secondDigit;
 int Scoring::score;
-int f, s;
-Sprite* firstDigit;
-Sprite* secondDigit;
+int f;
+int s;
 
 int Scoring::gesture(Entity *e)
 {
@@ -77,13 +81,24 @@ void Scoring::checkEntities()
 
 void Scoring::setupScore()
 {
-	//firstDigit-> drawScore();
-	//secondDigit-> drawScore();
+	firstDigit = new Sprite();
+	secondDigit = new Sprite();
+
+	firstDigitPos = glm::mat4(1.0f);
+	secondDigitPos = glm::mat4(1.0f);
+	firstDigitPos = glm::translate(firstDigitPos, glm::vec3(-0.27f, -0.2f, 0.0));
+	secondDigitPos = glm::translate(secondDigitPos, glm::vec3(0.05f, -0.2f, 0.0));
+
+	firstDigit-> setupScore();
+	secondDigit-> setupScore();
 }
 
 void Scoring::displayScore()
 {
 	f = score / 10;
 	s = score - (f * 10);
+
+	firstDigit->drawScore(firstDigitPos, f);
+	secondDigit->drawScore(secondDigitPos, s);	
 	//std::cout << f << "  " << s << std::endl;
 }

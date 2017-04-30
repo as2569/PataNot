@@ -32,8 +32,8 @@ GLuint digituvs;
 glm::mat4 VP;
 Leap::Vector leapVec;
 
-glm::mat4 firstDigit;
-glm::mat4 secondDigit;
+//glm::mat4 firstDigit;
+//glm::mat4 secondDigit;
 
 int bpm = 25;
 int fb = 5;
@@ -166,7 +166,7 @@ int main(int argc, char *argv[])
 	int64_t frameID;
 	int64_t lastFrame = controller.frame().timestamp();
 
-	firstDigit = glm::mat4(1.0f);
+	//firstDigit = glm::mat4(1.0f);
 
 	controller.addListener(listener); //Have the sample listener receive events from the controller
 
@@ -201,9 +201,10 @@ int main(int argc, char *argv[])
 	Entity::reserve();
 	srand(time(NULL));
 	
-	Sprite score1 = Sprite();
-	score1.setupScore();
-	firstDigit = glm::translate(firstDigit, glm::vec3(-0.1f, 0.0f, 0.0f));
+	Scoring::setupScore();
+	//Sprite score1 = Sprite();
+	//score1.setupScore();
+	//firstDigit = glm::translate(firstDigit, glm::vec3(-0.1f, 0.0f, 0.0f));
 
     while (bGameLoopRunning)
     {
@@ -251,7 +252,8 @@ int main(int argc, char *argv[])
 		//glUniform3fv(leapVectorLocation, 1, GL_FALSE, &leapVec[0]);
 		
         glUseProgram(graphics3d_get_shader_program(0));
-		score1.drawScore(firstDigit, 1);
+		
+		Scoring::displayScore();
 		Entity::drawEntities();
 		GLuint modelMatrixLocation = glGetUniformLocation(graphics3d_get_shader_program(0), "VP"); // Get the location of our VP matrix in the shader  
 		glUniformMatrix4fv(modelMatrixLocation, 1, GL_FALSE, &VP[0][0]); // Send our VP matrix to the shader 
