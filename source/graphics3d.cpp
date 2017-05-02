@@ -4,7 +4,7 @@
 
 static SDL_GLContext __graphics3d_gl_context;
 SDL_Window  * __graphics3d_window = NULL;
-static GLuint        __graphics3d_shader_program[2];
+static GLuint        __graphics3d_shader_program[3];
 static Uint32        __graphics3d_frame_delay = 33;
 
 void graphics3d_close();
@@ -38,6 +38,7 @@ int graphics3d_init(int sw,int sh,int fullscreen,const char *project,Uint32 fram
         return -1;
     }
     atexit(SDL_Quit); //Why is this here?
+
     __graphics3d_frame_delay = frameDelay;
     
     __graphics3d_window = SDL_CreateWindow(project?project:"gametest3d",
@@ -75,23 +76,37 @@ int graphics3d_init(int sw,int sh,int fullscreen,const char *project,Uint32 fram
         return -1;
     }
     
+	//Shader program 0
     __graphics3d_shader_program[0] = BuildShaderProgram("shaders/vs1.glsl", "shaders/fs1.glsl");
     if (__graphics3d_shader_program[0] == -1)
     {
         return -1;
-    }
-    
+    } 
     slog("Using program[0] %d", __graphics3d_shader_program[0]);
 
+	//Shader program 1
      __graphics3d_shader_program[1] = BuildShaderProgram("shaders/vs1.glsl", "shaders/leapfrag.glsl");
     if (__graphics3d_shader_program[1] == -1)
     {
         return -1;
-    }
-    
+    }   
     slog("Using program[1] %d", __graphics3d_shader_program[1]); 
 
-    atexit(graphics3d_close); //Why?
+	//Shader program 2
+	__graphics3d_shader_program[2] = BuildShaderProgram("shaders/vs1.glsl", "shaders/frag.glsl");
+    if (__graphics3d_shader_program[2] == -1)
+    {
+        return -1;
+    }   
+    slog("Using program[2] %d", __graphics3d_shader_program[2]); 
+	GLuint tex0 = glGetUniformLocation(graphics3d_get_shader_program(2), "sprite");
+	GLuint tex1 = glGetUniformLocation(graphics3d_get_shader_program(2), "gradient");
+	glUseProgram( __graphics3d_shader_program[2]);
+	glUniform1i(tex0, 0);
+	glUniform1i(tex1, 1);
+	glUseProgram(0);
+
+    atexit(graphics3d_close); 
     return 0;
 }
 

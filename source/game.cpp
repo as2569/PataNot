@@ -3,6 +3,7 @@
 #include <fstream>
 #include <cstring>
 #include <glm/gtc/matrix_transform.hpp> 
+#include <math.h>
 #include <SDL.h>
 #include <SDL_mixer.h>
 #include <SOIL.h>
@@ -28,12 +29,12 @@ GLuint barTex;
 GLuint digitTex;
 GLuint digit;
 GLuint digituvs;
+GLuint digitGradTex;
+GLuint digitGraduvs;
 
 glm::mat4 VP;
 Leap::Vector leapVec;
-
-//glm::mat4 firstDigit;
-//glm::mat4 secondDigit;
+float leapVals[2];
 
 int bpm = 25;
 int fb = 5;
@@ -166,8 +167,6 @@ int main(int argc, char *argv[])
 	int64_t frameID;
 	int64_t lastFrame = controller.frame().timestamp();
 
-	//firstDigit = glm::mat4(1.0f);
-
 	controller.addListener(listener); //Have the sample listener receive events from the controller
 
     init_logger("gametest3d.log");
@@ -184,6 +183,7 @@ int main(int argc, char *argv[])
 	glGenBuffers(1, &baruvs);
 	glGenBuffers(1, &digit);
 	glGenBuffers(1, &digituvs);
+	glGenBuffers(1, &digitGraduvs);
 
     slog("glError: %d", glGetError());
     
@@ -202,17 +202,19 @@ int main(int argc, char *argv[])
 	srand(time(NULL));
 	
 	Scoring::setupScore();
-	//Sprite score1 = Sprite();
-	//score1.setupScore();
-	//firstDigit = glm::translate(firstDigit, glm::vec3(-0.1f, 0.0f, 0.0f));
 
     while (bGameLoopRunning)
     {
 		////Get hand position
-		//using namespace Leap;
-		//const Frame frame = controller.frame();
-		//HandList hands = frame.hands();
-		//leapVec = hands.leftmost().palmNormal();
+		using namespace Leap;
+		const Frame frame = controller.frame();
+		HandList hands = frame.hands();
+		leapVec = hands.leftmost().palmNormal();
+		leapVals[0] = fabs(leapVec.x);
+		leapVals[1] = fabs(leapVec.y);
+		leapVals[2] = fabs(leapVec.z);
+
+		std::cout << leapVals[0] << std::endl;
 
 		//for (HandList::const_iterator hl = hands.begin(); hl != hands.end(); ++hl) //Not sure how iterator works
 		//{
@@ -244,7 +246,8 @@ int main(int argc, char *argv[])
 			//std::cout << frameID << " " << lastFrame << std::endl;
 		//}
 
-        glClearColor(0.4,0,0.5,1.0); //background color
+		glClearColor(leapVals[0],leapVals[1],leapVals[2],1.0); //background color
+        //glClearColor(0.6,0.3,0.5,1.0); //background color
         glClear(GL_COLOR_BUFFER_BIT);
 		
 		//glUseProgram(graphics3d_get_shader_program(1));
@@ -252,10 +255,11 @@ int main(int argc, char *argv[])
 		//glUniform3fv(leapVectorLocation, 1, GL_FALSE, &leapVec[0]);
 		
         glUseProgram(graphics3d_get_shader_program(0));
-		Entity::drawEntities();
-		Scoring::displayScore();
 		
-		GLuint modelMatrixLocation = glGetUniformLocation(graphics3d_get_shader_program(0), "VP"); // Get the location of our VP matrix in the shader  
+		Scoring::displayScore();
+		Entity::drawEntities();
+
+		GLuint modelMatrixLocation = glGetUniformLocation(graphics3d_get_shader_program(2), "VP"); // Get the location of our VP matrix in the shader  
 		glUniformMatrix4fv(modelMatrixLocation, 1, GL_FALSE, &VP[0][0]); // Send our VP matrix to the shader 
         glUseProgram(0);	
 

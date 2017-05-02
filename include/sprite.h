@@ -15,6 +15,8 @@ public:
 	unsigned char* image;
 	unsigned char* barTexture;
 	unsigned char* scoreTexture;
+	unsigned char* scoreGradient;
+
 	
 	int getTiming(int step);
 	void update();
