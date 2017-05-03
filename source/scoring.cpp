@@ -25,13 +25,18 @@ extern Leap::Listener listener;
 glm::mat4 Scoring::mat;
 glm::mat4 Scoring::firstDigitPos;
 glm::mat4 Scoring::secondDigitPos;
+glm::mat4 Scoring::firstHighPos;
+glm::mat4 Scoring::secondHighPos;
 Leap::Vector Scoring::leapVec;
 
 Sprite* Scoring::firstDigit;
 Sprite* Scoring::secondDigit;
+Sprite* Scoring::firstDigitScore;
+Sprite* Scoring::secondDigitScore;
+
+int Scoring::highScore;
 int Scoring::score;
-int f;
-int s;
+int f, s, hf, hs;
 
 int Scoring::gesture(Entity *e)
 {
@@ -86,15 +91,29 @@ void Scoring::setupScore()
 
 	firstDigitPos = glm::mat4(1.0f);
 	secondDigitPos = glm::mat4(1.0f);
-
 	firstDigitPos = glm::scale(firstDigitPos, glm::vec3(1.5f, 1.5f, 1.0f));
 	secondDigitPos = glm::scale(secondDigitPos, glm::vec3(1.5f, 1.5f, 1.0f));
-
 	firstDigitPos = glm::translate(firstDigitPos, glm::vec3(-0.1f, -0.1f, 0.0));
 	secondDigitPos = glm::translate(secondDigitPos, glm::vec3(0.00f, -0.1f, 0.0));
 
 	firstDigit-> setupScore();
 	secondDigit-> setupScore();
+}
+
+void Scoring::setupHighScore()
+{
+	firstDigitScore = new Sprite();
+	secondDigitScore = new Sprite();
+
+	firstHighPos = glm::mat4(1.0f);
+	secondHighPos = glm::mat4(1.0f);
+	firstHighPos = glm::scale(firstHighPos, glm::vec3(0.7f, 0.7f, 1.0f));
+	secondHighPos = glm::scale(secondHighPos, glm::vec3(0.7f, 0.7f, 1.0f));
+	firstHighPos = glm::translate(firstHighPos, glm::vec3(-0.1f, -0.4f, 0.0));
+	secondHighPos = glm::translate(secondHighPos, glm::vec3(0.00f, -0.4f, 0.0));
+
+	firstDigitScore-> setupScore();
+	secondDigitScore-> setupScore();
 }
 
 void Scoring::displayScore()
@@ -104,5 +123,42 @@ void Scoring::displayScore()
 
 	firstDigit->drawScore(firstDigitPos, f);
 	secondDigit->drawScore(secondDigitPos, s);	
-	//std::cout << f << "  " << s << std::endl;
 }
+
+void Scoring::displayHighScore()
+{
+	hf = highScore / 10;
+	hs = highScore - (hf * 10);
+
+	firstDigitScore->drawScore(firstHighPos, hf);
+	secondDigitScore->drawScore(secondHighPos, hs);
+}
+
+void Scoring::readScore()
+{
+	using namespace std;
+	ifstream file;
+	file.open("score.txt");
+	if (!file)
+	{
+		cout << "File load fail" << endl;
+		return;
+	}
+	file >> highScore;
+	cout << highScore << endl;
+	file.close();
+}
+
+void Scoring::writeScore()
+{
+	using namespace std;
+	fstream file;
+	//file.open("score.txt", std::ios_base::app);
+	file.open("score.txt", ios::out);
+	highScore = score;
+	file << highScore << endl;
+	cout << "Written to file" << endl;
+	file.close();
+
+}
+

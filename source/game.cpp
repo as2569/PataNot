@@ -201,7 +201,9 @@ int main(int argc, char *argv[])
 	Entity::reserve();
 	srand(time(NULL));
 	
+	Scoring::readScore();
 	Scoring::setupScore();
+	Scoring::setupHighScore();
 
     while (bGameLoopRunning)
     {
@@ -214,7 +216,7 @@ int main(int argc, char *argv[])
 		leapVals[1] = fabs(leapVec.y);
 		leapVals[2] = fabs(leapVec.z);
 
-		std::cout << leapVals[0] << std::endl;
+		//std::cout << leapVals[0] << std::endl;
 
 		//for (HandList::const_iterator hl = hands.begin(); hl != hands.end(); ++hl) //Not sure how iterator works
 		//{
@@ -235,6 +237,11 @@ int main(int argc, char *argv[])
 			if(evn.type == SDL_KEYDOWN && evn.key.keysym.sym == SDLK_x)
 			{
 				gamefunctions.playMusic();	
+			}
+			if(evn.type == SDL_KEYDOWN && evn.key.keysym.sym == SDLK_ESCAPE)
+			{
+				Scoring::writeScore();
+				//return 0;
 			}
         }
 
@@ -257,6 +264,7 @@ int main(int argc, char *argv[])
         glUseProgram(graphics3d_get_shader_program(0));
 		
 		Scoring::displayScore();
+		Scoring::displayHighScore();
 		Entity::drawEntities();
 
 		GLuint modelMatrixLocation = glGetUniformLocation(graphics3d_get_shader_program(2), "VP"); // Get the location of our VP matrix in the shader  
