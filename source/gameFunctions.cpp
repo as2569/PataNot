@@ -1,6 +1,7 @@
 #include <SDL_mixer.h>
 #include <SDL.h>
 #include <iostream>
+#include <Leap.h>
 #include "gameFunctions.h"
 
 void GameFunctions::deltaTime()
@@ -49,6 +50,7 @@ int GameFunctions::playMusic()
 		 return 1;
 	 }
 }
+
 
 
 

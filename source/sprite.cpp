@@ -38,7 +38,7 @@ void Sprite::setup()
 		spriteFrames[i].timing = 500;
 	}
 
-	image = SOIL_load_image("frametest.png", &width, &height, 0, SOIL_LOAD_RGB);
+	image = SOIL_load_image("arrow.png", &width, &height, 0, SOIL_LOAD_RGB);
 	
 
 	//Set up buffer

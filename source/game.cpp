@@ -34,6 +34,7 @@ GLuint digitGraduvs;
 
 glm::mat4 VP;
 Leap::Vector leapVec;
+Leap::Vector average;
 float leapVals[2];
 
 int bpm = 25;
@@ -207,16 +208,27 @@ int main(int argc, char *argv[])
 
     while (bGameLoopRunning)
     {
-		////Get hand position
 		using namespace Leap;
-		const Frame frame = controller.frame();
+		Frame frame = controller.frame();
 		HandList hands = frame.hands();
 		leapVec = hands.leftmost().palmNormal();
-		leapVals[0] = fabs(leapVec.x);
-		leapVals[1] = fabs(leapVec.y);
-		leapVals[2] = fabs(leapVec.z);
 
-		//std::cout << leapVals[0] << std::endl;
+		for( int i = 1; i < FRAME_SAMPLE_LENGTH; i++)
+		{
+			Frame frame = controller.frame(i);
+			HandList hands = frame.hands();
+			average += hands.leftmost().palmNormal();
+		}
+
+		average /= FRAME_SAMPLE_LENGTH;
+
+		leapVals[0] = fabs(average.x);
+		leapVals[1] = fabs(average.y);
+		leapVals[2] = fabs(average.z);
+
+		//leapVals[0] = fabs(leapVec.x);
+		//leapVals[1] = fabs(leapVec.y);
+		//leapVals[2] = fabs(leapVec.z);	
 
 		//for (HandList::const_iterator hl = hands.begin(); hl != hands.end(); ++hl) //Not sure how iterator works
 		//{
@@ -241,7 +253,7 @@ int main(int argc, char *argv[])
 			if(evn.type == SDL_KEYDOWN && evn.key.keysym.sym == SDLK_ESCAPE)
 			{
 				Scoring::writeScore();
-				//return 0;
+				return 0;
 			}
         }
 
