@@ -164,7 +164,7 @@ void Entity::animate()
 	if(timeRemaining <= 0)
 	{		
 		currentStep += 1;
-		if(currentStep == 4)
+		if(currentStep == NUM_ANIMATION_FRAMES)
 		{
 			currentStep = 0;
 		}

@@ -29,10 +29,10 @@ int Sprite::getTiming(int step)
 
 void Sprite::setup()
 {
-	size.x = 0.25f;
-	size.y = 1.0f;
+	size.x = 1 / NUM_ANIMATION_FRAMES;
+	size.y = 0.25f;
 
-	for(int i = 0; i < 4; i++)
+	for(int i = 0; i < NUM_ANIMATION_FRAMES; i++)
 	{
 		spriteFrames[i].index = i;
 		spriteFrames[i].timing = 500;
@@ -56,7 +56,7 @@ void Sprite::setup()
 }
 
 void Sprite::draw(glm::mat4 modelMatrix, int step){
-
+	int foo = 2;
 	float sprite[] = 
 	{
 			0.0f, 0.0f, 0.0f, 1.0f,
@@ -70,13 +70,21 @@ void Sprite::draw(glm::mat4 modelMatrix, int step){
 
 	float uvCoords[] =
 	{
-		(size.x * spriteFrames[step].index), size.y,
-		size.x * (spriteFrames[step].index + 1), size.y, 
-		(size.x * spriteFrames[step].index), 0.0f,
+		//(size.x * spriteFrames[step].index), size.y * foo,
+		//size.x * (spriteFrames[step].index + 1), size.y * foo, 
+		//(size.x * spriteFrames[step].index), 0.0f,
 
-		size.x * (spriteFrames[step].index + 1), size.y,
-		size.x * (spriteFrames[step].index + 1), 0.0f, 
-		(size.x * spriteFrames[step].index), 0.0f,
+		//size.x * (spriteFrames[step].index + 1), size.y * foo,
+		//size.x * (spriteFrames[step].index + 1), 0.0f, 
+		//(size.x * spriteFrames[step].index), 0.0f,
+
+		(size.x * spriteFrames[step].index), size.y + (size.y * foo),
+		size.x * (spriteFrames[step].index + 1), size.y + (size.y * foo), 
+		(size.x * spriteFrames[step].index), (size.y * foo),
+
+		size.x * (spriteFrames[step].index + 1), size.y + (size.y * foo),
+		size.x * (spriteFrames[step].index + 1), (size.y * foo), 
+		(size.x * spriteFrames[step].index), (size.y * foo),
 	};
 
 	GLuint model = glGetUniformLocation(graphics3d_get_shader_program(0), "model");
