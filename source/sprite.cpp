@@ -38,14 +38,14 @@ void Sprite::setup()
 		spriteFrames[i].timing = 500;
 	}
 
-	image = SOIL_load_image("arrow.png", &width, &height, 0, SOIL_LOAD_RGB);
-	
+	image = SOIL_load_image("arrowVomit.png", &width, &height, 0, SOIL_LOAD_RGBA);
 
 	//Set up buffer
 	glGenTextures(1, &tex);
 	glActiveTexture(0);
+
 	glBindTexture(GL_TEXTURE_2D, tex);
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, image);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
@@ -55,8 +55,8 @@ void Sprite::setup()
 	SOIL_free_image_data(image);
 }
 
-void Sprite::draw(glm::mat4 modelMatrix, int step){
-	int foo = 2;
+void Sprite::draw(glm::mat4 modelMatrix, int step, int sym){
+
 	float sprite[] = 
 	{
 			0.0f, 0.0f, 0.0f, 1.0f,
@@ -78,17 +78,20 @@ void Sprite::draw(glm::mat4 modelMatrix, int step){
 		//size.x * (spriteFrames[step].index + 1), 0.0f, 
 		//(size.x * spriteFrames[step].index), 0.0f,
 
-		(size.x * spriteFrames[step].index), size.y + (size.y * foo),
-		size.x * (spriteFrames[step].index + 1), size.y + (size.y * foo), 
-		(size.x * spriteFrames[step].index), (size.y * foo),
+		(size.x * spriteFrames[step].index), size.y + (size.y * sym),
+		size.x * (spriteFrames[step].index + 1), size.y + (size.y * sym), 
+		(size.x * spriteFrames[step].index), (size.y * sym),
 
-		size.x * (spriteFrames[step].index + 1), size.y + (size.y * foo),
-		size.x * (spriteFrames[step].index + 1), (size.y * foo), 
-		(size.x * spriteFrames[step].index), (size.y * foo),
+		size.x * (spriteFrames[step].index + 1), size.y + (size.y * sym),
+		size.x * (spriteFrames[step].index + 1), (size.y * sym), 
+		(size.x * spriteFrames[step].index), (size.y * sym),
 	};
 
 	GLuint model = glGetUniformLocation(graphics3d_get_shader_program(0), "model");
 	glUniformMatrix4fv(model, 1, GL_FALSE, &modelMatrix[0][0]);
+
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 	glEnableVertexAttribArray(0); 
 	glBindBuffer(GL_ARRAY_BUFFER, vbo); 

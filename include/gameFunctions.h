@@ -1,6 +1,6 @@
 #ifndef _GAMEFUNCTIONS_H_
 #define _GAMEFUNCTIONS_H_
-#define FRAME_SAMPLE_LENGTH 25
+#define FRAME_SAMPLE_LENGTH 50
 
 class GameFunctions
 {

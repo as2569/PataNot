@@ -110,16 +110,17 @@ glm::mat4 Entity::getMatrix()
 
 void Entity::spawnPos()
 {
+	symbol = rand() % 3;
 	pos = rand() % 2;
-	//std::cout << pos << std::endl; //console position and rotation
+	//std::cout << pos << symbol << std::endl; 
 
-	if(pos == 1)
+	if(pos == 0)
 	{
 		posVec = glm::vec3(0.55f, -0.8f, 0.0f);
 		modelMatrix = glm::translate(modelMatrix, posVec);
 	}
 
-	if(pos == 0)
+	if(pos == 1)
 	{
 		posVec = glm::vec3(-0.8f, -0.8f, 0.0f);
 		modelMatrix = glm::translate(modelMatrix, posVec);
@@ -155,7 +156,7 @@ void Entity::update()
 
 void Entity::draw()
 {
-	sprite->draw(modelMatrix, getStep());
+	sprite->draw(modelMatrix, getStep(), symbol);
 }
 
 void Entity::animate()

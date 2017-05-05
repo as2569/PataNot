@@ -22,7 +22,7 @@ public:
 	int getTiming(int step);
 	void update();
 	void setup();
-	void draw(glm::mat4, int step);
+	void draw(glm::mat4, int step, int sym);
 	void setupBar();
 	void barDraw(glm::mat4);
 	void setupScore();

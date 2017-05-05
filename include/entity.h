@@ -18,7 +18,8 @@ public:
 	static float thisBeat;
 	static float timing;
 	static float currentTime;
-	int pos; //0 for left, 1 for right
+	int pos; //1 for left, 0 for right
+	int symbol; //0 for up, 1 for right, 2 for left
 
 	glm::mat4 getMatrix(); 
 	int getStep();

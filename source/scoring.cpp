@@ -45,21 +45,40 @@ int Scoring::gesture(Entity *e)
 	const Frame frame = controller.frame();
 	HandList hands = frame.hands();
 	int pos = e->pos;
+	int sym = e->symbol;
 
 	for (HandList::const_iterator hl = hands.begin(); hl != hands.end(); ++hl) //Not sure how iterator works
 	{
 		const Hand hand = *hl;
-		//const Vector normal = hand.palmNormal();
-		//const Vector direction = hand.direction();
-		
+
 		//Is hand left or right?
 		std::string handType = hand.isLeft() ? "Left" : "Right";
 		
 		//Print states
 		//std::cout << handType <<" "<< pos << std::endl;
 		//std::cout << hand.direction() << std::endl;
+		
+		if(hand.isLeft() && e->pos == 1)
+		{
+			
+			if((hand.direction().yaw() > -0.2) && (hand.direction().yaw() < 0.2))
+			{
+				std::cout << "leftup" << hand.direction() <<std::endl;
+				return 1;
+			}
+		}
+
+		if(hand.isRight() && e->pos == 0)
+		{
+			
+			if((hand.direction().yaw() > -0.2) && (hand.direction().yaw() < 0.2))
+			{
+				std::cout << "rightup" << hand.direction().yaw() <<std::endl;
+				return 1;
+			}
+		}
     }
-	return 1;
+	return 0;
 }
 
 void Scoring::checkEnt(Entity *e)
@@ -67,12 +86,15 @@ void Scoring::checkEnt(Entity *e)
 	mat = e->getMatrix();
 	float f = mat[3][1];
 	if((f < 0.28f && f > 0.26f) && e->inUse)
+	//if((f < 0.12f && f > 0.10f) && e->inUse)
 	{
-		gesture(e);
-		//somecode to check if leap motion works
-		e->freeEntity(e);
-		score++;
-		displayScore();
+		if(gesture(e))
+		{
+			//somecode to check if leap motion works
+			e->freeEntity(e);
+			score++;
+			displayScore();
+		}
 	}
 }
 
@@ -153,7 +175,6 @@ void Scoring::writeScore()
 {
 	using namespace std;
 	fstream file;
-	//file.open("score.txt", std::ios_base::app);
 	file.open("score.txt", ios::out);
 	highScore = score;
 	file << highScore << endl;
