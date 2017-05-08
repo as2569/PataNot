@@ -33,6 +33,8 @@ GLuint digitGradTex;
 GLuint digitGraduvs;
 
 glm::mat4 VP;
+glm::mat4 barMat;
+glm::vec3 barVec;
 Leap::Vector leapVec;
 Leap::Vector average;
 float leapVals[2];
@@ -193,21 +195,27 @@ int main(int argc, char *argv[])
 
 	SDL_Init(SDL_INIT_EVERYTHING);
 	
-	//use 32075 for njit shanty
+	//0 for barbie, 1 for njit shanty, 2 for njit 
 	if( Mix_OpenAudio( 32075, MIX_DEFAULT_FORMAT, 2, 1024 ) == -1 )
     {
         std::cout << "AudioFail" << std::endl;    
     }
 
-
 	Mix_Init(MIX_INIT_MP3);
-	gamefunctions.loadSong(2);
+	gamefunctions.loadSong(1);
 	Entity::reserve();
 	srand(time(NULL));
 	
 	Scoring::readScore();
 	Scoring::setupScore();
 	Scoring::setupHighScore();
+
+	barVec = glm::vec3(-0.47f, 0.27f, 0.0f);
+	barMat = glm::mat4(1.0f);
+	barMat = glm::translate(barMat, barVec);
+
+	Sprite bar = Sprite();
+	bar.setupBar();
 
     while (bGameLoopRunning)
     {
@@ -283,23 +291,18 @@ int main(int argc, char *argv[])
 //		std::cout << "V gesture formed " << controller.frame().timestamp() << std::endl;
 //	}
 //}
-		
-
-
-
+	
 		glClearColor(leapVals[0],leapVals[1],leapVals[2],1.0); //background color
         //glClearColor(0.6,0.3,0.5,1.0); //background color
         glClear(GL_COLOR_BUFFER_BIT);
-		
-		//glUseProgram(graphics3d_get_shader_program(1));
-		//GLuint leapVectorLocation = glGetUniformLocation(graphics3d_get_shader_program(1), "leapVec");
-		//glUniform3fv(leapVectorLocation, 1, GL_FALSE, &leapVec[0]);
+	
 		
         glUseProgram(graphics3d_get_shader_program(0));
 		
 		Scoring::displayScore();
 		Scoring::displayHighScore();
 		Entity::drawEntities();
+		bar.barDraw(barMat);
 
 		GLuint modelMatrixLocation = glGetUniformLocation(graphics3d_get_shader_program(2), "VP"); // Get the location of our VP matrix in the shader  
 		glUniformMatrix4fv(modelMatrixLocation, 1, GL_FALSE, &VP[0][0]); // Send our VP matrix to the shader 

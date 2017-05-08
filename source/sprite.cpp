@@ -123,12 +123,12 @@ void Sprite::setupBar()
 		spriteFrames[i].timing = 1;
 	}
 
-	barTexture = SOIL_load_image("digits.png", &width, &height, 0, SOIL_LOAD_RGB);
+	barTexture = SOIL_load_image("barNew.png", &width, &height, 0, SOIL_LOAD_RGBA);
 
 	//Set up buffer
 	glGenTextures(1, &barTex);
 	glBindTexture(GL_TEXTURE_2D, barTex);
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, barTexture);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, barTexture);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
@@ -145,11 +145,11 @@ void Sprite::barDraw(glm::mat4 modelMatrix){
 	float sprite[] = 
 	{
 			0.0f, 0.0f, 0.0f, 1.0f,
-			0.25f, 0.0f, 0.0f, 1.0f,
+			1.0f, 0.0f, 0.0f, 1.0f,
 			0.0f, 0.25f, 0.0f, 1.0f, 
 
-			0.25f, 0.0f, 0.0f, 1.0f,
-			0.25f, 0.25f, 0.0f, 1.0f,
+			1.0f, 0.0f, 0.0f, 1.0f,
+			1.0f, 0.25f, 0.0f, 1.0f,
 			0.0f, 0.25f, 0.0f, 1.0f,
 	};
 
@@ -167,6 +167,9 @@ void Sprite::barDraw(glm::mat4 modelMatrix){
 	GLuint model = glGetUniformLocation(graphics3d_get_shader_program(0), "model");
 	glUniformMatrix4fv(model, 1, GL_FALSE, &modelMatrix[0][0]);
 
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
 	glEnableVertexAttribArray(0); 
 	glBindBuffer(GL_ARRAY_BUFFER, bar); 
 	glBufferData(GL_ARRAY_BUFFER, sizeof(sprite), sprite, GL_STATIC_DRAW);
@@ -176,7 +179,8 @@ void Sprite::barDraw(glm::mat4 modelMatrix){
 	glBindBuffer(GL_ARRAY_BUFFER, baruvs); 
 	glBufferData(GL_ARRAY_BUFFER, sizeof(uvCoords), uvCoords, GL_STATIC_DRAW);
 	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
-	glBindTexture(GL_TEXTURE_2D, tex);
+
+	glBindTexture(GL_TEXTURE_2D, barTex);
 	glDrawArrays(GL_TRIANGLES, 0, 6);
 	glBindBuffer(GL_ARRAY_BUFFER, 0);
 	glDisableVertexAttribArray(0);

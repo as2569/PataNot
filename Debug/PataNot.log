@@ -1,4 +1,4 @@
-﻿Build started 5/8/2017 3:46:27 PM.
+﻿Build started 5/8/2017 5:29:43 PM.
 Environment at start of build:
 ACPath = C:\Program Files (x86)\Lenovo\Access Connections\
 adb = C:\Users\Adam\AppData\Local\Android\sdk\platform-tools
@@ -59,8 +59,8 @@ windir = C:\Windows
 windows_tracing_flags = 3
 windows_tracing_logfile = C:\BVTBin\Tests\installpackage\csilogfile.log
 
-15:46:27.353     1>Project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" on node 2 (Build target(s)).
-15:46:27.353     1>Initial Properties:
+17:29:43.458     1>Project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" on node 2 (Build target(s)).
+17:29:43.458     1>Initial Properties:
                    _AfterCompileWinFXInternalDependsOn = 
                            PrepareResourcesForSatelliteAssemblies;
                            MergeLocalizationDirectives;
@@ -1013,8 +1013,8 @@ windows_tracing_logfile = C:\BVTBin\Tests\installpackage\csilogfile.log
                    XamlTemporaryAssemblyName = PataNot
                    YieldDuringToolExecution = true
 
-15:46:27.354     1>Building with tools version "4.0".
-15:46:27.354     1>Target "_CheckForInvalidConfigurationAndPlatform: (TargetId:2)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (entry point):
+17:29:43.458     1>Building with tools version "4.0".
+17:29:43.458     1>Target "_CheckForInvalidConfigurationAndPlatform: (TargetId:2)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (entry point):
                    Task "Error" skipped, due to false condition; ( '$(_InvalidConfigurationError)' == 'true' ) was evaluated as ( '' == 'true' ).
                    Task "Warning" skipped, due to false condition; ( '$(_InvalidConfigurationWarning)' == 'true' ) was evaluated as ( '' == 'true' ).
                    Using "Message" task from assembly "Microsoft.Build.Tasks.v4.0, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
@@ -1031,17 +1031,17 @@ windows_tracing_logfile = C:\BVTBin\Tests\installpackage\csilogfile.log
                    Task "Error" skipped, due to false condition; ('$(OutDir)' != '' and !HasTrailingSlash('$(OutDir)')) was evaluated as ('C:\Users\Adam\Documents\PataNot\' != '' and !HasTrailingSlash('C:\Users\Adam\Documents\PataNot\')).
                    Task "Error" skipped, due to false condition; ('$(BaseIntermediateOutputPath)' != '' and !HasTrailingSlash('$(BaseIntermediateOutputPath)')) was evaluated as ('obj\' != '' and !HasTrailingSlash('obj\')).
                    Task "Error" skipped, due to false condition; ('$(IntermediateOutputPath)' != '' and !HasTrailingSlash('$(IntermediateOutputPath)')) was evaluated as ('Debug\' != '' and !HasTrailingSlash('Debug\')).
-15:46:27.357     1>Done building target "_CheckForInvalidConfigurationAndPlatform" in project "PataNot.vcxproj".: (TargetId:2)
-15:46:27.358     1>Target "_PrepareForBuild: (TargetId:3)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.BuildSteps.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "Build" depends on it):
+17:29:43.462     1>Done building target "_CheckForInvalidConfigurationAndPlatform" in project "PataNot.vcxproj".: (TargetId:2)
+17:29:43.462     1>Target "_PrepareForBuild: (TargetId:3)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.BuildSteps.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "Build" depends on it):
                    Task "CreateItem" skipped, due to false condition; ('%(CustomBuild.IncludeFileToTool)'!='') was evaluated as (''!='').
-15:46:27.358     1>Done building target "_PrepareForBuild" in project "PataNot.vcxproj".: (TargetId:3)
-15:46:27.358     1>Target "_PrepareForReferenceResolution: (TargetId:4)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "ResolveReferences" depends on it):
+17:29:43.462     1>Done building target "_PrepareForBuild" in project "PataNot.vcxproj".: (TargetId:3)
+17:29:43.462     1>Target "_PrepareForReferenceResolution: (TargetId:4)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "ResolveReferences" depends on it):
                    Task "Message" skipped, due to false condition; ('$(_REFERENCE_DEBUG)'=='true') was evaluated as (''=='true').
-15:46:27.358     1>Done building target "_PrepareForReferenceResolution" in project "PataNot.vcxproj".: (TargetId:4)
+17:29:43.462     1>Done building target "_PrepareForReferenceResolution" in project "PataNot.vcxproj".: (TargetId:4)
                    Target "ComputeCrtSDKReference" skipped, due to false condition; ('@(ClCompile)'!='' and '$(WindowsAppContainer)'=='true' and '$(UseCrtSDKReference)' != 'false') was evaluated as ('source\entity.cpp;source\gameFunctions.cpp;source\game.cpp;source\graphics3d.cpp;source\interface.cpp;source\scoring.cpp;source\shader.cpp;source\simple_logger.cpp;source\sprite.cpp'!='' and 'false'=='true' and '' != 'false').
-15:46:27.358     1>Target "BeforeResolveReferences: (TargetId:5)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "ResolveReferences" depends on it):
-15:46:27.358     1>Done building target "BeforeResolveReferences" in project "PataNot.vcxproj".: (TargetId:5)
-15:46:27.358     1>Target "AssignProjectConfiguration: (TargetId:6)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "ResolveReferences" depends on it):
+17:29:43.462     1>Target "BeforeResolveReferences: (TargetId:5)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "ResolveReferences" depends on it):
+17:29:43.462     1>Done building target "BeforeResolveReferences" in project "PataNot.vcxproj".: (TargetId:5)
+17:29:43.462     1>Target "AssignProjectConfiguration: (TargetId:6)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "ResolveReferences" depends on it):
                    Using "AssignProjectConfiguration" task from assembly "Microsoft.Build.Tasks.v4.0, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
                    Task "AssignProjectConfiguration" (TaskId:4)
                      Task Parameter:CurrentProject=C:\Users\Adam\Documents\PataNot\PataNot.vcxproj (TaskId:4)
@@ -1055,28 +1055,28 @@ windows_tracing_logfile = C:\BVTBin\Tests\installpackage\csilogfile.log
                      Task Parameter:OnlyReferenceAndBuildProjectsEnabledInSolutionConfiguration=True (TaskId:4)
                      Task Parameter:ShouldUnsetParentConfigurationAndPlatform=True (TaskId:4)
                    Done executing task "AssignProjectConfiguration". (TaskId:4)
-15:46:27.359     1>Done building target "AssignProjectConfiguration" in project "PataNot.vcxproj".: (TargetId:6)
+17:29:43.463     1>Done building target "AssignProjectConfiguration" in project "PataNot.vcxproj".: (TargetId:6)
                    Target "AssignProjectConfiguration" skipped. Previously built successfully.
-15:46:27.359     1>Target "_SplitProjectReferencesByFileExistence: (TargetId:7)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "ResolveProjectReferences" depends on it):
+17:29:43.463     1>Target "_SplitProjectReferencesByFileExistence: (TargetId:7)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "ResolveProjectReferences" depends on it):
                    Task "ResolveNonMSBuildProjectOutput" skipped, due to false condition; ('$(BuildingInsideVisualStudio)'=='true' and '@(ProjectReferenceWithConfiguration)'!='') was evaluated as ('true'=='true' and ''!='').
-15:46:27.359     1>Done building target "_SplitProjectReferencesByFileExistence" in project "PataNot.vcxproj".: (TargetId:7)
+17:29:43.463     1>Done building target "_SplitProjectReferencesByFileExistence" in project "PataNot.vcxproj".: (TargetId:7)
                    Target "_RemoveNameMetadataFromProjectReferenceItems" skipped, due to false condition; ('@(ProjectReference)'!='') was evaluated as (''!='').
-15:46:27.359     1>Target "ResolveProjectReferences: (TargetId:8)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "ResolveReferences" depends on it):
+17:29:43.463     1>Target "ResolveProjectReferences: (TargetId:8)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "ResolveReferences" depends on it):
                    Task "MSBuild" skipped, due to false condition; ('%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and ('$(BuildingInsideVisualStudio)' == 'true' or '$(BuildProjectReferences)' != 'true') and '$(VisualStudioVersion)' != '10.0' and '@(_MSBuildProjectReferenceExistent)' != '') was evaluated as ('' == 'true' and '' != '' and ('true' == 'true' or 'true' != 'true') and '11.0' != '10.0' and '' != '').
                    Task "MSBuild" skipped, due to false condition; ('%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and ('$(BuildingInsideVisualStudio)' == 'true' or '$(BuildProjectReferences)' != 'true') and '$(VisualStudioVersion)' == '10.0' and '@(_MSBuildProjectReferenceExistent)' != '') was evaluated as ('' == 'true' and '' != '' and ('true' == 'true' or 'true' != 'true') and '11.0' == '10.0' and '' != '').
                    Task "MSBuild" skipped, due to false condition; ('%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and '$(BuildingInsideVisualStudio)' != 'true' and '$(BuildProjectReferences)' == 'true' and '@(_MSBuildProjectReferenceExistent)' != '') was evaluated as ('' == 'true' and '' != '' and 'true' != 'true' and 'true' == 'true' and '' != '').
                    Task "MSBuild" skipped, due to false condition; ('%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and '$(BuildingProject)' == 'true' and '@(_MSBuildProjectReferenceExistent)' != '') was evaluated as ('' == 'true' and '' != '' and 'true' == 'true' and '' != '').
                    Task "Warning" skipped, due to false condition; ('@(ProjectReferenceWithConfiguration)' != '' and '@(_MSBuildProjectReferenceNonexistent)' != '') was evaluated as ('' != '' and '' != '').
-15:46:27.360     1>Done building target "ResolveProjectReferences" in project "PataNot.vcxproj".: (TargetId:8)
+17:29:43.464     1>Done building target "ResolveProjectReferences" in project "PataNot.vcxproj".: (TargetId:8)
                    Target "ResolveNativeReferences" skipped, due to false condition; ('@(NativeReference)'!='') was evaluated as (''!='').
                    Target "_PrepareForReferenceResolution" skipped. Previously built successfully.
-15:46:27.360     1>Target "GetFrameworkPaths: (TargetId:9)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.NETFramework.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "ResolveAssemblyReferences" depends on it):
-15:46:27.360     1>Done building target "GetFrameworkPaths" in project "PataNot.vcxproj".: (TargetId:9)
+17:29:43.464     1>Target "GetFrameworkPaths: (TargetId:9)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.NETFramework.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "ResolveAssemblyReferences" depends on it):
+17:29:43.464     1>Done building target "GetFrameworkPaths" in project "PataNot.vcxproj".: (TargetId:9)
                    Target "GetWinFXPath" skipped, due to false condition; (('@(Page)' != '' or '@(ApplicationDefinition)' != '' or '@(Resource)' != '') and ('$(GetWinFXNativePath)' != '' or '$(GetWinFXWoWPath)' != '' )) was evaluated as (('' != '' or '' != '' or '' != '') and ('' != '' or '' != '' )).
-15:46:27.360     1>Target "GetReferenceAssemblyPaths: (TargetId:10)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "ResolveAssemblyReferences" depends on it):
+17:29:43.464     1>Target "GetReferenceAssemblyPaths: (TargetId:10)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "ResolveAssemblyReferences" depends on it):
                    Task "GetReferenceAssemblyPaths" skipped, due to false condition; ('$(TargetFrameworkMoniker)' != '' and ('$(_TargetFrameworkDirectories)' == '' or '$(_FullFrameworkReferenceAssemblyPaths)' == '')) was evaluated as ('' != '' and ('C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0' == '' or 'C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0' == '')).
-15:46:27.361     1>Done building target "GetReferenceAssemblyPaths" in project "PataNot.vcxproj".: (TargetId:10)
-15:46:27.361     1>Target "SetBuildDefaultEnvironmentVariables: (TargetId:11)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.Cpp.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "PrepareForBuild" depends on it):
+17:29:43.465     1>Done building target "GetReferenceAssemblyPaths" in project "PataNot.vcxproj".: (TargetId:10)
+17:29:43.465     1>Target "SetBuildDefaultEnvironmentVariables: (TargetId:11)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.Cpp.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "PrepareForBuild" depends on it):
                    Using "SetEnv" task from assembly "Microsoft.Build.CppTasks.Common.v110, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
                    Task "SetEnv" (TaskId:5)
                      Task Parameter:Name=PATH (TaskId:5)
@@ -1103,19 +1103,19 @@ windows_tracing_logfile = C:\BVTBin\Tests\installpackage\csilogfile.log
                      Task Parameter:Prefix=False (TaskId:8)
                      INCLUDE=C:\Libraries\SDL2_mixer-2.0.1\include;C:\Libraries\Simple OpenGL Image Library\src;C:\Libraries\SDL2_image-2.0.1\include;C:\Libraries\glm-0.9.8.4;C:\Users\Adam\Documents\PataNot\include;C:\Libraries\SDL2-2.0.5\include;C:\Libraries\LeapSDK\include;C:\Libraries\glew-2.0.0\include;C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include;C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\atlmfc\include;C:\Program Files (x86)\Windows Kits\8.0\Include\um;C:\Program Files (x86)\Windows Kits\8.0\Include\shared;C:\Program Files (x86)\Windows Kits\8.0\Include\winrt;; (TaskId:8)
                    Done executing task "SetEnv". (TaskId:8)
-15:46:27.362     1>Done building target "SetBuildDefaultEnvironmentVariables" in project "PataNot.vcxproj".: (TargetId:11)
+17:29:43.467     1>Done building target "SetBuildDefaultEnvironmentVariables" in project "PataNot.vcxproj".: (TargetId:11)
                    Target "SetUserMacroEnvironmentVariables" skipped, due to false condition; ('@(BuildMacro)' != '') was evaluated as ('' != '').
-15:46:27.362     1>Target "GetResolvedWinMD: (TargetId:12)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "PrepareForBuild" depends on it):
-15:46:27.363     1>Done building target "GetResolvedWinMD" in project "PataNot.vcxproj".: (TargetId:12)
-15:46:27.363     1>Target "PlatformPrepareForBuild: (TargetId:13)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.Cpp.Platform.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "PrepareForBuild" depends on it):
+17:29:43.467     1>Target "GetResolvedWinMD: (TargetId:12)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "PrepareForBuild" depends on it):
+17:29:43.467     1>Done building target "GetResolvedWinMD" in project "PataNot.vcxproj".: (TargetId:12)
+17:29:43.467     1>Target "PlatformPrepareForBuild: (TargetId:13)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.Cpp.Platform.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "PrepareForBuild" depends on it):
                    Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(ConfigurationPlatformExists)' != 'true') was evaluated as (''!='true' and 'true' != 'true').
                    Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(ToolsetTargetsFound)' != 'true' and '$(PlatformToolset)' == 'v100') was evaluated as (''!='true' and 'true' != 'true' and 'v110' == 'v100').
                    Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(ToolsetTargetsFound)' != 'true' and '$(PlatformToolset)' == 'v90') was evaluated as (''!='true' and 'true' != 'true' and 'v110' == 'v90').
                    Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(ToolsetTargetsFound)' != 'true' and '$(PlatformToolset)' != 'v90' and '$(PlatformToolset)' != 'v100') was evaluated as (''!='true' and 'true' != 'true' and 'v110' != 'v90' and 'v110' != 'v100').
-15:46:27.363     1>Done building target "PlatformPrepareForBuild" in project "PataNot.vcxproj".: (TargetId:13)
+17:29:43.467     1>Done building target "PlatformPrepareForBuild" in project "PataNot.vcxproj".: (TargetId:13)
                    Target "GetFrameworkPaths" skipped. Previously built successfully.
                    Target "GetReferenceAssemblyPaths" skipped. Previously built successfully.
-15:46:27.363     1>Target "PrepareForBuild: (TargetId:14)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "ResolveAssemblyReferences" depends on it):
+17:29:43.467     1>Target "PrepareForBuild: (TargetId:14)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "ResolveAssemblyReferences" depends on it):
                    Task "VCMessage" skipped, due to false condition; ('$(DesignTimeBuild)'!='true' and '$(ConfigurationPlatformExists)' != 'true') was evaluated as (''!='true' and 'true' != 'true').
                    Using "MakeDir" task from assembly "Microsoft.Build.Tasks.v4.0, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
                    Task "MakeDir" (TaskId:9)
@@ -1136,32 +1136,32 @@ windows_tracing_logfile = C:\BVTBin\Tests\installpackage\csilogfile.log
                              C:\Users\Adam\Documents\PataNot\
                              Debug\ (TaskId:10)
                    Done executing task "MakeDir". (TaskId:10)
-15:46:27.364     1>Done building target "PrepareForBuild" in project "PataNot.vcxproj".: (TargetId:14)
+17:29:43.469     1>Done building target "PrepareForBuild" in project "PataNot.vcxproj".: (TargetId:14)
                    Target "_PrepareForReferenceResolution" skipped. Previously built successfully.
                    Target "ComputeCrtSDKReference" skipped, due to false condition; ('@(ClCompile)'!='' and '$(WindowsAppContainer)'=='true' and '$(UseCrtSDKReference)' != 'false') was evaluated as ('source\entity.cpp;source\gameFunctions.cpp;source\game.cpp;source\graphics3d.cpp;source\interface.cpp;source\scoring.cpp;source\shader.cpp;source\simple_logger.cpp;source\sprite.cpp'!='' and 'false'=='true' and '' != 'false').
-15:46:27.364     1>Target "GetInstalledSDKLocations: (TargetId:15)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "ResolveSDKReferences" depends on it):
+17:29:43.469     1>Target "GetInstalledSDKLocations: (TargetId:15)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "ResolveSDKReferences" depends on it):
                    Task "GetInstalledSDKLocations" skipped, due to false condition; ('@(SDKReference)' != '') was evaluated as ('' != '').
-15:46:27.364     1>Done building target "GetInstalledSDKLocations" in project "PataNot.vcxproj".: (TargetId:15)
-15:46:27.364     1>Target "ResolveSDKReferences: (TargetId:16)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "ResolveAssemblyReferences" depends on it):
+17:29:43.469     1>Done building target "GetInstalledSDKLocations" in project "PataNot.vcxproj".: (TargetId:15)
+17:29:43.469     1>Target "ResolveSDKReferences: (TargetId:16)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "ResolveAssemblyReferences" depends on it):
                    Task "ResolveSDKReference" skipped, due to false condition; ('@(SDKReference)'!='') was evaluated as (''!='').
-15:46:27.364     1>Done building target "ResolveSDKReferences" in project "PataNot.vcxproj".: (TargetId:16)
+17:29:43.469     1>Done building target "ResolveSDKReferences" in project "PataNot.vcxproj".: (TargetId:16)
                    Target "ResolveSDKReferences" skipped. Previously built successfully.
-15:46:27.364     1>Target "ExpandSDKReferences: (TargetId:17)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "ResolveAssemblyReferences" depends on it):
+17:29:43.469     1>Target "ExpandSDKReferences: (TargetId:17)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "ResolveAssemblyReferences" depends on it):
                    Task "GetSDKReferenceFiles" skipped, due to false condition; ('@(ResolvedSDKReference)'!='') was evaluated as (''!='').
-15:46:27.364     1>Done building target "ExpandSDKReferences" in project "PataNot.vcxproj".: (TargetId:17)
-15:46:27.364     1>Target "ResolveAssemblyReferences: (TargetId:18)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "ResolveReferences" depends on it):
+17:29:43.469     1>Done building target "ExpandSDKReferences" in project "PataNot.vcxproj".: (TargetId:17)
+17:29:43.469     1>Target "ResolveAssemblyReferences: (TargetId:18)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "ResolveReferences" depends on it):
                    Task "ResolveAssemblyReference" skipped, due to false condition; ('@(Reference)'!='' or '@(_ResolvedProjectReferencePaths)'!='' or '@(_ExplicitReference)' != '') was evaluated as (''!='' or ''!='' or '' != '').
-15:46:27.364     1>Done building target "ResolveAssemblyReferences" in project "PataNot.vcxproj".: (TargetId:18)
+17:29:43.469     1>Done building target "ResolveAssemblyReferences" in project "PataNot.vcxproj".: (TargetId:18)
                    Target "ResolveComReferences" skipped, due to false condition; ('@(COMReference)'!='' or '@(COMFileReference)'!='') was evaluated as (''!='' or ''!='').
-15:46:27.364     1>Target "AfterResolveReferences: (TargetId:19)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "ResolveReferences" depends on it):
-15:46:27.364     1>Done building target "AfterResolveReferences" in project "PataNot.vcxproj".: (TargetId:19)
+17:29:43.470     1>Target "AfterResolveReferences: (TargetId:19)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "ResolveReferences" depends on it):
+17:29:43.470     1>Done building target "AfterResolveReferences" in project "PataNot.vcxproj".: (TargetId:19)
                    Target "ImplicitlyExpandDesignTimeFacades" skipped, due to false condition; ('$(ImplicitlyExpandDesignTimeFacades)' == 'true') was evaluated as ('' == 'true').
                    Target "ResolveTestReferences" skipped, due to false condition; ('@(Shadow)'!='') was evaluated as (''!='').
-15:46:27.364     1>Target "ResolveReferences: (TargetId:20)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "Build" depends on it):
-15:46:27.365     1>Done building target "ResolveReferences" in project "PataNot.vcxproj".: (TargetId:20)
+17:29:43.470     1>Target "ResolveReferences: (TargetId:20)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "Build" depends on it):
+17:29:43.470     1>Done building target "ResolveReferences" in project "PataNot.vcxproj".: (TargetId:20)
                    Target "PrepareForBuild" skipped. Previously built successfully.
                    Target "PrepareForBuild" skipped. Previously built successfully.
-15:46:27.365     1>Target "InitializeBuildStatus: (TargetId:21)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "Build" depends on it):
+17:29:43.470     1>Target "InitializeBuildStatus: (TargetId:21)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "Build" depends on it):
                    Using "ReadLinesFromFile" task from assembly "Microsoft.Build.Tasks.v4.0, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
                    Task "ReadLinesFromFile" (TaskId:11)
                      Task Parameter:File=Debug\PataNot.lastbuildstate (TaskId:11)
@@ -1181,64 +1181,64 @@ windows_tracing_logfile = C:\BVTBin\Tests\installpackage\csilogfile.log
                      Task Parameter:Files=Debug\PataNot.unsuccessfulbuild (TaskId:13)
                      Creating "Debug\PataNot.unsuccessfulbuild" because "AlwaysCreate" was specified. (TaskId:13)
                    Done executing task "Touch". (TaskId:13)
-15:46:27.369     1>Done building target "InitializeBuildStatus" in project "PataNot.vcxproj".: (TargetId:21)
+17:29:43.473     1>Done building target "InitializeBuildStatus" in project "PataNot.vcxproj".: (TargetId:21)
                    Target "AssignProjectConfiguration" skipped. Previously built successfully.
                    Target "_SplitProjectReferencesByFileExistence" skipped. Previously built successfully.
-15:46:27.369     1>Target "BuildGenerateSourcesTraverse: (TargetId:22)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "BuildGenerateSources" depends on it):
+17:29:43.473     1>Target "BuildGenerateSourcesTraverse: (TargetId:22)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "BuildGenerateSources" depends on it):
                    Task "MSBuild" skipped, due to false condition; ('$(BuildPassReferences)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and '@(_MSBuildProjectReferenceExistent)' != '' and '%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true') was evaluated as ('' == 'true' and '' != '' and '' != '' and '' == 'true').
-15:46:27.370     1>Done building target "BuildGenerateSourcesTraverse" in project "PataNot.vcxproj".: (TargetId:22)
+17:29:43.473     1>Done building target "BuildGenerateSourcesTraverse" in project "PataNot.vcxproj".: (TargetId:22)
                    Target "PrepareForBuild" skipped. Previously built successfully.
                    Target "ResolveReferences" skipped. Previously built successfully.
-15:46:27.370     1>Target "BeforeBuildGenerateSources: (TargetId:23)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.BuildSteps.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
-15:46:27.370     1>Done building target "BeforeBuildGenerateSources" in project "PataNot.vcxproj".: (TargetId:23)
-15:46:27.370     1>Target "PreBuildEvent: (TargetId:24)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppCommon.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+17:29:43.473     1>Target "BeforeBuildGenerateSources: (TargetId:23)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.BuildSteps.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+17:29:43.473     1>Done building target "BeforeBuildGenerateSources" in project "PataNot.vcxproj".: (TargetId:23)
+17:29:43.473     1>Target "PreBuildEvent: (TargetId:24)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppCommon.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
                    Task "Message" skipped, due to false condition; ('%(PreBuildEvent.Message)' != '' and '%(PreBuildEvent.Command)' != '') was evaluated as ('' != '' and '' != '').
                    Task "Exec" skipped, due to false condition; ('%(PreBuildEvent.Command)' != '') was evaluated as ('' != '').
-15:46:27.370     1>Done building target "PreBuildEvent" in project "PataNot.vcxproj".: (TargetId:24)
+17:29:43.473     1>Done building target "PreBuildEvent" in project "PataNot.vcxproj".: (TargetId:24)
                    Target "CustomBuild" skipped, due to false condition; ('@(CustomBuild)' != '') was evaluated as ('' != '').
                    Target "FxCompile" skipped, due to false condition; ('@(FxCompile)' != '') was evaluated as ('' != '').
                    Target "Xsd" skipped, due to false condition; ('@(Xsd)' != '') was evaluated as ('' != '').
-15:46:27.370     1>Target "_Xsd: (TargetId:25)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
-15:46:27.370     1>Done building target "_Xsd" in project "PataNot.vcxproj".: (TargetId:25)
-15:46:27.370     1>Target "MakeDirsForMidl: (TargetId:26)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_Midl" depends on it):
+17:29:43.473     1>Target "_Xsd: (TargetId:25)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+17:29:43.473     1>Done building target "_Xsd" in project "PataNot.vcxproj".: (TargetId:25)
+17:29:43.473     1>Target "MakeDirsForMidl: (TargetId:26)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_Midl" depends on it):
                    Task "Makedir" (TaskId:14)
                    Done executing task "Makedir". (TaskId:14)
-15:46:27.370     1>Done building target "MakeDirsForMidl" in project "PataNot.vcxproj".: (TargetId:26)
+17:29:43.474     1>Done building target "MakeDirsForMidl" in project "PataNot.vcxproj".: (TargetId:26)
                    Target "Midl" skipped, due to false condition; ('@(Midl)' != '') was evaluated as ('' != '').
                    Target "CustomBuild" skipped, due to false condition; ('@(CustomBuild)' != '') was evaluated as ('' != '').
                    Target "FxCompile" skipped, due to false condition; ('@(FxCompile)' != '') was evaluated as ('' != '').
-15:46:27.371     1>Target "ComputeMIDLGeneratedCompileInputs: (TargetId:27)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_Midl" depends on it):
-15:46:27.371     1>Done building target "ComputeMIDLGeneratedCompileInputs" in project "PataNot.vcxproj".: (TargetId:27)
-15:46:27.371     1>Target "AfterMidl: (TargetId:28)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_Midl" depends on it):
-15:46:27.371     1>Done building target "AfterMidl" in project "PataNot.vcxproj".: (TargetId:28)
-15:46:27.371     1>Target "_Midl: (TargetId:29)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
-15:46:27.371     1>Done building target "_Midl" in project "PataNot.vcxproj".: (TargetId:29)
-15:46:27.371     1>Target "AfterBuildGenerateSources: (TargetId:30)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.BuildSteps.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
-15:46:27.371     1>Done building target "AfterBuildGenerateSources" in project "PataNot.vcxproj".: (TargetId:30)
-15:46:27.371     1>Target "AfterBuildGenerateSourcesEvent: (TargetId:31)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
-15:46:27.371     1>Done building target "AfterBuildGenerateSourcesEvent" in project "PataNot.vcxproj".: (TargetId:31)
-15:46:27.371     1>Target "_BuildGenerateSourcesAction: (TargetId:32)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "BuildGenerateSources" depends on it):
-15:46:27.371     1>Done building target "_BuildGenerateSourcesAction" in project "PataNot.vcxproj".: (TargetId:32)
-15:46:27.371     1>Target "BuildGenerateSources: (TargetId:33)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "Build" depends on it):
-15:46:27.371     1>Done building target "BuildGenerateSources" in project "PataNot.vcxproj".: (TargetId:33)
+17:29:43.474     1>Target "ComputeMIDLGeneratedCompileInputs: (TargetId:27)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_Midl" depends on it):
+17:29:43.474     1>Done building target "ComputeMIDLGeneratedCompileInputs" in project "PataNot.vcxproj".: (TargetId:27)
+17:29:43.474     1>Target "AfterMidl: (TargetId:28)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_Midl" depends on it):
+17:29:43.474     1>Done building target "AfterMidl" in project "PataNot.vcxproj".: (TargetId:28)
+17:29:43.474     1>Target "_Midl: (TargetId:29)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+17:29:43.474     1>Done building target "_Midl" in project "PataNot.vcxproj".: (TargetId:29)
+17:29:43.474     1>Target "AfterBuildGenerateSources: (TargetId:30)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.BuildSteps.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+17:29:43.474     1>Done building target "AfterBuildGenerateSources" in project "PataNot.vcxproj".: (TargetId:30)
+17:29:43.477     1>Target "AfterBuildGenerateSourcesEvent: (TargetId:31)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildGenerateSourcesAction" depends on it):
+17:29:43.477     1>Done building target "AfterBuildGenerateSourcesEvent" in project "PataNot.vcxproj".: (TargetId:31)
+17:29:43.477     1>Target "_BuildGenerateSourcesAction: (TargetId:32)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "BuildGenerateSources" depends on it):
+17:29:43.477     1>Done building target "_BuildGenerateSourcesAction" in project "PataNot.vcxproj".: (TargetId:32)
+17:29:43.477     1>Target "BuildGenerateSources: (TargetId:33)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "Build" depends on it):
+17:29:43.477     1>Done building target "BuildGenerateSources" in project "PataNot.vcxproj".: (TargetId:33)
                    Target "AssignProjectConfiguration" skipped. Previously built successfully.
                    Target "_SplitProjectReferencesByFileExistence" skipped. Previously built successfully.
-15:46:27.371     1>Target "BuildCompileTraverse: (TargetId:34)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "BuildCompile" depends on it):
+17:29:43.477     1>Target "BuildCompileTraverse: (TargetId:34)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "BuildCompile" depends on it):
                    Task "MSBuild" skipped, due to false condition; ('$(BuildPassReferences)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and '@(_MSBuildProjectReferenceExistent)' != ''  and '%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true') was evaluated as ('' == 'true' and '' != '' and '' != ''  and '' == 'true').
-15:46:27.371     1>Done building target "BuildCompileTraverse" in project "PataNot.vcxproj".: (TargetId:34)
+17:29:43.477     1>Done building target "BuildCompileTraverse" in project "PataNot.vcxproj".: (TargetId:34)
                    Target "PrepareForBuild" skipped. Previously built successfully.
                    Target "ResolveReferences" skipped. Previously built successfully.
-15:46:27.371     1>Target "BeforeClCompile: (TargetId:35)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_ClCompile" depends on it):
-15:46:27.371     1>Done building target "BeforeClCompile" in project "PataNot.vcxproj".: (TargetId:35)
+17:29:43.478     1>Target "BeforeClCompile: (TargetId:35)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_ClCompile" depends on it):
+17:29:43.478     1>Done building target "BeforeClCompile" in project "PataNot.vcxproj".: (TargetId:35)
                    Target "ComputeMIDLGeneratedCompileInputs" skipped. Previously built successfully.
-15:46:27.371     1>Target "ComputeCLInputPDBName: (TargetId:36)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_ClCompile" depends on it):
-15:46:27.371     1>Done building target "ComputeCLInputPDBName" in project "PataNot.vcxproj".: (TargetId:36)
+17:29:43.478     1>Target "ComputeCLInputPDBName: (TargetId:36)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_ClCompile" depends on it):
+17:29:43.478     1>Done building target "ComputeCLInputPDBName" in project "PataNot.vcxproj".: (TargetId:36)
                    Target "ResolveReferences" skipped. Previously built successfully.
-15:46:27.371     1>Target "ComputeReferenceCLInput: (TargetId:37)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_ClCompile" depends on it):
+17:29:43.478     1>Target "ComputeReferenceCLInput: (TargetId:37)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_ClCompile" depends on it):
                    Task "WriteLinesToFile" skipped, due to false condition; (('@(_ReferenceCopyLocalPaths)'!='') and '$(DesignTimeBuild)' != 'true') was evaluated as ((''!='') and '' != 'true').
                    Task "Message" skipped, due to false condition; ('$(_REFERENCE_DEBUG)'=='true') was evaluated as (''=='true').
-15:46:27.371     1>Done building target "ComputeReferenceCLInput" in project "PataNot.vcxproj".: (TargetId:37)
-15:46:27.371     1>Target "MakeDirsForCl: (TargetId:38)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_ClCompile" depends on it):
+17:29:43.479     1>Done building target "ComputeReferenceCLInput" in project "PataNot.vcxproj".: (TargetId:37)
+17:29:43.479     1>Target "MakeDirsForCl: (TargetId:38)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_ClCompile" depends on it):
                    Task "MakeDir" (TaskId:15)
                      Task Parameter:
                          Directories=
@@ -1249,23 +1249,23 @@ windows_tracing_logfile = C:\BVTBin\Tests\installpackage\csilogfile.log
                              C:\Users\Adam\Documents\PataNot\Debug
                              C:\Users\Adam\Documents\PataNot\Debug (TaskId:15)
                    Done executing task "MakeDir". (TaskId:15)
-15:46:27.372     1>Done building target "MakeDirsForCl" in project "PataNot.vcxproj".: (TargetId:38)
+17:29:43.480     1>Done building target "MakeDirsForCl" in project "PataNot.vcxproj".: (TargetId:38)
                    Target "PrepareForBuild" skipped. Previously built successfully.
                    Target "SetBuildDefaultEnvironmentVariables" skipped. Previously built successfully.
                    Target "SetUserMacroEnvironmentVariables" skipped, due to false condition; ('@(BuildMacro)' != '') was evaluated as ('' != '').
-15:46:27.372     1>Target "_SelectedFiles: (TargetId:39)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "SelectClCompile" depends on it):
-15:46:27.372     1>Done building target "_SelectedFiles" in project "PataNot.vcxproj".: (TargetId:39)
+17:29:43.480     1>Target "_SelectedFiles: (TargetId:39)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "SelectClCompile" depends on it):
+17:29:43.480     1>Done building target "_SelectedFiles" in project "PataNot.vcxproj".: (TargetId:39)
                    Target "ComputeMIDLGeneratedCompileInputs" skipped. Previously built successfully.
                    Target "ComputeCLInputPDBName" skipped. Previously built successfully.
                    Target "ComputeReferenceCLInput" skipped. Previously built successfully.
                    Target "_SelectedFiles" skipped. Previously built successfully.
-15:46:27.372     1>Target "SelectCustomBuild: (TargetId:40)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "SelectClCompile" depends on it):
-15:46:27.372     1>Done building target "SelectCustomBuild" in project "PataNot.vcxproj".: (TargetId:40)
-15:46:27.372     1>Target "SelectClCompile: (TargetId:41)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "ClCompile" depends on it):
-15:46:27.373     1>Done building target "SelectClCompile" in project "PataNot.vcxproj".: (TargetId:41)
+17:29:43.480     1>Target "SelectCustomBuild: (TargetId:40)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "SelectClCompile" depends on it):
+17:29:43.480     1>Done building target "SelectCustomBuild" in project "PataNot.vcxproj".: (TargetId:40)
+17:29:43.480     1>Target "SelectClCompile: (TargetId:41)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "ClCompile" depends on it):
+17:29:43.480     1>Done building target "SelectClCompile" in project "PataNot.vcxproj".: (TargetId:41)
                    Target "GenerateTargetFrameworkMonikerAttribute" skipped, due to false condition; ('$(GenerateTargetFrameworkAttribute)' == 'true') was evaluated as ('false' == 'true').
                    Target "ManagedIncrementalBuildPreProcessDependencyGraph" skipped, due to false condition; ('@(ClCompile)' != '' and '$(EnableManagedIncrementalBuild)' == 'True') was evaluated as ('source\entity.cpp;source\gameFunctions.cpp;source\game.cpp;source\graphics3d.cpp;source\interface.cpp;source\scoring.cpp;source\shader.cpp;source\simple_logger.cpp;source\sprite.cpp' != '' and 'false' == 'True').
-15:46:27.373     1>Target "ClCompile: (TargetId:42)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppCommon.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_ClCompile" depends on it):
+17:29:43.480     1>Target "ClCompile: (TargetId:42)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppCommon.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_ClCompile" depends on it):
                    Task "Delete" skipped, due to false condition; ('%(ClCompile.DebugInformationFormat)' != '' and '%(ClCompile.DebugInformationFormat)' != 'OldStyle' and '%(ClCompile.ProgramDataBaseFileName)' != '' and !Exists(%(ClCompile.ProgramDataBaseFileName))) was evaluated as ('EditAndContinue' != '' and 'EditAndContinue' != 'OldStyle' and 'Debug\vc110.pdb' != '' and !Exists(Debug\vc110.pdb)).
                    Task "CL" skipped, due to false condition; ('%(ClCompile.PrecompiledHeader)' == 'Create' and '%(ClCompile.ExcludedFromBuild)'!='true' and '%(ClCompile.CompilerIteration)' == '') was evaluated as ('NotUsing' == 'Create' and ''!='true' and '' == '').
                    Using "CL" task from assembly "Microsoft.Build.CppTasks.Common.v110, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
@@ -1877,82 +1877,79 @@ windows_tracing_logfile = C:\BVTBin\Tests\installpackage\csilogfile.log
                      	C:\USERS\ADAM\DOCUMENTS\PATANOT\DEBUG\SHADER.OBJ (TaskId:16)
                      	C:\USERS\ADAM\DOCUMENTS\PATANOT\DEBUG\SIMPLE_LOGGER.OBJ (TaskId:16)
                      	C:\USERS\ADAM\DOCUMENTS\PATANOT\DEBUG\SPRITE.OBJ (TaskId:16)
-                     source\game.cpp will be compiled as C:\Users\Adam\Documents\PataNot\source\game.cpp was modified at 5/8/2017 3:46:26 PM. (TaskId:16)
+                     source\sprite.cpp will be compiled as C:\Users\Adam\Documents\PataNot\source\sprite.cpp was modified at 5/8/2017 5:29:42 PM. (TaskId:16)
                      Environment Variables passed to tool: (TaskId:16)
-                       VS_UNICODE_OUTPUT=1672 (TaskId:16)
-                     C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt source\game.cpp (TaskId:16)
+                       VS_UNICODE_OUTPUT=776 (TaskId:16)
+                     C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt source\sprite.cpp (TaskId:16)
                      Tracking command: (TaskId:16)
-                     C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0A\bin\NETFX 4.0 Tools\Tracker.exe /d C:\Windows\Microsoft.NET\Framework\v4.0.30319\FileTracker.dll /i C:\Users\Adam\Documents\PataNot\Debug /r C:\USERS\ADAM\DOCUMENTS\PATANOT\SOURCE\GAME.CPP /b MSBuildConsole_CancelEvent00c13d4566ca4beb919d8dbda0866219  /c "C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe"  /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt source\game.cpp (TaskId:16)
-                     game.cpp (TaskId:16)
-15:46:28.808     1>c:\users\adam\documents\patanot\source\game.cpp(206): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
-15:46:28.808     1>c:\users\adam\documents\patanot\source\game.cpp(233): warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
-15:46:28.810     1>c:\users\adam\documents\patanot\source\game.cpp(167): warning C4101: 'frameID' : unreferenced local variable
+                     C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0A\bin\NETFX 4.0 Tools\Tracker.exe /d C:\Windows\Microsoft.NET\Framework\v4.0.30319\FileTracker.dll /i C:\Users\Adam\Documents\PataNot\Debug /r C:\USERS\ADAM\DOCUMENTS\PATANOT\SOURCE\SPRITE.CPP /b MSBuildConsole_CancelEvent2649b6dcfe9e4ce682a72b9a855a37e7  /c "C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe"  /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt source\sprite.cpp (TaskId:16)
+                     sprite.cpp (TaskId:16)
                    Done executing task "CL". (TaskId:16)
-15:46:29.217     1>Done building target "ClCompile" in project "PataNot.vcxproj".: (TargetId:42)
+17:29:44.920     1>Done building target "ClCompile" in project "PataNot.vcxproj".: (TargetId:42)
                    Target "ManagedIncrementalBuildPostProcessDependencyGraph" skipped, due to false condition; ('@(ClCompile)' != '' and '$(EnableManagedIncrementalBuild)' == 'True') was evaluated as ('source\entity.cpp;source\gameFunctions.cpp;source\game.cpp;source\graphics3d.cpp;source\interface.cpp;source\scoring.cpp;source\shader.cpp;source\simple_logger.cpp;source\sprite.cpp' != '' and 'false' == 'True').
-15:46:29.218     1>Target "AfterClCompile: (TargetId:43)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_ClCompile" depends on it):
-15:46:29.218     1>Done building target "AfterClCompile" in project "PataNot.vcxproj".: (TargetId:43)
-15:46:29.218     1>Target "_ClCompile: (TargetId:44)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildCompileAction" depends on it):
-15:46:29.218     1>Done building target "_ClCompile" in project "PataNot.vcxproj".: (TargetId:44)
+17:29:44.920     1>Target "AfterClCompile: (TargetId:43)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_ClCompile" depends on it):
+17:29:44.920     1>Done building target "AfterClCompile" in project "PataNot.vcxproj".: (TargetId:43)
+17:29:44.920     1>Target "_ClCompile: (TargetId:44)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildCompileAction" depends on it):
+17:29:44.920     1>Done building target "_ClCompile" in project "PataNot.vcxproj".: (TargetId:44)
                    Target "_ResGen" skipped, due to false condition; ('@(EmbeddedResource)'!='') was evaluated as (''!='').
-15:46:29.218     1>Target "BeforeResourceCompile: (TargetId:45)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_ResourceCompile" depends on it):
-15:46:29.218     1>Done building target "BeforeResourceCompile" in project "PataNot.vcxproj".: (TargetId:45)
-15:46:29.218     1>Target "MakeDirsForResourceCompile: (TargetId:46)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_ResourceCompile" depends on it):
+17:29:44.921     1>Target "BeforeResourceCompile: (TargetId:45)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_ResourceCompile" depends on it):
+17:29:44.921     1>Done building target "BeforeResourceCompile" in project "PataNot.vcxproj".: (TargetId:45)
+17:29:44.921     1>Target "MakeDirsForResourceCompile: (TargetId:46)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_ResourceCompile" depends on it):
                    Task "MakeDir" (TaskId:17)
                      Task Parameter:Directories=C:\Users\Adam\Documents\PataNot\Debug (TaskId:17)
                    Done executing task "MakeDir". (TaskId:17)
-15:46:29.218     1>Done building target "MakeDirsForResourceCompile" in project "PataNot.vcxproj".: (TargetId:46)
+17:29:44.921     1>Done building target "MakeDirsForResourceCompile" in project "PataNot.vcxproj".: (TargetId:46)
                    Target "ResourceCompile" skipped, due to false condition; ('@(ResourceCompile)' != '') was evaluated as ('' != '').
-15:46:29.218     1>Target "AfterResourceCompile: (TargetId:47)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_ResourceCompile" depends on it):
-15:46:29.218     1>Done building target "AfterResourceCompile" in project "PataNot.vcxproj".: (TargetId:47)
-15:46:29.218     1>Target "_ResourceCompile: (TargetId:48)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildCompileAction" depends on it):
-15:46:29.218     1>Done building target "_ResourceCompile" in project "PataNot.vcxproj".: (TargetId:48)
+17:29:44.922     1>Target "AfterResourceCompile: (TargetId:47)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_ResourceCompile" depends on it):
+17:29:44.922     1>Done building target "AfterResourceCompile" in project "PataNot.vcxproj".: (TargetId:47)
+17:29:44.922     1>Target "_ResourceCompile: (TargetId:48)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildCompileAction" depends on it):
+17:29:44.922     1>Done building target "_ResourceCompile" in project "PataNot.vcxproj".: (TargetId:48)
                    Target "_ImpLib" skipped, due to false condition; ('$(ImpLibCompiled)' == 'true') was evaluated as ('' == 'true').
                    Target "_Lib" skipped, due to false condition; ('$(LibCompiled)' == 'true') was evaluated as ('' == 'true').
-15:46:29.218     1>Target "AfterBuildCompileEvent: (TargetId:49)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildCompileAction" depends on it):
-15:46:29.218     1>Done building target "AfterBuildCompileEvent" in project "PataNot.vcxproj".: (TargetId:49)
-15:46:29.218     1>Target "_BuildCompileAction: (TargetId:50)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "BuildCompile" depends on it):
-15:46:29.218     1>Done building target "_BuildCompileAction" in project "PataNot.vcxproj".: (TargetId:50)
-15:46:29.219     1>Target "BuildCompile: (TargetId:51)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "Build" depends on it):
-15:46:29.219     1>Done building target "BuildCompile" in project "PataNot.vcxproj".: (TargetId:51)
+17:29:44.922     1>Target "AfterBuildCompileEvent: (TargetId:49)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildCompileAction" depends on it):
+17:29:44.922     1>Done building target "AfterBuildCompileEvent" in project "PataNot.vcxproj".: (TargetId:49)
+17:29:44.922     1>Target "_BuildCompileAction: (TargetId:50)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "BuildCompile" depends on it):
+17:29:44.922     1>Done building target "_BuildCompileAction" in project "PataNot.vcxproj".: (TargetId:50)
+17:29:44.922     1>Target "BuildCompile: (TargetId:51)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "Build" depends on it):
+17:29:44.922     1>Done building target "BuildCompile" in project "PataNot.vcxproj".: (TargetId:51)
                    Target "AssignProjectConfiguration" skipped. Previously built successfully.
                    Target "_SplitProjectReferencesByFileExistence" skipped. Previously built successfully.
-15:46:29.219     1>Target "BuildLinkTraverse: (TargetId:52)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "BuildLink" depends on it):
+17:29:44.922     1>Target "BuildLinkTraverse: (TargetId:52)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "BuildLink" depends on it):
                    Task "MSBuild" skipped, due to false condition; ('$(BuildPassReferences)' == 'true' and '@(ProjectReferenceWithConfiguration)' != '' and '@(_MSBuildProjectReferenceExistent)' != ''  and '%(_MSBuildProjectReferenceExistent.BuildReference)' == 'true') was evaluated as ('' == 'true' and '' != '' and '' != ''  and '' == 'true').
-15:46:29.219     1>Done building target "BuildLinkTraverse" in project "PataNot.vcxproj".: (TargetId:52)
+17:29:44.922     1>Done building target "BuildLinkTraverse" in project "PataNot.vcxproj".: (TargetId:52)
                    Target "PrepareForBuild" skipped. Previously built successfully.
                    Target "ResolveReferences" skipped. Previously built successfully.
-15:46:29.219     1>Target "ComputeLegacyManifestEmbedding: (TargetId:53)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildLinkAction" depends on it):
+17:29:44.922     1>Target "ComputeLegacyManifestEmbedding: (TargetId:53)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildLinkAction" depends on it):
                    Task "VCMessage" skipped, due to false condition; ('$(RevertManifestEmbedding)' == 'true' and '$(_LegacyManifestEmbeddingDebug)' == 'true') was evaluated as ('' == 'true' and '' == 'true').
-15:46:29.219     1>Done building target "ComputeLegacyManifestEmbedding" in project "PataNot.vcxproj".: (TargetId:53)
-15:46:29.220     1>Target "BeforeLink: (TargetId:54)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_Link" depends on it):
-15:46:29.220     1>Done building target "BeforeLink" in project "PataNot.vcxproj".: (TargetId:54)
-15:46:29.220     1>Target "ComputeRCOutputs: (TargetId:55)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "ComputeRCGeneratedLinkInputs" depends on it):
-15:46:29.220     1>Done building target "ComputeRCOutputs" in project "PataNot.vcxproj".: (TargetId:55)
-15:46:29.220     1>Target "ComputeRCGeneratedLinkInputs: (TargetId:56)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_Link" depends on it):
-15:46:29.220     1>Done building target "ComputeRCGeneratedLinkInputs" in project "PataNot.vcxproj".: (TargetId:56)
-15:46:29.220     1>Target "ComputeManifestGeneratedLinkerInputs: (TargetId:57)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_Link" depends on it):
-15:46:29.220     1>Done building target "ComputeManifestGeneratedLinkerInputs" in project "PataNot.vcxproj".: (TargetId:57)
-15:46:29.220     1>Target "ComputeCustomBuildOutput: (TargetId:58)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_Link" depends on it):
+17:29:44.922     1>Done building target "ComputeLegacyManifestEmbedding" in project "PataNot.vcxproj".: (TargetId:53)
+17:29:44.923     1>Target "BeforeLink: (TargetId:54)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_Link" depends on it):
+17:29:44.923     1>Done building target "BeforeLink" in project "PataNot.vcxproj".: (TargetId:54)
+17:29:44.923     1>Target "ComputeRCOutputs: (TargetId:55)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "ComputeRCGeneratedLinkInputs" depends on it):
+17:29:44.923     1>Done building target "ComputeRCOutputs" in project "PataNot.vcxproj".: (TargetId:55)
+17:29:44.923     1>Target "ComputeRCGeneratedLinkInputs: (TargetId:56)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_Link" depends on it):
+17:29:44.923     1>Done building target "ComputeRCGeneratedLinkInputs" in project "PataNot.vcxproj".: (TargetId:56)
+17:29:44.923     1>Target "ComputeManifestGeneratedLinkerInputs: (TargetId:57)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_Link" depends on it):
+17:29:44.923     1>Done building target "ComputeManifestGeneratedLinkerInputs" in project "PataNot.vcxproj".: (TargetId:57)
+17:29:44.923     1>Target "ComputeCustomBuildOutput: (TargetId:58)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_Link" depends on it):
                    Task "CreateItem" skipped, due to false condition; ('%(CustomBuildDirsToMake.OutputFileToTool)'!='') was evaluated as (''!='').
                    Task "MakeDir" (TaskId:18)
                    Done executing task "MakeDir". (TaskId:18)
-15:46:29.220     1>Done building target "ComputeCustomBuildOutput" in project "PataNot.vcxproj".: (TargetId:58)
+17:29:44.923     1>Done building target "ComputeCustomBuildOutput" in project "PataNot.vcxproj".: (TargetId:58)
                    Target "ComputeMIDLGeneratedCompileInputs" skipped. Previously built successfully.
                    Target "ComputeCLInputPDBName" skipped. Previously built successfully.
                    Target "ComputeReferenceCLInput" skipped. Previously built successfully.
-15:46:29.220     1>Target "ComputeCLOutputs: (TargetId:59)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "ComputeCLGeneratedLinkInputs" depends on it):
-15:46:29.221     1>Done building target "ComputeCLOutputs" in project "PataNot.vcxproj".: (TargetId:59)
-15:46:29.221     1>Target "ComputeCLGeneratedLinkInputs: (TargetId:60)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_Link" depends on it):
-15:46:29.222     1>Done building target "ComputeCLGeneratedLinkInputs" in project "PataNot.vcxproj".: (TargetId:60)
-15:46:29.222     1>Target "ComputeLinkInputsFromProject: (TargetId:61)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_Link" depends on it):
-15:46:29.222     1>Done building target "ComputeLinkInputsFromProject" in project "PataNot.vcxproj".: (TargetId:61)
+17:29:44.923     1>Target "ComputeCLOutputs: (TargetId:59)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "ComputeCLGeneratedLinkInputs" depends on it):
+17:29:44.925     1>Done building target "ComputeCLOutputs" in project "PataNot.vcxproj".: (TargetId:59)
+17:29:44.925     1>Target "ComputeCLGeneratedLinkInputs: (TargetId:60)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_Link" depends on it):
+17:29:44.925     1>Done building target "ComputeCLGeneratedLinkInputs" in project "PataNot.vcxproj".: (TargetId:60)
+17:29:44.925     1>Target "ComputeLinkInputsFromProject: (TargetId:61)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_Link" depends on it):
+17:29:44.925     1>Done building target "ComputeLinkInputsFromProject" in project "PataNot.vcxproj".: (TargetId:61)
                    Target "ComputeReferenceLinkInputs" skipped, due to false condition; (@(ProjectReference) != '') was evaluated as ( != '').
-15:46:29.222     1>Target "ComputeManifestInputsTargets: (TargetId:62)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_Link" depends on it):
-15:46:29.222     1>Done building target "ComputeManifestInputsTargets" in project "PataNot.vcxproj".: (TargetId:62)
+17:29:44.926     1>Target "ComputeManifestInputsTargets: (TargetId:62)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_Link" depends on it):
+17:29:44.926     1>Done building target "ComputeManifestInputsTargets" in project "PataNot.vcxproj".: (TargetId:62)
                    Target "ManifestResourceCompile" skipped, due to false condition; ('$(EmbedManifestBy)' == 'LINK' and '@(Manifest)' != '') was evaluated as ('LINK' == 'LINK' and '' != '').
                    Target "AssignWinFXEmbeddedResource" skipped, due to false condition; ('@(WinFXEmbeddedResource)' != '') was evaluated as ('' != '').
-15:46:29.223     1>Target "AssignTargetPaths: (TargetId:63)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "PrepareResourceNames" depends on it):
+17:29:44.926     1>Target "AssignTargetPaths: (TargetId:63)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "PrepareResourceNames" depends on it):
                    Using "AssignTargetPath" task from assembly "Microsoft.Build.Tasks.v4.0, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
                    Task "AssignTargetPath" (TaskId:19)
                      Task Parameter:RootFolder=C:\Users\Adam\Documents\PataNot (TaskId:19)
@@ -1973,9 +1970,9 @@ windows_tracing_logfile = C:\BVTBin\Tests\installpackage\csilogfile.log
                      Task Parameter:RootFolder=C:\Users\Adam\Documents\PataNot (TaskId:22)
                    Done executing task "AssignTargetPath". (TaskId:22)
                    Task "AssignTargetPath" skipped, due to false condition; ('@(_DeploymentBaseManifestWithTargetPath)'=='' and '%(None.Extension)'=='.manifest') was evaluated as (''=='' and '.glsl'=='.manifest').
-15:46:29.224     1>Done building target "AssignTargetPaths" in project "PataNot.vcxproj".: (TargetId:63)
+17:29:44.929     1>Done building target "AssignTargetPaths" in project "PataNot.vcxproj".: (TargetId:63)
                    Target "AssignTargetPaths" skipped. Previously built successfully.
-15:46:29.224     1>Target "SplitResourcesByCulture: (TargetId:64)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "PrepareResourceNames" depends on it):
+17:29:44.929     1>Target "SplitResourcesByCulture: (TargetId:64)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "PrepareResourceNames" depends on it):
                    Task "Warning" skipped, due to false condition; ('@(ResxWithNoCulture)'!='') was evaluated as (''!='').
                    Task "Warning" skipped, due to false condition; ('@(ResxWithCulture)'!='') was evaluated as (''!='').
                    Task "Warning" skipped, due to false condition; ('@(NonResxWithCulture)'!='') was evaluated as (''!='').
@@ -1983,13 +1980,13 @@ windows_tracing_logfile = C:\BVTBin\Tests\installpackage\csilogfile.log
                    Using "AssignCulture" task from assembly "Microsoft.Build.Tasks.v4.0, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
                    Task "AssignCulture" (TaskId:23)
                    Done executing task "AssignCulture". (TaskId:23)
-15:46:29.225     1>Done building target "SplitResourcesByCulture" in project "PataNot.vcxproj".: (TargetId:64)
+17:29:44.929     1>Done building target "SplitResourcesByCulture" in project "PataNot.vcxproj".: (TargetId:64)
                    Target "CreateManifestResourceNames" skipped, due to false condition; ('@(EmbeddedResource)' != '') was evaluated as ('' != '').
-15:46:29.225     1>Target "CreateCustomManifestResourceNames: (TargetId:65)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "PrepareResourceNames" depends on it):
-15:46:29.225     1>Done building target "CreateCustomManifestResourceNames" in project "PataNot.vcxproj".: (TargetId:65)
-15:46:29.225     1>Target "PrepareResourceNames: (TargetId:66)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_Link" depends on it):
-15:46:29.225     1>Done building target "PrepareResourceNames" in project "PataNot.vcxproj".: (TargetId:66)
-15:46:29.225     1>Target "MakeDirsForLink: (TargetId:67)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_Link" depends on it):
+17:29:44.930     1>Target "CreateCustomManifestResourceNames: (TargetId:65)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "PrepareResourceNames" depends on it):
+17:29:44.930     1>Done building target "CreateCustomManifestResourceNames" in project "PataNot.vcxproj".: (TargetId:65)
+17:29:44.930     1>Target "PrepareResourceNames: (TargetId:66)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_Link" depends on it):
+17:29:44.930     1>Done building target "PrepareResourceNames" in project "PataNot.vcxproj".: (TargetId:66)
+17:29:44.930     1>Target "MakeDirsForLink: (TargetId:67)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_Link" depends on it):
                    Task "MakeDir" (TaskId:24)
                      Task Parameter:
                          Directories=
@@ -1998,20 +1995,20 @@ windows_tracing_logfile = C:\BVTBin\Tests\installpackage\csilogfile.log
                              C:\Users\Adam\Documents\PataNot
                              C:\Users\Adam\Documents\PataNot\ (TaskId:24)
                    Done executing task "MakeDir". (TaskId:24)
-15:46:29.226     1>Done building target "MakeDirsForLink" in project "PataNot.vcxproj".: (TargetId:67)
-15:46:29.226     1>Target "DoLinkOutputFilesMatch: (TargetId:68)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_Link" depends on it):
+17:29:44.932     1>Done building target "MakeDirsForLink" in project "PataNot.vcxproj".: (TargetId:67)
+17:29:44.932     1>Target "DoLinkOutputFilesMatch: (TargetId:68)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_Link" depends on it):
                    Task "VCMessage" skipped, due to false condition; ('@(_OutputFileFromLink)' == '') was evaluated as ('C:\Users\Adam\Documents\PataNot\PataNot.exe' == '').
                    Task "VCMessage" skipped, due to false condition; ('@(_OutputFileFromLink)' != '' and '%(_OutputFileFromLink.FullPath)' != '$([System.IO.Path]::GetFullPath($(TargetPath)))') was evaluated as ('C:\Users\Adam\Documents\PataNot\PataNot.exe' != '' and 'C:\Users\Adam\Documents\PataNot\PataNot.exe' != 'C:\Users\Adam\Documents\PataNot\PataNot.exe').
                    Task "VCMessage" skipped, due to false condition; ('@(_OutputFileFromLink)' != '' and '%(_OutputFileFromLink.Extension)' != '$(TargetExt)') was evaluated as ('C:\Users\Adam\Documents\PataNot\PataNot.exe' != '' and '.exe' != '.exe').
                    Task "VCMessage" skipped, due to false condition; ('@(_OutputFileFromLink)' != '' and '%(_OutputFileFromLink.Filename)' != '$(TargetName)') was evaluated as ('C:\Users\Adam\Documents\PataNot\PataNot.exe' != '' and 'PataNot' != 'PataNot').
-15:46:29.226     1>Done building target "DoLinkOutputFilesMatch" in project "PataNot.vcxproj".: (TargetId:68)
-15:46:29.226     1>Target "PreLinkEvent: (TargetId:69)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppCommon.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_Link" depends on it):
+17:29:44.934     1>Done building target "DoLinkOutputFilesMatch" in project "PataNot.vcxproj".: (TargetId:68)
+17:29:44.934     1>Target "PreLinkEvent: (TargetId:69)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppCommon.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_Link" depends on it):
                    Task "Message" skipped, due to false condition; ('%(PreLinkEvent.Message)' != '' and '%(PreLinkEvent.Command)' != '') was evaluated as ('' != '' and '' != '').
                    Task "Exec" skipped, due to false condition; ('%(PreLinkEvent.Command)' != '') was evaluated as ('' != '').
-15:46:29.226     1>Done building target "PreLinkEvent" in project "PataNot.vcxproj".: (TargetId:69)
-15:46:29.227     1>Target "ComputeLinkSwitches: (TargetId:70)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppCommon.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "Link" depends on it):
-15:46:29.227     1>Done building target "ComputeLinkSwitches" in project "PataNot.vcxproj".: (TargetId:70)
-15:46:29.227     1>Target "Link: (TargetId:71)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppCommon.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_Link" depends on it):
+17:29:44.935     1>Done building target "PreLinkEvent" in project "PataNot.vcxproj".: (TargetId:69)
+17:29:44.935     1>Target "ComputeLinkSwitches: (TargetId:70)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppCommon.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "Link" depends on it):
+17:29:44.936     1>Done building target "ComputeLinkSwitches" in project "PataNot.vcxproj".: (TargetId:70)
+17:29:44.936     1>Target "Link: (TargetId:71)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppCommon.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_Link" depends on it):
                    Using "Link" task from assembly "Microsoft.Build.CppTasks.Common.v110, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
                    Task "Link" (TaskId:25)
                      Task Parameter:BuildingInIde=True (TaskId:25)
@@ -2480,108 +2477,12 @@ windows_tracing_logfile = C:\BVTBin\Tests\installpackage\csilogfile.log
                      Task Parameter:ToolArchitecture=Native32Bit (TaskId:25)
                      Write Tracking Logs: (TaskId:25)
                      	Debug\link.write.1.tlog (TaskId:25)
-                     	Debug\link.10268-cvtres.write.1.tlog (TaskId:25)
-                     	Debug\link.10268-rc.write.1.tlog (TaskId:25)
-                     	Debug\link.10268.write.1.tlog (TaskId:25)
-                     	Debug\link.10320-cvtres.write.1.tlog (TaskId:25)
-                     	Debug\link.10320-rc.write.1.tlog (TaskId:25)
-                     	Debug\link.10320.write.1.tlog (TaskId:25)
-                     	Debug\link.10596-cvtres.write.1.tlog (TaskId:25)
-                     	Debug\link.10596-rc.write.1.tlog (TaskId:25)
-                     	Debug\link.10596.write.1.tlog (TaskId:25)
-                     	Debug\link.11480-cvtres.write.1.tlog (TaskId:25)
-                     	Debug\link.11480-rc.write.1.tlog (TaskId:25)
-                     	Debug\link.11480.write.1.tlog (TaskId:25)
-                     	Debug\link.12268-cvtres.write.1.tlog (TaskId:25)
-                     	Debug\link.12268-rc.write.1.tlog (TaskId:25)
-                     	Debug\link.12268.write.1.tlog (TaskId:25)
-                     	Debug\link.4964-cvtres.write.1.tlog (TaskId:25)
-                     	Debug\link.4964-rc.write.1.tlog (TaskId:25)
-                     	Debug\link.4964.write.1.tlog (TaskId:25)
-                     	Debug\link.6132-cvtres.write.1.tlog (TaskId:25)
-                     	Debug\link.6132-rc.write.1.tlog (TaskId:25)
-                     	Debug\link.6132.write.1.tlog (TaskId:25)
-                     	Debug\link.7740-cvtres.write.1.tlog (TaskId:25)
-                     	Debug\link.7740-rc.write.1.tlog (TaskId:25)
-                     	Debug\link.7740.write.1.tlog (TaskId:25)
-                     	Debug\link.7756-cvtres.write.1.tlog (TaskId:25)
-                     	Debug\link.7756-rc.write.1.tlog (TaskId:25)
-                     	Debug\link.7756.write.1.tlog (TaskId:25)
-                     	Debug\link.8828-cvtres.write.1.tlog (TaskId:25)
-                     	Debug\link.8828-rc.write.1.tlog (TaskId:25)
-                     	Debug\link.8828.write.1.tlog (TaskId:25)
-                     	Debug\link.9208-cvtres.write.1.tlog (TaskId:25)
-                     	Debug\link.9208-rc.write.1.tlog (TaskId:25)
-                     	Debug\link.9208.write.1.tlog (TaskId:25)
-                     	Debug\link.9516-cvtres.write.1.tlog (TaskId:25)
-                     	Debug\link.9516-rc.write.1.tlog (TaskId:25)
-                     	Debug\link.9516.write.1.tlog (TaskId:25)
                      	Debug\link-cvtres.write.1.tlog (TaskId:25)
-                     	Debug\link.10268-cvtres.write.1.tlog (TaskId:25)
-                     	Debug\link.10320-cvtres.write.1.tlog (TaskId:25)
-                     	Debug\link.10596-cvtres.write.1.tlog (TaskId:25)
-                     	Debug\link.11480-cvtres.write.1.tlog (TaskId:25)
-                     	Debug\link.12268-cvtres.write.1.tlog (TaskId:25)
-                     	Debug\link.4964-cvtres.write.1.tlog (TaskId:25)
-                     	Debug\link.6132-cvtres.write.1.tlog (TaskId:25)
-                     	Debug\link.7740-cvtres.write.1.tlog (TaskId:25)
-                     	Debug\link.7756-cvtres.write.1.tlog (TaskId:25)
-                     	Debug\link.8828-cvtres.write.1.tlog (TaskId:25)
-                     	Debug\link.9208-cvtres.write.1.tlog (TaskId:25)
-                     	Debug\link.9516-cvtres.write.1.tlog (TaskId:25)
                      	Debug\link-cvtres.write.1.tlog (TaskId:25)
                      	Debug\link-rc.write.1.tlog (TaskId:25)
                      Read Tracking Logs: (TaskId:25)
                      	Debug\link.read.1.tlog (TaskId:25)
-                     	Debug\link.10268-cvtres.read.1.tlog (TaskId:25)
-                     	Debug\link.10268-rc.read.1.tlog (TaskId:25)
-                     	Debug\link.10268.read.1.tlog (TaskId:25)
-                     	Debug\link.10320-cvtres.read.1.tlog (TaskId:25)
-                     	Debug\link.10320-rc.read.1.tlog (TaskId:25)
-                     	Debug\link.10320.read.1.tlog (TaskId:25)
-                     	Debug\link.10596-cvtres.read.1.tlog (TaskId:25)
-                     	Debug\link.10596-rc.read.1.tlog (TaskId:25)
-                     	Debug\link.10596.read.1.tlog (TaskId:25)
-                     	Debug\link.11480-cvtres.read.1.tlog (TaskId:25)
-                     	Debug\link.11480-rc.read.1.tlog (TaskId:25)
-                     	Debug\link.11480.read.1.tlog (TaskId:25)
-                     	Debug\link.12268-cvtres.read.1.tlog (TaskId:25)
-                     	Debug\link.12268-rc.read.1.tlog (TaskId:25)
-                     	Debug\link.12268.read.1.tlog (TaskId:25)
-                     	Debug\link.4964-cvtres.read.1.tlog (TaskId:25)
-                     	Debug\link.4964-rc.read.1.tlog (TaskId:25)
-                     	Debug\link.4964.read.1.tlog (TaskId:25)
-                     	Debug\link.6132-cvtres.read.1.tlog (TaskId:25)
-                     	Debug\link.6132-rc.read.1.tlog (TaskId:25)
-                     	Debug\link.6132.read.1.tlog (TaskId:25)
-                     	Debug\link.7740-cvtres.read.1.tlog (TaskId:25)
-                     	Debug\link.7740-rc.read.1.tlog (TaskId:25)
-                     	Debug\link.7740.read.1.tlog (TaskId:25)
-                     	Debug\link.7756-cvtres.read.1.tlog (TaskId:25)
-                     	Debug\link.7756-rc.read.1.tlog (TaskId:25)
-                     	Debug\link.7756.read.1.tlog (TaskId:25)
-                     	Debug\link.8828-cvtres.read.1.tlog (TaskId:25)
-                     	Debug\link.8828-rc.read.1.tlog (TaskId:25)
-                     	Debug\link.8828.read.1.tlog (TaskId:25)
-                     	Debug\link.9208-cvtres.read.1.tlog (TaskId:25)
-                     	Debug\link.9208-rc.read.1.tlog (TaskId:25)
-                     	Debug\link.9208.read.1.tlog (TaskId:25)
-                     	Debug\link.9516-cvtres.read.1.tlog (TaskId:25)
-                     	Debug\link.9516-rc.read.1.tlog (TaskId:25)
-                     	Debug\link.9516.read.1.tlog (TaskId:25)
                      	Debug\link-cvtres.read.1.tlog (TaskId:25)
-                     	Debug\link.10268-cvtres.read.1.tlog (TaskId:25)
-                     	Debug\link.10320-cvtres.read.1.tlog (TaskId:25)
-                     	Debug\link.10596-cvtres.read.1.tlog (TaskId:25)
-                     	Debug\link.11480-cvtres.read.1.tlog (TaskId:25)
-                     	Debug\link.12268-cvtres.read.1.tlog (TaskId:25)
-                     	Debug\link.4964-cvtres.read.1.tlog (TaskId:25)
-                     	Debug\link.6132-cvtres.read.1.tlog (TaskId:25)
-                     	Debug\link.7740-cvtres.read.1.tlog (TaskId:25)
-                     	Debug\link.7756-cvtres.read.1.tlog (TaskId:25)
-                     	Debug\link.8828-cvtres.read.1.tlog (TaskId:25)
-                     	Debug\link.9208-cvtres.read.1.tlog (TaskId:25)
-                     	Debug\link.9516-cvtres.read.1.tlog (TaskId:25)
                      	Debug\link-cvtres.read.1.tlog (TaskId:25)
                      	Debug\link-rc.read.1.tlog (TaskId:25)
                      Outputs for C:\USERS\ADAM\DOCUMENTS\PATANOT\DEBUG\ENTITY.OBJ|C:\USERS\ADAM\DOCUMENTS\PATANOT\DEBUG\GAME.OBJ|C:\USERS\ADAM\DOCUMENTS\PATANOT\DEBUG\GAMEFUNCTIONS.OBJ|C:\USERS\ADAM\DOCUMENTS\PATANOT\DEBUG\GRAPHICS3D.OBJ|C:\USERS\ADAM\DOCUMENTS\PATANOT\DEBUG\INTERFACE.OBJ|C:\USERS\ADAM\DOCUMENTS\PATANOT\DEBUG\SCORING.OBJ|C:\USERS\ADAM\DOCUMENTS\PATANOT\DEBUG\SHADER.OBJ|C:\USERS\ADAM\DOCUMENTS\PATANOT\DEBUG\SIMPLE_LOGGER.OBJ|C:\USERS\ADAM\DOCUMENTS\PATANOT\DEBUG\SPRITE.OBJ: (TaskId:25)
@@ -2623,9 +2524,9 @@ windows_tracing_logfile = C:\BVTBin\Tests\installpackage\csilogfile.log
                      	C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\VC\LIB\MSVCPRTD.LIB (TaskId:25)
                      	C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\VC\LIB\MSVCRTD.LIB (TaskId:25)
                      	C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\VC\LIB\OLDNAMES.LIB (TaskId:25)
-                     Source compilation required: input C:\USERS\ADAM\DOCUMENTS\PATANOT\DEBUG\GAME.OBJ is newer than output C:\USERS\ADAM\DOCUMENTS\PATANOT\PATANOT.EXE. (TaskId:25)
+                     Source compilation required: input C:\USERS\ADAM\DOCUMENTS\PATANOT\DEBUG\SPRITE.OBJ is newer than output C:\USERS\ADAM\DOCUMENTS\PATANOT\PATANOT.PDB. (TaskId:25)
                      Environment Variables passed to tool: (TaskId:25)
-                       VS_UNICODE_OUTPUT=1628 (TaskId:25)
+                       VS_UNICODE_OUTPUT=1244 (TaskId:25)
                      C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Adam\Documents\PataNot\PataNot.exe" /INCREMENTAL /NOLOGO SDL2main.lib SDL2.lib glew32.lib opengl32.lib leap.lib SOIL.lib SDL2_image.lib SDL2_Mixer.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Adam\Documents\PataNot\PataNot.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Adam\Documents\PataNot\PataNot.lib" /MACHINE:X86 Debug\entity.obj
                      Debug\gameFunctions.obj
                      Debug\game.obj
@@ -2636,7 +2537,7 @@ windows_tracing_logfile = C:\BVTBin\Tests\installpackage\csilogfile.log
                      Debug\simple_logger.obj
                      Debug\sprite.obj (TaskId:25)
                      Tracking command: (TaskId:25)
-                     C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0A\bin\NETFX 4.0 Tools\Tracker.exe /a /d C:\Windows\Microsoft.NET\Framework\v4.0.30319\FileTracker.dll /i C:\Users\Adam\Documents\PataNot\Debug /r "C:\USERS\ADAM\DOCUMENTS\PATANOT\DEBUG\ENTITY.OBJ|C:\USERS\ADAM\DOCUMENTS\PATANOT\DEBUG\GAME.OBJ|C:\USERS\ADAM\DOCUMENTS\PATANOT\DEBUG\GAMEFUNCTIONS.OBJ|C:\USERS\ADAM\DOCUMENTS\PATANOT\DEBUG\GRAPHICS3D.OBJ|C:\USERS\ADAM\DOCUMENTS\PATANOT\DEBUG\INTERFACE.OBJ|C:\USERS\ADAM\DOCUMENTS\PATANOT\DEBUG\SCORING.OBJ|C:\USERS\ADAM\DOCUMENTS\PATANOT\DEBUG\SHADER.OBJ|C:\USERS\ADAM\DOCUMENTS\PATANOT\DEBUG\SIMPLE_LOGGER.OBJ|C:\USERS\ADAM\DOCUMENTS\PATANOT\DEBUG\SPRITE.OBJ" /b MSBuildConsole_CancelEvent0b73bd67e21f442e948641ece240a5a6  /c "C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe"  /ERRORREPORT:PROMPT /OUT:"C:\Users\Adam\Documents\PataNot\PataNot.exe" /INCREMENTAL /NOLOGO SDL2main.lib SDL2.lib glew32.lib opengl32.lib leap.lib SOIL.lib SDL2_image.lib SDL2_Mixer.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Adam\Documents\PataNot\PataNot.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Adam\Documents\PataNot\PataNot.lib" /MACHINE:X86 Debug\entity.obj
+                     C:\Program Files (x86)\Microsoft SDKs\Windows\v8.0A\bin\NETFX 4.0 Tools\Tracker.exe /a /d C:\Windows\Microsoft.NET\Framework\v4.0.30319\FileTracker.dll /i C:\Users\Adam\Documents\PataNot\Debug /r "C:\USERS\ADAM\DOCUMENTS\PATANOT\DEBUG\ENTITY.OBJ|C:\USERS\ADAM\DOCUMENTS\PATANOT\DEBUG\GAME.OBJ|C:\USERS\ADAM\DOCUMENTS\PATANOT\DEBUG\GAMEFUNCTIONS.OBJ|C:\USERS\ADAM\DOCUMENTS\PATANOT\DEBUG\GRAPHICS3D.OBJ|C:\USERS\ADAM\DOCUMENTS\PATANOT\DEBUG\INTERFACE.OBJ|C:\USERS\ADAM\DOCUMENTS\PATANOT\DEBUG\SCORING.OBJ|C:\USERS\ADAM\DOCUMENTS\PATANOT\DEBUG\SHADER.OBJ|C:\USERS\ADAM\DOCUMENTS\PATANOT\DEBUG\SIMPLE_LOGGER.OBJ|C:\USERS\ADAM\DOCUMENTS\PATANOT\DEBUG\SPRITE.OBJ" /b MSBuildConsole_CancelEvent6f9c11f61f98476fb64b71e9c9c3b5fa  /c "C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe"  /ERRORREPORT:PROMPT /OUT:"C:\Users\Adam\Documents\PataNot\PataNot.exe" /INCREMENTAL /NOLOGO SDL2main.lib SDL2.lib glew32.lib opengl32.lib leap.lib SOIL.lib SDL2_image.lib SDL2_Mixer.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Adam\Documents\PataNot\PataNot.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Adam\Documents\PataNot\PataNot.lib" /MACHINE:X86 Debug\entity.obj
                      Debug\gameFunctions.obj
                      Debug\game.obj
                      Debug\graphics3d.obj
@@ -2651,93 +2552,93 @@ windows_tracing_logfile = C:\BVTBin\Tests\installpackage\csilogfile.log
                      Task Parameter:Importance=High (TaskId:26)
                      PataNot.vcxproj -> C:\Users\Adam\Documents\PataNot\PataNot.exe (TaskId:26)
                    Done executing task "Message". (TaskId:26)
-15:46:29.693     1>Done building target "Link" in project "PataNot.vcxproj".: (TargetId:71)
+17:29:45.228     1>Done building target "Link" in project "PataNot.vcxproj".: (TargetId:71)
                    Target "MetaGenInputsOutputs" skipped, due to false condition; ('$(EnableManagedIncrementalBuild)' == 'True') was evaluated as ('false' == 'True').
                    Target "ComputeMetaGenInputs" skipped, due to false condition; ('$(CLRSupport)'!='' and '$(CLRSupport)'!='false') was evaluated as ('false'!='' and 'false'!='false').
                    Target "MetaGen" skipped, due to false condition; ('@(MetaGen)' != '') was evaluated as ('' != '').
-15:46:29.693     1>Target "ComputeLinkImportLibraryOutputsForClean: (TargetId:72)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_Link" depends on it):
+17:29:45.228     1>Target "ComputeLinkImportLibraryOutputsForClean: (TargetId:72)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_Link" depends on it):
                    Task "WriteLinesToFile" skipped, due to false condition; ('@(_LinkImportLibrary)' != '') was evaluated as ('' != '').
-15:46:29.693     1>Done building target "ComputeLinkImportLibraryOutputsForClean" in project "PataNot.vcxproj".: (TargetId:72)
-15:46:29.693     1>Target "AfterLink: (TargetId:73)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_Link" depends on it):
-15:46:29.693     1>Done building target "AfterLink" in project "PataNot.vcxproj".: (TargetId:73)
-15:46:29.693     1>Target "_Link: (TargetId:74)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildLinkAction" depends on it):
-15:46:29.693     1>Done building target "_Link" in project "PataNot.vcxproj".: (TargetId:74)
-15:46:29.694     1>Target "_ALink: (TargetId:75)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildLinkAction" depends on it):
-15:46:29.694     1>Done building target "_ALink" in project "PataNot.vcxproj".: (TargetId:75)
+17:29:45.229     1>Done building target "ComputeLinkImportLibraryOutputsForClean" in project "PataNot.vcxproj".: (TargetId:72)
+17:29:45.229     1>Target "AfterLink: (TargetId:73)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_Link" depends on it):
+17:29:45.229     1>Done building target "AfterLink" in project "PataNot.vcxproj".: (TargetId:73)
+17:29:45.229     1>Target "_Link: (TargetId:74)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildLinkAction" depends on it):
+17:29:45.229     1>Done building target "_Link" in project "PataNot.vcxproj".: (TargetId:74)
+17:29:45.229     1>Target "_ALink: (TargetId:75)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildLinkAction" depends on it):
+17:29:45.229     1>Done building target "_ALink" in project "PataNot.vcxproj".: (TargetId:75)
                    Target "ComputeLegacyManifestEmbedding" skipped. Previously built successfully.
-15:46:29.694     1>Target "_Manifest: (TargetId:76)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildLinkAction" depends on it):
+17:29:45.229     1>Target "_Manifest: (TargetId:76)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildLinkAction" depends on it):
                    Task "CallTarget" skipped, due to false condition; ('$(LegacyManifestEmbedding)' == 'true') was evaluated as ('' == 'true').
-15:46:29.694     1>Done building target "_Manifest" in project "PataNot.vcxproj".: (TargetId:76)
-15:46:29.694     1>Target "RegisterOutput: (TargetId:77)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppCommon.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildLinkAction" depends on it):
+17:29:45.229     1>Done building target "_Manifest" in project "PataNot.vcxproj".: (TargetId:76)
+17:29:45.229     1>Target "RegisterOutput: (TargetId:77)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppCommon.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildLinkAction" depends on it):
                    Task "Exec" skipped, due to false condition; ('$(ConfigurationType)'=='DynamicLibrary' and '%(Link.RegisterOutput)'=='true' and '%(Link.PerUserRedirection)'!='true') was evaluated as ('Application'=='DynamicLibrary' and 'false'=='true' and 'false'!='true').
                    Task "Exec" skipped, due to false condition; ('$(ConfigurationType)'=='DynamicLibrary' and '%(Link.RegisterOutput)'=='true' and '%(Link.PerUserRedirection)'=='true') was evaluated as ('Application'=='DynamicLibrary' and 'false'=='true' and 'false'=='true').
                    Task "Exec" skipped, due to false condition; ('$(ConfigurationType)'=='Application' and '%(Link.RegisterOutput)'=='true' and '%(Link.PerUserRedirection)'!='true') was evaluated as ('Application'=='Application' and 'false'=='true' and 'false'!='true').
                    Task "Exec" skipped, due to false condition; ('$(ConfigurationType)'=='Application' and '%(Link.RegisterOutput)'=='true' and '%(Link.PerUserRedirection)'=='true') was evaluated as ('Application'=='Application' and 'false'=='true' and 'false'=='true').
                    Task "VCMessage" skipped, due to false condition; ('$(_RegisterOutputExitCode)' != '' and '$(_RegisterOutputExitCode)' != '0') was evaluated as ('' != '' and '' != '0').
-15:46:29.694     1>Done building target "RegisterOutput" in project "PataNot.vcxproj".: (TargetId:77)
+17:29:45.230     1>Done building target "RegisterOutput" in project "PataNot.vcxproj".: (TargetId:77)
                    Target "PrepareForBuild" skipped. Previously built successfully.
                    Target "ResolveReferences" skipped. Previously built successfully.
-15:46:29.694     1>Target "ResolvedXDCMake: (TargetId:78)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_XdcMake" depends on it):
+17:29:45.230     1>Target "ResolvedXDCMake: (TargetId:78)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_XdcMake" depends on it):
                    Task "MSBuild" skipped, due to false condition; ('%(_MSBuildProjectReferenceExistent.Extension)' == '.vcxproj' and '@(ProjectReferenceWithConfiguration)' != '' and '@(_MSBuildProjectReferenceExistent)' != '' and '$(_ClCompileGenerateXMLDocumentationFiles)' == 'true') was evaluated as ('' == '.vcxproj' and '' != '' and '' != '' and '' == 'true').
-15:46:29.695     1>Done building target "ResolvedXDCMake" in project "PataNot.vcxproj".: (TargetId:78)
-15:46:29.695     1>Target "ComputeCLCompileGeneratedXDCFiles: (TargetId:79)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_XdcMake" depends on it):
-15:46:29.695     1>Done building target "ComputeCLCompileGeneratedXDCFiles" in project "PataNot.vcxproj".: (TargetId:79)
-15:46:29.695     1>Target "MakeDirsForXdcMake: (TargetId:80)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_XdcMake" depends on it):
+17:29:45.230     1>Done building target "ResolvedXDCMake" in project "PataNot.vcxproj".: (TargetId:78)
+17:29:45.230     1>Target "ComputeCLCompileGeneratedXDCFiles: (TargetId:79)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_XdcMake" depends on it):
+17:29:45.231     1>Done building target "ComputeCLCompileGeneratedXDCFiles" in project "PataNot.vcxproj".: (TargetId:79)
+17:29:45.231     1>Target "MakeDirsForXdcMake: (TargetId:80)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_XdcMake" depends on it):
                    Task "MakeDir" (TaskId:27)
                    Done executing task "MakeDir". (TaskId:27)
-15:46:29.695     1>Done building target "MakeDirsForXdcMake" in project "PataNot.vcxproj".: (TargetId:80)
+17:29:45.231     1>Done building target "MakeDirsForXdcMake" in project "PataNot.vcxproj".: (TargetId:80)
                    Target "XdcMake" skipped, due to false condition; ('@(XdcMake)' != '') was evaluated as ('' != '').
-15:46:29.695     1>Target "_XdcMake: (TargetId:81)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildLinkAction" depends on it):
-15:46:29.695     1>Done building target "_XdcMake" in project "PataNot.vcxproj".: (TargetId:81)
-15:46:29.695     1>Target "ComputeCLCompileGeneratedSbrFiles: (TargetId:82)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BscMake" depends on it):
-15:46:29.695     1>Done building target "ComputeCLCompileGeneratedSbrFiles" in project "PataNot.vcxproj".: (TargetId:82)
-15:46:29.695     1>Target "MakeDirsForBscMake: (TargetId:83)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BscMake" depends on it):
+17:29:45.231     1>Target "_XdcMake: (TargetId:81)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildLinkAction" depends on it):
+17:29:45.231     1>Done building target "_XdcMake" in project "PataNot.vcxproj".: (TargetId:81)
+17:29:45.231     1>Target "ComputeCLCompileGeneratedSbrFiles: (TargetId:82)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BscMake" depends on it):
+17:29:45.231     1>Done building target "ComputeCLCompileGeneratedSbrFiles" in project "PataNot.vcxproj".: (TargetId:82)
+17:29:45.231     1>Target "MakeDirsForBscMake: (TargetId:83)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BscMake" depends on it):
                    Task "MakeDir" (TaskId:28)
                    Done executing task "MakeDir". (TaskId:28)
-15:46:29.696     1>Done building target "MakeDirsForBscMake" in project "PataNot.vcxproj".: (TargetId:83)
+17:29:45.231     1>Done building target "MakeDirsForBscMake" in project "PataNot.vcxproj".: (TargetId:83)
                    Target "BscMake" skipped, due to false condition; ('@(BscMake)' != '') was evaluated as ('' != '').
                    Target "CustomBuildStep" skipped, due to false condition; ('@(CustomBuildStep)' != '' and '$(SelectedFiles)'=='') was evaluated as ('' != '' and ''=='').
-15:46:29.696     1>Target "_BscMake: (TargetId:84)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildLinkAction" depends on it):
-15:46:29.696     1>Done building target "_BscMake" in project "PataNot.vcxproj".: (TargetId:84)
+17:29:45.231     1>Target "_BscMake: (TargetId:84)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildLinkAction" depends on it):
+17:29:45.231     1>Done building target "_BscMake" in project "PataNot.vcxproj".: (TargetId:84)
                    Target "RunMergeNativeCodeAnalysis" skipped, due to false condition; ('$(Language)'=='C++' and '$(RunCodeAnalysisOnThisProject)'=='true') was evaluated as ('C++'=='C++' and ''=='true').
                    Target "RunNativeCodeAnalysis" skipped, due to false condition; ('$(Language)'=='C++' and '$(RunCodeAnalysisOnThisProject)'=='true') was evaluated as ('C++'=='C++' and ''=='true').
-15:46:29.696     1>Target "_GenerateSatelliteAssemblyInputs: (TargetId:85)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "CreateSatelliteAssemblies" depends on it):
+17:29:45.231     1>Target "_GenerateSatelliteAssemblyInputs: (TargetId:85)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "CreateSatelliteAssemblies" depends on it):
                    Task "Warning" skipped, due to false condition; ('@(ManifestResourceWithCulture)'!='' and '%(ManifestResourceWithCulture.EmittedForCompatibilityOnly)'=='') was evaluated as (''!='' and ''=='').
                    Task "Warning" skipped, due to false condition; ('@(ManifestNonResxWithCultureOnDisk)'!='' and '%(ManifestNonResxWithCultureOnDisk.EmittedForCompatibilityOnly)'=='') was evaluated as (''!='' and ''=='').
-15:46:29.696     1>Done building target "_GenerateSatelliteAssemblyInputs" in project "PataNot.vcxproj".: (TargetId:85)
+17:29:45.232     1>Done building target "_GenerateSatelliteAssemblyInputs" in project "PataNot.vcxproj".: (TargetId:85)
                    Target "ComputeIntermediateSatelliteAssemblies" skipped, due to false condition; (@(ReferenceSatellitePaths->'%(DestinationSubDirectory)') != '') was evaluated as ( != '').
                    Target "GenerateSatelliteAssemblies" skipped, due to false condition; ('@(_SatelliteAssemblyResourceInputs)' != '') was evaluated as ('' != '').
-15:46:29.696     1>Target "CreateSatelliteAssemblies: (TargetId:86)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildLinkAction" depends on it):
-15:46:29.696     1>Done building target "CreateSatelliteAssemblies" in project "PataNot.vcxproj".: (TargetId:86)
-15:46:29.696     1>Target "_Appverifier: (TargetId:87)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildLinkAction" depends on it):
-15:46:29.696     1>Done building target "_Appverifier" in project "PataNot.vcxproj".: (TargetId:87)
-15:46:29.696     1>Target "_Deploy: (TargetId:88)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildLinkAction" depends on it):
-15:46:29.696     1>Done building target "_Deploy" in project "PataNot.vcxproj".: (TargetId:88)
+17:29:45.232     1>Target "CreateSatelliteAssemblies: (TargetId:86)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildLinkAction" depends on it):
+17:29:45.232     1>Done building target "CreateSatelliteAssemblies" in project "PataNot.vcxproj".: (TargetId:86)
+17:29:45.232     1>Target "_Appverifier: (TargetId:87)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildLinkAction" depends on it):
+17:29:45.232     1>Done building target "_Appverifier" in project "PataNot.vcxproj".: (TargetId:87)
+17:29:45.232     1>Target "_Deploy: (TargetId:88)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildLinkAction" depends on it):
+17:29:45.232     1>Done building target "_Deploy" in project "PataNot.vcxproj".: (TargetId:88)
                    Target "ComputeIntermediateSatelliteAssemblies" skipped, due to false condition; (@(ReferenceSatellitePaths->'%(DestinationSubDirectory)') != '') was evaluated as ( != '').
                    Target "_CopyFilesMarkedCopyLocal" skipped, due to false condition; ('@(ReferenceCopyLocalPaths)' != '') was evaluated as ('' != '').
                    Target "AssignTargetPaths" skipped. Previously built successfully.
                    Target "_SplitProjectReferencesByFileExistence" skipped. Previously built successfully.
-15:46:29.696     1>Target "GetCopyToOutputDirectoryXamlAppDefs: (TargetId:89)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Xaml.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "GetCopyToOutputDirectoryItems" depends on it):
+17:29:45.232     1>Target "GetCopyToOutputDirectoryXamlAppDefs: (TargetId:89)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Xaml.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "GetCopyToOutputDirectoryItems" depends on it):
                    Task "AssignTargetPath" (TaskId:29)
                      Task Parameter:RootFolder=C:\Users\Adam\Documents\PataNot (TaskId:29)
                    Done executing task "AssignTargetPath". (TaskId:29)
-15:46:29.696     1>Done building target "GetCopyToOutputDirectoryXamlAppDefs" in project "PataNot.vcxproj".: (TargetId:89)
-15:46:29.696     1>Target "GetCopyToOutputDirectoryItems: (TargetId:90)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_CopySourceItemsToOutputDirectory" depends on it):
+17:29:45.232     1>Done building target "GetCopyToOutputDirectoryXamlAppDefs" in project "PataNot.vcxproj".: (TargetId:89)
+17:29:45.232     1>Target "GetCopyToOutputDirectoryItems: (TargetId:90)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_CopySourceItemsToOutputDirectory" depends on it):
                    Task "MSBuild" skipped, due to false condition; ('@(_MSBuildProjectReferenceExistent)' != '' and '$(_GetChildProjectCopyToOutputDirectoryItems)' == 'true' and '%(_MSBuildProjectReferenceExistent.Private)' != 'false' and '$(UseCommonOutputDirectory)' != 'true') was evaluated as ('' != '' and 'true' == 'true' and '' != 'false' and 'false' != 'true').
                    Task "AssignTargetPath" (TaskId:30)
                      Task Parameter:RootFolder=C:\Users\Adam\Documents\PataNot (TaskId:30)
                    Done executing task "AssignTargetPath". (TaskId:30)
-15:46:29.697     1>Done building target "GetCopyToOutputDirectoryItems" in project "PataNot.vcxproj".: (TargetId:90)
+17:29:45.233     1>Done building target "GetCopyToOutputDirectoryItems" in project "PataNot.vcxproj".: (TargetId:90)
                    Target "_CopyOutOfDateSourceItemsToOutputDirectory" skipped, due to false condition; ( '@(_SourceItemsToCopyToOutputDirectory)' != '' ) was evaluated as ( '' != '' ).
                    Target "_CopyOutOfDateSourceItemsToOutputDirectoryAlways" skipped, due to false condition; ( '@(_SourceItemsToCopyToOutputDirectoryAlways)' != '' ) was evaluated as ( '' != '' ).
-15:46:29.697     1>Target "_CopySourceItemsToOutputDirectory: (TargetId:91)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "CopyFilesToOutputDirectory" depends on it):
-15:46:29.697     1>Done building target "_CopySourceItemsToOutputDirectory" in project "PataNot.vcxproj".: (TargetId:91)
+17:29:45.233     1>Target "_CopySourceItemsToOutputDirectory: (TargetId:91)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "CopyFilesToOutputDirectory" depends on it):
+17:29:45.233     1>Done building target "_CopySourceItemsToOutputDirectory" in project "PataNot.vcxproj".: (TargetId:91)
                    Target "_CopyAppConfigFile" skipped, due to false condition; ( '@(AppConfigWithTargetPath)' != '' ) was evaluated as ( '' != '' ).
                    Target "_CopyManifestFiles" skipped, due to false condition; ( '$(_DeploymentCopyApplicationManifest)'=='true' or '$(GenerateClickOnceManifests)'=='true' ) was evaluated as ( ''=='true' or ''=='true' ).
-15:46:29.697     1>Target "_CheckForCompileOutputs: (TargetId:92)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "CopyFilesToOutputDirectory" depends on it):
-15:46:29.697     1>Done building target "_CheckForCompileOutputs" in project "PataNot.vcxproj".: (TargetId:92)
+17:29:45.233     1>Target "_CheckForCompileOutputs: (TargetId:92)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "CopyFilesToOutputDirectory" depends on it):
+17:29:45.233     1>Done building target "_CheckForCompileOutputs" in project "PataNot.vcxproj".: (TargetId:92)
                    Target "_SGenCheckForOutputs" skipped, due to false condition; ('$(_SGenGenerateSerializationAssembliesConfig)' == 'On' or ('@(WebReferenceUrl)'!='' and '$(_SGenGenerateSerializationAssembliesConfig)' == 'Auto')) was evaluated as ('Off' == 'On' or (''!='' and 'Off' == 'Auto')).
-15:46:29.697     1>Target "CopyFilesToOutputDirectory: (TargetId:93)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "PrepareForRun" depends on it):
+17:29:45.233     1>Target "CopyFilesToOutputDirectory: (TargetId:93)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "PrepareForRun" depends on it):
                    Task "Copy" skipped, due to false condition; ('$(CopyBuildOutputToOutputDirectory)' == 'true' and '$(SkipCopyBuildProduct)' != 'true') was evaluated as ('true' == 'true' and 'true' != 'true').
                    Task "Message" skipped, due to false condition; ('$(CopyBuildOutputToOutputDirectory)' == 'true' and '$(SkipCopyBuildProduct)'!='true') was evaluated as ('true' == 'true' and 'true'!='true').
                    Task "Copy" skipped, due to false condition; ('@(AddModules)' != '') was evaluated as ('' != '').
@@ -2748,21 +2649,21 @@ windows_tracing_logfile = C:\BVTBin\Tests\installpackage\csilogfile.log
                    Task "Copy" skipped, due to false condition; ('@(ReferenceComWrappersToCopyLocal)' != '' or '@(ResolvedIsolatedComModules)' != '' or '@(_DeploymentLooseManifestFile)' != '' or '@(NativeReferenceFile)' != '' ) was evaluated as ('' != '' or '' != '' or '' != '' or '' != '' ).
                    Task "Copy" skipped, due to false condition; ('$(SkipCopyWinMDArtifact)' != 'true' and '@(WinMDExpArtifacts)' != '') was evaluated as ('' != 'true' and '' != '').
                    Task "Message" skipped, due to false condition; ('$(SkipCopyWinMDArtifact)' != 'true' and '$(_WindowsMetadataOutputPath)' != '') was evaluated as ('' != 'true' and '' != '').
-15:46:29.698     1>Done building target "CopyFilesToOutputDirectory" in project "PataNot.vcxproj".: (TargetId:93)
-15:46:29.698     1>Target "PrepareForRun: (TargetId:94)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildLinkAction" depends on it):
-15:46:29.698     1>Done building target "PrepareForRun" in project "PataNot.vcxproj".: (TargetId:94)
+17:29:45.234     1>Done building target "CopyFilesToOutputDirectory" in project "PataNot.vcxproj".: (TargetId:93)
+17:29:45.234     1>Target "PrepareForRun: (TargetId:94)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildLinkAction" depends on it):
+17:29:45.234     1>Done building target "PrepareForRun" in project "PataNot.vcxproj".: (TargetId:94)
                    Target "CustomBuildStep" skipped, due to false condition; ('@(CustomBuildStep)' != '' and '$(SelectedFiles)'=='') was evaluated as ('' != '' and ''=='').
-15:46:29.698     1>Target "PostBuildEvent: (TargetId:95)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppCommon.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildLinkAction" depends on it):
+17:29:45.234     1>Target "PostBuildEvent: (TargetId:95)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppCommon.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "_BuildLinkAction" depends on it):
                    Task "Message" skipped, due to false condition; ('%(PostBuildEvent.Message)' != '' and '%(PostBuildEvent.Command)' != '') was evaluated as ('' != '' and '' != '').
                    Task "Exec" skipped, due to false condition; ('%(PostBuildEvent.Command)' != '') was evaluated as ('' != '').
-15:46:29.698     1>Done building target "PostBuildEvent" in project "PataNot.vcxproj".: (TargetId:95)
-15:46:29.698     1>Target "_BuildLinkAction: (TargetId:96)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "BuildLink" depends on it):
-15:46:29.698     1>Done building target "_BuildLinkAction" in project "PataNot.vcxproj".: (TargetId:96)
-15:46:29.698     1>Target "BuildLink: (TargetId:97)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "Build" depends on it):
-15:46:29.698     1>Done building target "BuildLink" in project "PataNot.vcxproj".: (TargetId:97)
-15:46:29.698     1>Target "AfterBuild: (TargetId:98)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.BuildSteps.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "Build" depends on it):
-15:46:29.698     1>Done building target "AfterBuild" in project "PataNot.vcxproj".: (TargetId:98)
-15:46:29.698     1>Target "FinalizeBuildStatus: (TargetId:99)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "Build" depends on it):
+17:29:45.234     1>Done building target "PostBuildEvent" in project "PataNot.vcxproj".: (TargetId:95)
+17:29:45.234     1>Target "_BuildLinkAction: (TargetId:96)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "BuildLink" depends on it):
+17:29:45.234     1>Done building target "_BuildLinkAction" in project "PataNot.vcxproj".: (TargetId:96)
+17:29:45.234     1>Target "BuildLink: (TargetId:97)" in file "C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Common.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "Build" depends on it):
+17:29:45.234     1>Done building target "BuildLink" in project "PataNot.vcxproj".: (TargetId:97)
+17:29:45.234     1>Target "AfterBuild: (TargetId:98)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.BuildSteps.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "Build" depends on it):
+17:29:45.234     1>Done building target "AfterBuild" in project "PataNot.vcxproj".: (TargetId:98)
+17:29:45.234     1>Target "FinalizeBuildStatus: (TargetId:99)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.CppBuild.targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (target "Build" depends on it):
                    Using "Delete" task from assembly "Microsoft.Build.Tasks.v4.0, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a".
                    Task "Delete" (TaskId:31)
                      Task Parameter:Files=Debug\PataNot.unsuccessfulbuild (TaskId:31)
@@ -2772,26 +2673,26 @@ windows_tracing_logfile = C:\BVTBin\Tests\installpackage\csilogfile.log
                      Task Parameter:Files=Debug\PataNot.lastbuildstate (TaskId:32)
                      Touching "Debug\PataNot.lastbuildstate". (TaskId:32)
                    Done executing task "Touch". (TaskId:32)
-15:46:29.704     1>Done building target "FinalizeBuildStatus" in project "PataNot.vcxproj".: (TargetId:99)
-15:46:29.704     1>Target "Build: (TargetId:100)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.BuildSteps.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (entry point):
-15:46:29.704     1>Done building target "Build" in project "PataNot.vcxproj".: (TargetId:100)
-15:46:29.704     1>Done Building Project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (Build target(s)).
+17:29:45.237     1>Done building target "FinalizeBuildStatus" in project "PataNot.vcxproj".: (TargetId:99)
+17:29:45.237     1>Target "Build: (TargetId:100)" in file "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V110\Microsoft.BuildSteps.Targets" from project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (entry point):
+17:29:45.237     1>Done building target "Build" in project "PataNot.vcxproj".: (TargetId:100)
+17:29:45.237     1>Done Building Project "C:\Users\Adam\Documents\PataNot\PataNot.vcxproj" (Build target(s)).
 
 Project Performance Summary:
-     2351 ms  C:\Users\Adam\Documents\PataNot\PataNot.vcxproj   1 calls
-               2351 ms  Build                                      1 calls
+     1779 ms  C:\Users\Adam\Documents\PataNot\PataNot.vcxproj   1 calls
+               1779 ms  Build                                      1 calls
 
 Target Performance Summary:
         0 ms  AfterBuildCompileEvent                     1 calls
-        0 ms  ComputeCLCompileGeneratedXDCFiles          1 calls
-        0 ms  ComputeManifestGeneratedLinkerInputs       1 calls
+        0 ms  SelectClCompile                            1 calls
         0 ms  GetCopyToOutputDirectoryXamlAppDefs        1 calls
         0 ms  _CheckForCompileOutputs                    1 calls
+        0 ms  GetResolvedWinMD                           1 calls
         0 ms  _Manifest                                  1 calls
         0 ms  _SelectedFiles                             1 calls
         0 ms  _PrepareForBuild                           1 calls
         0 ms  PostBuildEvent                             1 calls
-        0 ms  AfterBuildGenerateSources                  1 calls
+        0 ms  ResolveReferences                          1 calls
         0 ms  _Midl                                      1 calls
         0 ms  _ClCompile                                 1 calls
         0 ms  CreateCustomManifestResourceNames          1 calls
@@ -2803,99 +2704,99 @@ Target Performance Summary:
         0 ms  BeforeResourceCompile                      1 calls
         0 ms  SelectCustomBuild                          1 calls
         0 ms  AfterMidl                                  1 calls
+        0 ms  ComputeManifestGeneratedLinkerInputs       1 calls
         0 ms  BuildCompileTraverse                       1 calls
-        0 ms  CreateSatelliteAssemblies                  1 calls
         0 ms  BuildGenerateSources                       1 calls
         0 ms  _CopySourceItemsToOutputDirectory          1 calls
-        0 ms  ComputeLinkImportLibraryOutputsForClean    1 calls
         0 ms  GetFrameworkPaths                          1 calls
         0 ms  AfterResourceCompile                       1 calls
         0 ms  _Xsd                                       1 calls
         0 ms  ComputeCustomBuildOutput                   1 calls
-        0 ms  ComputeLinkSwitches                        1 calls
-        0 ms  ExpandSDKReferences                        1 calls
-        0 ms  _GenerateSatelliteAssemblyInputs           1 calls
+        0 ms  MakeDirsForBscMake                         1 calls
+        0 ms  MakeDirsForResourceCompile                 1 calls
+        0 ms  AfterBuildGenerateSources                  1 calls
         0 ms  _ResourceCompile                           1 calls
-        0 ms  ComputeLinkInputsFromProject               1 calls
         0 ms  Build                                      1 calls
         0 ms  _Link                                      1 calls
         0 ms  BuildLinkTraverse                          1 calls
         0 ms  ComputeManifestInputsTargets               1 calls
         0 ms  ComputeRCOutputs                           1 calls
         0 ms  _XdcMake                                   1 calls
-        0 ms  MakeDirsForResourceCompile                 1 calls
-        0 ms  PreLinkEvent                               1 calls
-        0 ms  ComputeMIDLGeneratedCompileInputs          1 calls
-        0 ms  _PrepareForReferenceResolution             1 calls
-        0 ms  AfterResolveReferences                     1 calls
+        0 ms  CreateSatelliteAssemblies                  1 calls
+        0 ms  ExpandSDKReferences                        1 calls
+        0 ms  ComputeLinkInputsFromProject               1 calls
         0 ms  _Deploy                                    1 calls
-        0 ms  DoLinkOutputFilesMatch                     1 calls
-        0 ms  ComputeReferenceCLInput                    1 calls
-        0 ms  PrepareForRun                              1 calls
-        0 ms  PreBuildEvent                              1 calls
-        0 ms  MakeDirsForMidl                            1 calls
-        0 ms  _BscMake                                   1 calls
-        0 ms  _Appverifier                               1 calls
-        0 ms  RegisterOutput                             1 calls
-        0 ms  _BuildGenerateSourcesAction                1 calls
-        0 ms  BuildLink                                  1 calls
-        0 ms  ComputeCLCompileGeneratedSbrFiles          1 calls
+        0 ms  ComputeMIDLGeneratedCompileInputs          1 calls
+        0 ms  AfterLink                                  1 calls
+        0 ms  _PrepareForReferenceResolution             1 calls
         0 ms  ResolveSDKReferences                       1 calls
         0 ms  _ALink                                     1 calls
-        0 ms  _SplitProjectReferencesByFileExistence     1 calls
-        0 ms  ComputeLegacyManifestEmbedding             1 calls
+        0 ms  BeforeResolveReferences                    1 calls
+        0 ms  AfterResolveReferences                     1 calls
+        0 ms  ComputeCLCompileGeneratedSbrFiles          1 calls
         0 ms  BeforeClCompile                            1 calls
         0 ms  AfterBuildGenerateSourcesEvent             1 calls
-        0 ms  BeforeResolveReferences                    1 calls
         0 ms  PrepareResourceNames                       1 calls
-        0 ms  AfterLink                                  1 calls
+        0 ms  _Appverifier                               1 calls
+        0 ms  SplitResourcesByCulture                    1 calls
         0 ms  ComputeRCGeneratedLinkInputs               1 calls
         0 ms  BuildCompile                               1 calls
-        0 ms  BeforeBuildGenerateSources                 1 calls
-        0 ms  AfterClCompile                             1 calls
+        0 ms  BuildLink                                  1 calls
         0 ms  _BuildCompileAction                        1 calls
-        0 ms  PlatformPrepareForBuild                    1 calls
+        0 ms  ComputeCLGeneratedLinkInputs               1 calls
         0 ms  GetInstalledSDKLocations                   1 calls
+        0 ms  _BscMake                                   1 calls
+        0 ms  _SplitProjectReferencesByFileExistence     1 calls
         0 ms  MakeDirsForXdcMake                         1 calls
-        1 ms  AssignTargetPaths                          1 calls
-        1 ms  PrepareForBuild                            1 calls
+        0 ms  PlatformPrepareForBuild                    1 calls
+        0 ms  ResolvedXDCMake                            1 calls
+        0 ms  AfterClCompile                             1 calls
+        0 ms  BuildGenerateSourcesTraverse               1 calls
+        0 ms  BeforeBuildGenerateSources                 1 calls
+        0 ms  _BuildGenerateSourcesAction                1 calls
+        0 ms  ComputeLegacyManifestEmbedding             1 calls
+        0 ms  PreBuildEvent                              1 calls
+        0 ms  PrepareForRun                              1 calls
+        1 ms  RegisterOutput                             1 calls
+        1 ms  _GenerateSatelliteAssemblyInputs           1 calls
+        1 ms  ComputeLinkSwitches                        1 calls
         1 ms  ResolveProjectReferences                   1 calls
-        1 ms  ComputeCLGeneratedLinkInputs               1 calls
-        1 ms  MakeDirsForBscMake                         1 calls
-        1 ms  SetBuildDefaultEnvironmentVariables        1 calls
         1 ms  MakeDirsForCl                              1 calls
-        1 ms  MakeDirsForLink                            1 calls
-        1 ms  SelectClCompile                            1 calls
-        1 ms  BuildGenerateSourcesTraverse               1 calls
-        1 ms  ResolveReferences                          1 calls
-        1 ms  ComputeCLOutputs                           1 calls
-        1 ms  SplitResourcesByCulture                    1 calls
-        1 ms  GetResolvedWinMD                           1 calls
-        1 ms  GetCopyToOutputDirectoryItems              1 calls
+        1 ms  ComputeLinkImportLibraryOutputsForClean    1 calls
+        1 ms  PreLinkEvent                               1 calls
+        1 ms  ComputeReferenceCLInput                    1 calls
+        1 ms  MakeDirsForMidl                            1 calls
         1 ms  CopyFilesToOutputDirectory                 1 calls
-        1 ms  ResolvedXDCMake                            1 calls
-        1 ms  GetReferenceAssemblyPaths                  1 calls
+        1 ms  ComputeCLCompileGeneratedXDCFiles          1 calls
         1 ms  AssignProjectConfiguration                 1 calls
-        3 ms  _CheckForInvalidConfigurationAndPlatform   1 calls
-        4 ms  InitializeBuildStatus                      1 calls
-        6 ms  FinalizeBuildStatus                        1 calls
-      466 ms  Link                                       1 calls
-     1844 ms  ClCompile                                  1 calls
+        1 ms  GetReferenceAssemblyPaths                  1 calls
+        1 ms  GetCopyToOutputDirectoryItems              1 calls
+        2 ms  DoLinkOutputFilesMatch                     1 calls
+        2 ms  ComputeCLOutputs                           1 calls
+        2 ms  MakeDirsForLink                            1 calls
+        2 ms  PrepareForBuild                            1 calls
+        2 ms  SetBuildDefaultEnvironmentVariables        1 calls
+        3 ms  InitializeBuildStatus                      1 calls
+        3 ms  FinalizeBuildStatus                        1 calls
+        3 ms  AssignTargetPaths                          1 calls
+        4 ms  _CheckForInvalidConfigurationAndPlatform   1 calls
+      292 ms  Link                                       1 calls
+     1440 ms  ClCompile                                  1 calls
 
 Task Performance Summary:
         0 ms  AssignCulture                              1 calls
         0 ms  ReadLinesFromFile                          1 calls
-        0 ms  Message                                    3 calls
-        1 ms  SetEnv                                     4 calls
-        1 ms  Delete                                     1 calls
-        1 ms  AssignTargetPath                           6 calls
-        1 ms  AssignProjectConfiguration                 1 calls
-        1 ms  MakeDir                                    9 calls
-        2 ms  WriteLinesToFile                           1 calls
-        5 ms  Touch                                      2 calls
-      463 ms  Link                                       1 calls
-     1840 ms  CL                                         1 calls
+        0 ms  AssignProjectConfiguration                 1 calls
+        1 ms  WriteLinesToFile                           1 calls
+        1 ms  Message                                    3 calls
+        2 ms  SetEnv                                     4 calls
+        2 ms  Delete                                     1 calls
+        2 ms  AssignTargetPath                           6 calls
+        3 ms  Touch                                      2 calls
+        3 ms  MakeDir                                    9 calls
+      285 ms  Link                                       1 calls
+     1432 ms  CL                                         1 calls
 
 Build succeeded.
 
-Time Elapsed 00:00:02.36
+Time Elapsed 00:00:01.79
