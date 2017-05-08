@@ -90,7 +90,7 @@ void Entity::setup()
 	sprite->setup();
 }
 
-void Entity::randomSpawn(float BPM, int firstBeat)
+void Entity::randomSpawn(float BPM)
 {
 	timing = (1 / (BPM / 60)) * 1000;
 	currentTime = SDL_GetTicks();

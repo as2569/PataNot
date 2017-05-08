@@ -4,6 +4,8 @@
 #include <Leap.h>
 #include "gameFunctions.h"
 
+extern int bpm;
+
 void GameFunctions::deltaTime()
 {
 	if (SDL_GetTicks()> last)
@@ -13,16 +15,33 @@ void GameFunctions::deltaTime()
 	}
 };
 
-void GameFunctions::loadSong()
+void GameFunctions::loadSong(int choice)
 {
-	if((music = Mix_LoadMUS("barbie.mp3")) == NULL)
-	{
-		std::cout<< Mix_GetError()<<std::endl;
+	if(choice == 1)
+	{ 
+		bpm = 40;
+		if((music = Mix_LoadMUS("barbie.mp3")) == NULL)
+		{
+			std::cout<< Mix_GetError()<<std::endl;
+		}
 	}
-	else
+	if(choice == 2)
 	{
-		//std::cout << "loaded song" << std::endl;
+		bpm = 40;
+		if((music = Mix_LoadMUS("StarWars.mp3")) == NULL)
+		{
+			std::cout<< Mix_GetError()<<std::endl;
+		}
 	}
+	if(choice == 3)
+	{
+		bpm == 20;
+		if((music = Mix_LoadMUS("NJIT.mp3")) == NULL)
+		{
+			std::cout<< Mix_GetError()<<std::endl;
+		}
+	}
+
 }
 
 void GameFunctions::cleanupSong()
@@ -38,19 +57,18 @@ int GameFunctions::playMusic()
      if( Mix_PlayingMusic() == 0 )
      {
 		//Play the music
-		if( Mix_PlayMusic(music, -1 ) == -1 )
+		if( Mix_PlayMusic(music, 1 ) == -1 )
 		{
 			std::cout << "playing" << std::endl;	
 		}    
 		return 1;
      }
-	 else
-	 {
-		 Mix_HaltMusic();
-		 return 1;
-	 }
+	 //else
+	 //{
+		// Mix_HaltMusic();
+		// return 1;
+	 //}
 }
-
 
 
 

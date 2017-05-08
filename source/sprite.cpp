@@ -29,7 +29,7 @@ int Sprite::getTiming(int step)
 
 void Sprite::setup()
 {
-	size.x = 1 / NUM_ANIMATION_FRAMES;
+	size.x = 1.0f / NUM_ANIMATION_FRAMES;
 	size.y = 0.25f;
 
 	for(int i = 0; i < NUM_ANIMATION_FRAMES; i++)
@@ -38,7 +38,7 @@ void Sprite::setup()
 		spriteFrames[i].timing = 500;
 	}
 
-	image = SOIL_load_image("arrowVomit.png", &width, &height, 0, SOIL_LOAD_RGBA);
+	image = SOIL_load_image("arrows.png", &width, &height, 0, SOIL_LOAD_RGBA);
 
 	//Set up buffer
 	glGenTextures(1, &tex);

@@ -30,7 +30,7 @@ public:
 	void setSprite();
 	void spawnPos();
 	void draw();
-	static void randomSpawn(float, int);
+	static void randomSpawn(float);
 	static void drawEntities();
 	static void updateEntities();
 	static void reserve();

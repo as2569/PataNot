@@ -1,6 +1,6 @@
 #ifndef _SPRITE_H_
 #define _SPRITE_H_
-#define NUM_ANIMATION_FRAMES 1
+#define NUM_ANIMATION_FRAMES 4
 
 struct frameData{
 	int index;

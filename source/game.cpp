@@ -36,9 +36,8 @@ glm::mat4 VP;
 Leap::Vector leapVec;
 Leap::Vector average;
 float leapVals[2];
-
-int bpm = 45;
-int fb = 5;
+int bpm = 40;
+int diff = 0;
 
 Leap::Controller controller;
 Leap::Listener listener;
@@ -167,6 +166,8 @@ int main(int argc, char *argv[])
 	SDL_Event evn;
 	int64_t frameID;
 	int64_t lastFrame = controller.frame().timestamp();
+	int64_t newFrame = 0;
+	int count = 0;
 
 	controller.addListener(listener); //Have the sample listener receive events from the controller
 
@@ -198,7 +199,7 @@ int main(int argc, char *argv[])
     }
 
 	Mix_Init(MIX_INIT_MP3);
-	gamefunctions.loadSong();
+	gamefunctions.loadSong(2);
 	Entity::reserve();
 	srand(time(NULL));
 	
@@ -212,6 +213,7 @@ int main(int argc, char *argv[])
 		Frame frame = controller.frame();
 		HandList hands = frame.hands();
 		leapVec = hands.leftmost().palmNormal();
+		gamefunctions.playMusic();
 
 		for( int i = 1; i < FRAME_SAMPLE_LENGTH; i++)
 		{
@@ -226,7 +228,7 @@ int main(int argc, char *argv[])
 		leapVals[2] = fabs(average.z);
 		
 		gamefunctions.deltaTime(); //time keeping
-		Entity::randomSpawn(bpm, fb);
+		Entity::randomSpawn(bpm);
 		Entity::updateEntities();		
 		Scoring::checkEntities(); //check if entity is 'scorable'
 
@@ -248,10 +250,40 @@ int main(int argc, char *argv[])
 		////print TIME when the specified frame is processed
 		//if(controller.frame().timestamp() >= lastFrame + 100000)
 		//{
-			//lastFrame = controller.frame().timestamp();
-			//frameID = controller.frame().id();
-			//std::cout << frameID << " " << lastFrame << std::endl;
+		//	lastFrame = controller.frame().timestamp();
+		//	frameID = controller.frame().id();
+		//	std::cout << frameID << " " << lastFrame << std::endl;
 		//}
+
+		//print TIME between frame with both hand input
+		HandList handLen = controller.frame().hands();
+
+		//if(handLen.count() == 0)
+		//{
+		//	lastFrame = controller.frame().timestamp();
+		//	count = count + 1;
+		//	//std::cout << count << std::endl;
+		//	//int out = controller.frame().timestamp();
+		//}
+		//if(handLen.count() == 1);
+		//{
+		//	newFrame = controller.frame().timestamp();
+		//	diff = lastFrame - newFrame;
+		//	std::cout << diff << std::endl;
+		//	diff = 0;
+		//}
+
+//HandList handlist = controller.frame().hands();
+//if((handlist.leftmost().direction().yaw() > -0.2) && (handlist.leftmost().direction().yaw() < 0.2))
+//{
+//	if(handlist.leftmost().fingers().extended().count() == 2)
+//	{
+//		std::cout << "V gesture formed " << controller.frame().timestamp() << std::endl;
+//	}
+//}
+		
+
+
 
 		glClearColor(leapVals[0],leapVals[1],leapVals[2],1.0); //background color
         //glClearColor(0.6,0.3,0.5,1.0); //background color

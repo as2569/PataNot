@@ -50,31 +50,84 @@ int Scoring::gesture(Entity *e)
 	for (HandList::const_iterator hl = hands.begin(); hl != hands.end(); ++hl) //Not sure how iterator works
 	{
 		const Hand hand = *hl;
+		HandList hands = controller.frame().hands();
 
 		//Is hand left or right?
 		std::string handType = hand.isLeft() ? "Left" : "Right";
 		
 		//Print states
 		//std::cout << handType <<" "<< pos << std::endl;
-		//std::cout << hand.direction() << std::endl;
+		//std::cout << hand.direction().yaw() << std::endl;
 		
-		if(hand.isLeft() && e->pos == 1)
+		if(hand.isLeft() && (e->pos == 1 && e->symbol == 0))
 		{
-			
-			if((hand.direction().yaw() > -0.2) && (hand.direction().yaw() < 0.2))
+			if((hand.direction().yaw() > -0.4) && (hand.direction().yaw() < 0.4))
 			{
-				std::cout << "leftup" << hand.direction() <<std::endl;
-				return 1;
+				//if(hand.fingers().extended().count() == 2)
+				//{
+					std::cout << "left up " << hand.direction().yaw() <<std::endl;
+					return 1;
+				//}
 			}
 		}
 
-		if(hand.isRight() && e->pos == 0)
+		if(hand.isRight() && (e->pos == 0 && e->symbol == 0))
 		{
-			
-			if((hand.direction().yaw() > -0.2) && (hand.direction().yaw() < 0.2))
+			if((hand.direction().yaw() > -0.4) && (hand.direction().yaw() < 0.4))
 			{
-				std::cout << "rightup" << hand.direction().yaw() <<std::endl;
-				return 1;
+				//if(hand.fingers().extended().count() == 2)
+				//{
+					std::cout << "right up " << hand.direction().yaw() <<std::endl;
+					return 1;
+				//}
+			}
+		}
+
+		if(hand.isLeft() && (e->pos == 1 && e->symbol == 1))
+		{
+			if((hand.direction().yaw() > 0.4) && (hand.direction().yaw() < 1.6))
+			{
+				//if(hand.fingers().extended().count() == 2)
+				//{
+					std::cout << "left right " << hand.direction().yaw() <<std::endl;
+					return 1;
+				//}
+			}
+		}
+
+		if(hand.isRight() && (e->pos == 0 && e->symbol == 1))
+		{
+			if((hand.direction().yaw() > 0.4) && (hand.direction().yaw() < 1.6))
+			{
+				//if(hand.fingers().extended().count() == 2)
+				//{
+					std::cout << "right right " << hand.direction().yaw() <<std::endl;
+					return 1;
+				//}
+			}
+		}
+
+		if(hand.isLeft() && (e->pos == 1 && e->symbol == 2))
+		{
+			if((hand.direction().yaw() < -0.4) && (hand.direction().yaw() > -1.6))
+			{
+				//if(hand.fingers().extended().count() == 2)
+				//{
+					std::cout << "left left " << hand.direction().yaw() <<std::endl;
+					return 1;
+				//}
+			}
+		}
+
+		if(hand.isRight() && (e->pos == 0 && e->symbol == 2))
+		{
+			if((hand.direction().yaw() < -0.4) && (hand.direction().yaw() > -1.6))
+			{
+				//if(hand.fingers().extended().count() == 2)
+				//{
+					std::cout << "right right " << hand.direction().yaw() <<std::endl;
+					return 1;
+				//}
 			}
 		}
     }
