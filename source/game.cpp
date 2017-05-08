@@ -36,7 +36,7 @@ glm::mat4 VP;
 Leap::Vector leapVec;
 Leap::Vector average;
 float leapVals[2];
-int bpm = 40;
+int bpm = 50;
 int diff = 0;
 
 Leap::Controller controller;
@@ -193,10 +193,12 @@ int main(int argc, char *argv[])
 
 	SDL_Init(SDL_INIT_EVERYTHING);
 	
+	//use 32075 for njit shanty
 	if( Mix_OpenAudio( 32075, MIX_DEFAULT_FORMAT, 2, 1024 ) == -1 )
     {
         std::cout << "AudioFail" << std::endl;    
     }
+
 
 	Mix_Init(MIX_INIT_MP3);
 	gamefunctions.loadSong(2);

@@ -20,7 +20,7 @@ void GameFunctions::loadSong(int choice)
 	if(choice == 1)
 	{ 
 		bpm = 40;
-		if((music = Mix_LoadMUS("barbie.mp3")) == NULL)
+		if((music = Mix_LoadMUS("barbie192.mp3")) == NULL)
 		{
 			std::cout<< Mix_GetError()<<std::endl;
 		}
@@ -28,7 +28,7 @@ void GameFunctions::loadSong(int choice)
 	if(choice == 2)
 	{
 		bpm = 40;
-		if((music = Mix_LoadMUS("StarWars.mp3")) == NULL)
+		if((music = Mix_LoadMUS("NJIT.mp3")) == NULL)
 		{
 			std::cout<< Mix_GetError()<<std::endl;
 		}
@@ -36,7 +36,7 @@ void GameFunctions::loadSong(int choice)
 	if(choice == 3)
 	{
 		bpm == 20;
-		if((music = Mix_LoadMUS("NJIT.mp3")) == NULL)
+		if((music = Mix_LoadMUS("NJIT192.mp3")) == NULL)
 		{
 			std::cout<< Mix_GetError()<<std::endl;
 		}

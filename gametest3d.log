@@ -952,3 +952,7 @@ c:\users\adam\documents\patanot\source\graphics3d.cpp:85: Using program[0] 3
 c:\users\adam\documents\patanot\source\graphics3d.cpp:93: Using program[1] 6
 c:\users\adam\documents\patanot\source\graphics3d.cpp:101: Using program[2] 9
 c:\users\adam\documents\patanot\source\game.cpp:190: glError: 0
+c:\users\adam\documents\patanot\source\graphics3d.cpp:85: Using program[0] 3
+c:\users\adam\documents\patanot\source\graphics3d.cpp:93: Using program[1] 6
+c:\users\adam\documents\patanot\source\graphics3d.cpp:101: Using program[2] 9
+c:\users\adam\documents\patanot\source\game.cpp:190: glError: 0
